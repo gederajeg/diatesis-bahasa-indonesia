@@ -1,0 +1,304 @@
+morphind	root_morphind	root_pos_morphind	affix_morphind	affix_morphind_wclass	pref_morphind	suff_morphind	verb_tagged	n	ok	remark	kbbi_form_pos	gloss	semantics
+ber+kait<v>+an_VSA	kait	v	ber-_an	ber-_v_an	ber-	an	TRUE	3985	TRUE	"based on ""kaitan""? Note that the frequency of ""kait"" is 35 tokens while ""kaitan"" returns 606 tokens. This suggests that ""kaitan"" is not parsed into ""kait"" and presumably is already represented as a complex form."	v		
+ber+sangkut<v>+an_VSA	sangkut	v	ber-_an	ber-_v_an	ber-	an	TRUE	2801	TRUE		v		
+ber+tuju<v>+an_VSA	tuju	v	ber-_an	ber-_v_an	ber-	an	TRUE	2569	FALSE	"based on ""tujuan""?"	v		
+ber+hubung<v>+an_VSA	hubung	v	ber-_an	ber-_v_an	ber-	an	TRUE	2505	TRUE		v		
+ber+sama<a>+an_VSA	sama	a	ber-_an	ber-_a_an	ber-	an	TRUE	1224	TRUE		v		
+ber+lebih<a>+an_VSA	lebih	a	ber-_an	ber-_a_an	ber-	an	TRUE	1222	TRUE		a		
+ber+tentang<v>+an_VSA	tentang	v	ber-_an	ber-_v_an	ber-	an	TRUE	975	TRUE		v		
+ber+hadap<v>+an_VSA	hadap	v	ber-_an	ber-_v_an	ber-	an	TRUE	665	TRUE		v		
+ber+ukur<v>+an_VSA	ukur	v	ber-_an	ber-_v_an	ber-	an	TRUE	551	FALSE	"based on ""ukuran""?"	v		
+ber+kena<v>+an_VSA	kena	v	ber-_an	ber-_v_an	ber-	an	TRUE	531	TRUE		v		
+ber+jual<v>+an_VSA	jual	v	ber-_an	ber-_v_an	ber-	an	TRUE	476	TRUE		v		
+ber+ganti<v>+an_VSA	ganti	v	ber-_an	ber-_v_an	ber-	an	TRUE	390	TRUE		v		
+ber+pakai<v>+an_VSA	pakai	v	ber-_an	ber-_v_an	ber-	an	TRUE	358	FALSE	"based on ""pakaian""?"	v		
+ber+dekat<a>+an_VSA	dekat	a	ber-_an	ber-_a_an	ber-	an	TRUE	282	TRUE		v		
+ber+lawan<v>+an_VSA	lawan	v	ber-_an	ber-_v_an	ber-	an	TRUE	281	TRUE		v		
+ber+kenal<v>+an_VSA	kenal	v	ber-_an	ber-_v_an	ber-	an	TRUE	267	TRUE		v		
+ber+anggap<v>+an_VSA	anggap	v	ber-_an	ber-_v_an	ber-	an	TRUE	264	FALSE	"based on ""anggapan""?"	v		
+ber+batas<n>+an_VSA	batas	n	ber-_an	ber-_n_an	ber-	an	TRUE	254	TRUE		v		
+ber+datang<v>+an_VSA	datang	v	ber-_an	ber-_v_an	ber-	an	TRUE	238	TRUE		v		
+ber+pasang<v>+an_VSA	pasang	v	ber-_an	ber-_v_an	ber-	an	TRUE	230	TRUE		v		
+ber+lari<v>+an_VSA	lari	v	ber-_an	ber-_v_an	ber-	an	TRUE	221	TRUE		v		
+ber+muncul<v>+an_VSA	muncul	v	ber-_an	ber-_v_an	ber-	an	TRUE	219	TRUE		v		
+ber+pandang<v>+an_VSA	pandang	v	ber-_an	ber-_v_an	ber-	an	TRUE	215	TRUE		v		
+ber+damping<v>+an_VSA	damping	v	ber-_an	ber-_v_an	ber-	an	TRUE	196	TRUE		v		
+ber+urut<n>+an_VSA	urut	n	ber-_an	ber-_n_an	ber-	an	TRUE	187	TRUE		v		
+ber+urus<v>+an_VSA	urus	v	ber-_an	ber-_v_an	ber-	an	TRUE	178	TRUE		v		
+ber+sentuh<v>+an_VSA	sentuh	v	ber-_an	ber-_v_an	ber-	an	TRUE	172	TRUE		v		
+ber+serak<a>+an_VSA	serak	a	ber-_an	ber-_a_an	ber-	an	TRUE	172	TRUE		v		
+ber+muat<v>+an_VSA	muat	v	ber-_an	ber-_v_an	ber-	an	TRUE	158	FALSE	"based on ""muatan""?"	v		
+ber+bantu<v>+an_VSA	bantu	v	ber-_an	ber-_v_an	ber-	an	TRUE	142	FALSE	"based on ""bantuan""?"	v		
+ber+tepat<a>+an_VSA	tepat	a	ber-_an	ber-_a_an	ber-	an	TRUE	141	TRUE		v		
+ber+halang<v>+an_VSA	halang	v	ber-_an	ber-_v_an	ber-	an	TRUE	140	FALSE	"based on ""halangan""?"	v		
+ber+hambur<v>+an_VSA	hambur	v	ber-_an	ber-_v_an	ber-	an	TRUE	139	TRUE		v		
+ber+iring<v>+an_VSA	iring	v	ber-_an	ber-_v_an	ber-	an	TRUE	128	TRUE		v		
+ber+pacar<n>+an_VSA	pacar	n	ber-_an	ber-_n_an	ber-	an	TRUE	125	TRUE		v		
+ber+jatuh<v>+an_VSA	jatuh	v	ber-_an	ber-_v_an	ber-	an	TRUE	123	TRUE		v		
+ber+papas<v>+an_VSA	papas	v	ber-_an	ber-_v_an	ber-	an	TRUE	120	TRUE		v		
+ber+pegang<v>+an_VSA	pegang	v	ber-_an	ber-_v_an	ber-	an	TRUE	119	TRUE		v		
+ber+tebar<v>+an_VSA	tebar	v	ber-_an	ber-_v_an	ber-	an	TRUE	119	TRUE		v		
+ber+pikir<v>+an_VSA	pikir	v	ber-_an	ber-_v_an	ber-	an	TRUE	116	FALSE	"based on ""pikiran""?"	v		
+ber+lain<a>+an_VSA	lain	a	ber-_an	ber-_a_an	ber-	an	TRUE	115	TRUE		v		
+ber+seberang<n>+an_VSA	seberang	n	ber-_an	ber-_n_an	ber-	an	TRUE	112	TRUE		v		
+ber+salam<n>+an_VSA	salam	n	ber-_an	ber-_n_an	ber-	an	TRUE	108	TRUE		v		
+ber+peluk<v>+an_VSA	peluk	v	ber-_an	ber-_v_an	ber-	an	TRUE	106	TRUE		v		
+ber+atur<v>+an_VSA	atur	v	ber-_an	ber-_v_an	ber-	an	TRUE	98	FALSE	"based on ""aturan""?"	v		
+ber+singgung<v>+an_VSA	singgung	v	ber-_an	ber-_v_an	ber-	an	TRUE	96	TRUE		v		
+ber+gugur<v>+an_VSA	gugur	v	ber-_an	ber-_v_an	ber-	an	TRUE	89	TRUE		v		
+ber+langgan<v>+an_VSA	langgan	v	ber-_an	ber-_v_an	ber-	an	TRUE	86	TRUE		v		
+ber+desak<v>+an_VSA	desak	v	ber-_an	ber-_v_an	ber-	an	TRUE	79	TRUE		v		
+ber+jauh<a>+an_VSA	jauh	a	ber-_an	ber-_a_an	ber-	an	TRUE	78	TRUE		v		
+ber+bareng<d>+an_VSA	bareng	d	ber-_an	ber-_d_an	ber-	an	TRUE	77	TRUE		v		
+ber+ikat<v>+an_VSA	ikat	v	ber-_an	ber-_v_an	ber-	an	TRUE	70	TRUE		v		
+ber+gilir<v>+an_VSA	gilir	v	ber-_an	ber-_v_an	ber-	an	TRUE	64	TRUE		v		
+ber+gandeng<v>+an_VSA	gandeng	v	ber-_an	ber-_v_an	ber-	an	TRUE	63	TRUE		v		
+ber+tabrak<v>+an_VSA	tabrak	v	ber-_an	ber-_v_an	ber-	an	TRUE	61	TRUE		v		
+ber+gelantung<v>+an_VSA	gelantung	v	ber-_an	ber-_v_an	ber-	an	TRUE	60	TRUE		v		
+ber+lumur<v>+an_VSA	lumur	v	ber-_an	ber-_v_an	ber-	an	TRUE	60	TRUE		v		
+ber+tali<n>+an_VSA	tali	n	ber-_an	ber-_n_an	ber-	an	TRUE	59	TRUE		v		
+ber+bentur<v>+an_VSA	bentur	v	ber-_an	ber-_v_an	ber-	an	TRUE	58	TRUE		v		
+ber+seliwer<v>+an_VSA	seliwer	v	ber-_an	ber-_v_an	ber-	an	TRUE	58	TRUE		v		
+ber+musuh<n>+an_VSA	musuh	n	ber-_an	ber-_n_an	ber-	an	TRUE	56	TRUE		v		
+ber+kilau<n>+an_VSA	kilau	n	ber-_an	ber-_n_an	ber-	an	TRUE	55	TRUE		v		
+ber+cucur<v>+an_VSA	cucur	v	ber-_an	ber-_v_an	ber-	an	TRUE	52	TRUE		v		
+ber+rebut<v>+an_VSA	rebut	v	ber-_an	ber-_v_an	ber-	an	TRUE	50	TRUE		v		
+ber+sisi<n>+an_VSA	sisi	n	ber-_an	ber-_n_an	ber-	an	TRUE	50	TRUE		v		
+ber+lompat<v>+an_VSA	lompat	v	ber-_an	ber-_v_an	ber-	an	TRUE	49	TRUE		v		
+ber+cium<v>+an_VSA	cium	v	ber-_an	ber-_v_an	ber-	an	TRUE	48	TRUE		v	kiss	
+ber+kejar<v>+an_VSA	kejar	v	ber-_an	ber-_v_an	ber-	an	TRUE	46	TRUE		v		
+ber+gelimpang<v>+an_VSA	gelimpang	v	ber-_an	ber-_v_an	ber-	an	TRUE	45	TRUE		v		
+ber+tatap<v>+an_VSA	tatap	v	ber-_an	ber-_v_an	ber-	an	TRUE	45	TRUE		v		
+ber+sahut<v>+an_VSA	sahut	v	ber-_an	ber-_v_an	ber-	an	TRUE	43	TRUE		v		
+ber+halu<n>+an_VSA	halu	n	ber-_an	ber-_n_an	ber-	an	TRUE	42	FALSE	"based on ""haluan""?"	v		
+ber+tulis<v>+an_VSA	tulis	v	ber-_an	ber-_v_an	ber-	an	TRUE	39	FALSE	"either (i) typo of ""bertuliskan"" or (ii) based on ""tulisan""? (where ber- means 'to have')"	v		
+ber+alir<v>+an_VSA	alir	v	ber-_an	ber-_v_an	ber-	an	TRUE	38	FALSE	"based on ""aliran""?"	v		
+ber+sesuai<a>+an_VSA	sesuai	a	ber-_an	ber-_a_an	ber-	an	TRUE	38	TRUE		v		
+ber+gentayang<pre-cat>+an_VSA	gentayang	pre-cat	ber-_an	ber-_pre-cat_an	ber-	an	TRUE	36	TRUE		v		
+ber+tekan<v>+an_VSA	tekan	v	ber-_an	ber-_v_an	ber-	an	TRUE	35	FALSE	"based on ""tekanan""?"	v		
+ber+patok<v>+an_VSA	patok	v	ber-_an	ber-_v_an	ber-	an	TRUE	30	FALSE	"based on ""patokan""?"	v		
+ber+pergi<v>+an_VSA	pergi	v	ber-_an	ber-_v_an	ber-	an	TRUE	30	TRUE		v		
+ber+juluk<v>+an_VSA	juluk	v	ber-_an	ber-_v_an	ber-	an	TRUE	27	FALSE	"based on ""julukan""?"	v		
+ber+terbang<v>+an_VSA	terbang	v	ber-_an	ber-_v_an	ber-	an	TRUE	24	TRUE		v		
+ber+gesek<v>+an_VSA	gesek	v	ber-_an	ber-_v_an	ber-	an	TRUE	23	TRUE		v		
+ber+kendara<v>+an_VSA	kendara	v	ber-_an	ber-_v_an	ber-	an	TRUE	22	FALSE	"based on ""kendaraan""?"	v		
+ber+dua<c>+an_VSA	dua	c	ber-_an	ber-_c_an	ber-	an	TRUE	21	TRUE		v		
+ber+impit<v>+an_VSA	impit	v	ber-_an	ber-_v_an	ber-	an	TRUE	21	TRUE		v		
+ber+jejal<v>+an_VSA	jejal	v	ber-_an	ber-_v_an	ber-	an	TRUE	21	TRUE		v		
+ber+loncat<v>+an_VSA	loncat	v	ber-_an	ber-_v_an	ber-	an	TRUE	21	TRUE		v		
+ber+rangkul<v>+an_VSA	rangkul	v	ber-_an	ber-_v_an	ber-	an	TRUE	21	TRUE		v		
+ber+tabur<v>+an_VSA	tabur	v	ber-_an	ber-_v_an	ber-	an	TRUE	18	TRUE		v		
+ber+mekar<a>+an_VSA	mekar	a	ber-_an	ber-_a_an	ber-	an	TRUE	17	TRUE		v		
+ber+peran<n>+an_VSA	peran	n	ber-_an	ber-_n_an	ber-	an	TRUE	16	FALSE	"based on ""peranan""?"	v		
+ber+potong<v>+an_VSA	potong	v	ber-_an	ber-_v_an	ber-	an	TRUE	14	TRUE		adv		
+ber+taut<v>+an_VSA	taut	v	ber-_an	ber-_v_an	ber-	an	TRUE	14	TRUE		v		
+ber+guling<n>+an_VSA	guling	n	ber-_an	ber-_n_an	ber-	an	TRUE	13	TRUE		v		
+ber+mesra<a>+an_VSA	mesra	a	ber-_an	ber-_a_an	ber-	an	TRUE	13	TRUE		v		
+ber+siar<v>+an_VSA	siar	v	ber-_an	ber-_v_an	ber-	an	TRUE	13	FALSE	"based on ""siaran""?"	v		
+ber+silang<v>+an_VSA	silang	v	ber-_an	ber-_v_an	ber-	an	TRUE	13	TRUE		v		
+ber+tubruk<v>+an_VSA	tubruk	v	ber-_an	ber-_v_an	ber-	an	TRUE	13	TRUE		v		
+ber+andal<v>+an_VSA	andal	v	ber-_an	ber-_v_an	ber-	an	TRUE	12	FALSE	"it is ""berandalan"" 'thug'"	NA		
+ber+dasar<n>+an_VSA	dasar	n	ber-_an	ber-_n_an	ber-	an	TRUE	12	FALSE	typo	NA		
+ber+iris<n>+an_VSA	iris	n	ber-_an	ber-_n_an	ber-	an	TRUE	12	TRUE		NA		
+ber+jaring<v>+an_VSA	jaring	v	ber-_an	ber-_v_an	ber-	an	TRUE	12	FALSE	"based on ""jaringan""?"	NA		
+ber+rombong<a>+an_VSA	rombong	a	ber-_an	ber-_a_an	ber-	an	TRUE	12	TRUE		NA		
+ber+gelayut<v>+an_VSA	gelayut	v	ber-_an	ber-_v_an	ber-	an	TRUE	11	TRUE		NA		
+ber+himpit<v>+an_VSA	himpit	v	ber-_an	ber-_v_an	ber-	an	TRUE	11	TRUE	"In KBBI, it is ""berimpitan"""	v		
+ber+tumbang<v>+an_VSA	tumbang	v	ber-_an	ber-_v_an	ber-	an	TRUE	11	TRUE		NA		
+ber+tunang<v>+an_VSA	tunang	v	ber-_an	ber-_v_an	ber-	an	TRUE	11	TRUE		v		
+ber+getar<v>+an_VSA	getar	v	ber-_an	ber-_v_an	ber-	an	TRUE	10	TRUE		NA		
+ber+golong<v>+an_VSA	golong	v	ber-_an	ber-_v_an	ber-	an	TRUE	10	FALSE	"based on ""golongan""?"	v		
+ber+pencar<v>+an_VSA	pencar	v	ber-_an	ber-_v_an	ber-	an	TRUE	9	TRUE		v		
+ber+senggol<v>+an_VSA	senggol	v	ber-_an	ber-_v_an	ber-	an	TRUE	9	TRUE		v		
+ber+tegang<a>+an_VSA	tegang	a	ber-_an	ber-_a_an	ber-	an	TRUE	9	FALSE	"based on ""tegangan""?"	NA		
+ber+turut<v>+an_VSA	turut	v	ber-_an	ber-_v_an	ber-	an	TRUE	9	TRUE		v		
+ber+kibar<v>+an_VSA	kibar	v	ber-_an	ber-_v_an	ber-	an	TRUE	8	TRUE		v		
+ber+lesat<pre-cat>+an_VSA	lesat	pre-cat	ber-_an	ber-_pre-cat_an	ber-	an	TRUE	8	TRUE		NA		
+ber+pangkal<n>+an_VSA	pangkal	n	ber-_an	ber-_n_an	ber-	an	TRUE	8	FALSE	"based on ""pangkalan""?"	v		
+ber+jabat<v>+an_VSA	jabat	v	ber-_an	ber-_v_an	ber-	an	TRUE	7	TRUE		v		
+ber+lebar<a>+an_VSA	lebar	a	ber-_an	ber-_a_an	ber-	an	TRUE	7	FALSE	"based on ""lebaran""?"	v		
+ber+patung<n>+an_VSA	patung	n	ber-_an	ber-_n_an	ber-	an	TRUE	7	TRUE		v		
+ber+tumbuk<v>+an_VSA	tumbuk	v	ber-_an	ber-_v_an	ber-	an	TRUE	7	TRUE		v		
+ber+wirausaha<n>+an_VSA	wirausaha	n	ber-_an	ber-_n_an	ber-	an	TRUE	7	TRUE		NA		
+ber+harap<v>+an_VSA	harap	v	ber-_an	ber-_v_an	ber-	an	TRUE	6	FALSE	"based on ""harapan""?"	v		
+ber+pamer<v>+an_VSA	pamer	v	ber-_an	ber-_v_an	ber-	an	TRUE	6	FALSE	"based on ""pameran""?"	v		
+ber+pelanting<n>+an_VSA	pelanting	n	ber-_an	ber-_n_an	ber-	an	TRUE	6	TRUE		NA		
+ber+timbul<a>+an_VSA	timbul	v	ber-_an	ber-_v_an	ber-	an	TRUE	6	TRUE		NA		
+ber+geletak<d>+an_VSA	geletak	d	ber-_an	ber-_d_an	ber-	an	TRUE	5	TRUE		v		
+ber+kembang<v>+an_VSA	kembang	v	ber-_an	ber-_v_an	ber-	an	TRUE	5	TRUE		NA		
+ber+kilat<a>+an_VSA	kilat	n	ber-_an	ber-_n_an	ber-	an	TRUE	5	TRUE		v		
+ber+patah<a>+an_VSA	patah	a	ber-_an	ber-_a_an	ber-	an	TRUE	5	TRUE		NA		
+ber+pendar<n>+an_VSA	pendar	n	ber-_an	ber-_n_an	ber-	an	TRUE	5	TRUE		v		
+ber+setel<n>+an_VSA	setel	n	ber-_an	ber-_n_an	ber-	an	TRUE	5	FALSE	"based on ""setelan""?"	v		wear
+ber+tetangga<n>+an_VSA	tetangga	n	ber-_an	ber-_n_an	ber-	an	TRUE	5	TRUE		v		
+ber+ukir<v>+an_VSA	ukir	v	ber-_an	ber-_v_an	ber-	an	TRUE	5	FALSE	"based on ""ukiran""?"	NA		have
+ber+acu<v>+an_VSA	acu	v	ber-_an	ber-_v_an	ber-	an	TRUE	4	FALSE	"based on ""acuan""?"	NA		have
+ber+akhir<n>+an_VSA	akhir	n	ber-_an	ber-_n_an	ber-	an	TRUE	4	FALSE	"based on ""akhiran""?"	v		have
+ber+anggar<v>+an_VSA	anggar	v	ber-_an	ber-_v_an	ber-	an	TRUE	4	FALSE	"based on ""anggaran""?"	v		have
+ber+baik<a>+an_VSA	baik	a	ber-_an	ber-_a_an	ber-	an	TRUE	4	TRUE		v		
+ber+balas<v>+an_VSA	balas	v	ber-_an	ber-_v_an	ber-	an	TRUE	4	TRUE		NA		
+ber+batu<n>+an_VSA	batu	n	ber-_an	ber-_n_an	ber-	an	TRUE	4	TRUE		v		full
+ber+kitar<v>+an_VSA	kitar	v	ber-_an	ber-_v_an	ber-	an	TRUE	4	TRUE		NA		
+ber+leleh<v>+an_VSA	leleh	v	ber-_an	ber-_v_an	ber-	an	TRUE	4	TRUE		v		
+ber+mirip<a>+an_VSA	mirip	a	ber-_an	ber-_a_an	ber-	an	TRUE	4	TRUE		v		have
+ber+salah<a>+an_VSA	salah	a	ber-_an	ber-_a_an	ber-	an	TRUE	4	TRUE		v		
+ber+sambung<v>+an_VSA	sambung	v	ber-_an	ber-_v_an	ber-	an	TRUE	4	TRUE		v		
+ber+sebrang<v>+an_VSA	sebrang	v	ber-_an	ber-_v_an	ber-	an	TRUE	4	TRUE		v		
+ber+tampal<n>+an_VSA	tampal	n	ber-_an	ber-_n_an	ber-	an	TRUE	4	TRUE		NA		
+ber+tindih<v>+an_VSA	tindih	v	ber-_an	ber-_v_an	ber-	an	TRUE	4	TRUE		v		
+ber+tonjol<v>+an_VSA	tonjol	v	ber-_an	ber-_v_an	ber-	an	TRUE	4	TRUE		NA		
+ber+arak<n>+an_VSA	arak	n	ber-_an	ber-_n_an	ber-	an	TRUE	3	TRUE		v		
+ber+gelimang<a>+an_VSA	gelimang	a	ber-_an	ber-_a_an	ber-	an	TRUE	3	TRUE		NA		
+ber+gemeletuk<v>+an_VSA	gemeletuk	v	ber-_an	ber-_v_an	ber-	an	TRUE	3	TRUE		NA		
+ber+genggam<v>+an_VSA	genggam	v	ber-_an	ber-_v_an	ber-	an	TRUE	3	TRUE		NA		
+ber+gerombol<n>+an_VSA	gerombol	n	ber-_an	ber-_n_an	ber-	an	TRUE	3	TRUE		NA		
+ber+keluyur<pre-cat>+an_VSA	keluyur	v	ber-_an	ber-_v_an	ber-	an	TRUE	3	TRUE		v		
+ber+landas<n>+an_VSA	landas	n	ber-_an	ber-_n_an	ber-	an	TRUE	3	FALSE	"based on ""landasan""?"	v		use
+ber+lanjut<v>+an_VSA	lanjut	v	ber-_an	ber-_v_an	ber-	an	TRUE	3	TRUE		v		
+ber+lekat<a>+an_VSA	lekat	a	ber-_an	ber-_a_an	ber-	an	TRUE	3	TRUE		v		
+ber+limpah<v>+an_VSA	limpah	v	ber-_an	ber-_v_an	ber-	an	TRUE	3	TRUE		v		
+ber+lintas<n>+an_VSA	lintas	n	ber-_an	ber-_n_an	ber-	an	TRUE	3	TRUE		NA		
+ber+mi<n>+an_VSA	mi	n	ber-_an	ber-_n_an	ber-	an	TRUE	3	FALSE	typo			
+ber+paut<v>+an_VSA	paut	v	ber-_an	ber-_v_an	ber-	an	TRUE	3	TRUE		v		
+ber+renang<v>+an_VSA	renang	v	ber-_an	ber-_v_an	ber-	an	TRUE	3	TRUE		v		
+ber+samping<n>+an_VSA	samping	n	ber-_an	ber-_n_an	ber-	an	TRUE	3	TRUE		v		
+ber+sasar<v>+an_VSA	sasar	v	ber-_an	ber-_v_an	ber-	an	TRUE	3	TRUE		v		have
+ber+saut<n>+an_VSA	saut	n	ber-_an	ber-_n_an	ber-	an	TRUE	3	TRUE		v		
+ber+tantang<v>+an_VSA	tantang	v	ber-_an	ber-_v_an	ber-	an	TRUE	3	FALSE	"typo for ""bertentangan"""			
+ber+terus<a>+an_VSA	terus	a	ber-_an	ber-_a_an	ber-	an	TRUE	3	TRUE		v		
+ber+angkut<v>+an_VSA	angkut	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	FALSE	"typo for ""bersangkutan"""			
+ber+bantal<n>+an_VSA	bantal	n	ber-_an	ber-_n_an	ber-	an	TRUE	2	FALSE	"based on ""bantalan""?"			wear
+ber+bentrok<v>+an_VSA	bentrok	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		v		
+ber+debar<n>+an_VSA	debar	n	ber-_an	ber-_n_an	ber-	an	TRUE	2	TRUE		NA		
+ber+diam<a>+an_VSA	diam	a	ber-_an	ber-_a_an	ber-	an	TRUE	2	TRUE		NA		
+ber+fikir<v>+an_VSA	fikir	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	FALSE	"based on ""fikiran""?"			
+ber+g<f>+an_VSA	g	f	ber-_an	ber-_f_an	ber-	an	TRUE	2	FALSE	typo			
+ber+gaduh<a>+an_VSA	gaduh	a	ber-_an	ber-_a_an	ber-	an	TRUE	2	TRUE		NA		
+ber+gantung<v>+an_VSA	gantung	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		v		plurality of the subject
+ber+gelar<v>+an_VSA	gelar	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		NA		
+ber+geliat<v>+an_VSA	geliat	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		NA		
+ber+jajar<n>+an_VSA	jajar	n	ber-_an	ber-_n_an	ber-	an	TRUE	2	TRUE		NA		
+ber+juntai<a>+an_VSA	juntai	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		a		
+ber+kuat<a>+an_VSA	kuat	a	ber-_an	ber-_a_an	ber-	an	TRUE	2	FALSE	context shows its use in the sense of 'to have'			have
+ber+laku<n>+an_VSA	laku	a	ber-_an	ber-_a_an	ber-	an	TRUE	2	FALSE	context shows its two uses are irrelevant			
+ber+lepas<v>+an_VSA	lepas	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		NA		
+ber+mental<n>+an_VSA	mental	n	ber-_an	ber-_n_an	ber-	an	TRUE	2	TRUE		NA		
+ber+pelesir<pre-cat>+an_VSA	pelesir	pre-cat	ber-_an	ber-_pre-cat_an	ber-	an	TRUE	2	FALSE	"based on ""pelesiran""?"			
+ber+rubah<n>+an_VSA	rubah	n	ber-_an	ber-_n_an	ber-	an	TRUE	2	FALSE	"typo for ""perubahan"""			
+ber+s<f>+an_VSA	s	f	ber-_an	ber-_f_an	ber-	an	TRUE	2	FALSE				
+ber+salip<v>+an_VSA	salip	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		NA		
+ber+sesak<a>+an_VSA	sesak	a	ber-_an	ber-_a_an	ber-	an	TRUE	2	TRUE	"KBBI has ""bersesak-sesak"""	NA		
+ber+simpang<n>+an_VSA	simpang	n	ber-_an	ber-_n_an	ber-	an	TRUE	2	TRUE		v		
+ber+sisih<v>+an_VSA	sisih	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		NA		
+ber+tangis<n>+an_VSA	tangis	n	ber-_an	ber-_n_an	ber-	an	TRUE	2	TRUE		v		
+ber+tempel<v>+an_VSA	tempel	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		NA		
+ber+tumbuh<v>+an_VSA	tumbuh	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		v		plurality of the subject
+ber+tumpah<v>+an_VSA	tumpah	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		NA		
+ber+tumpang<v>+an_VSA	tumpang	v	ber-_an	ber-_v_an	ber-	an	TRUE	2	TRUE		NA		
+ber+akrab<a>+an_VSA	akrab	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	TRUE		NA		
+ber+ampun<n>+an_VSA	ampun	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+anekaragam<n>+an_VSA	aneka ragam	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+asal<n>+an_VSA	asal	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	FALSE	"typo for ""beralasan"""	NA		
+ber+awal<n>+an_VSA	awal	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	FALSE	"based on ""awalan""?"			
+ber+bahas<v>+an_VSA	bahas	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"typo for ""berbahasa"""	NA		
+ber+banding<v>+an_VSA	banding	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		v		
+ber+bangun<v>+an_VSA	bangun	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"based on ""bangunan""?"			
+ber+bantah<v>+an_VSA	bantah	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+basah<a>+an_VSA	basah	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	TRUE		NA		
+ber+belanja<v>+an_VSA	belanja	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"typo for ""perbelanjaan"""	NA		
+ber+bising<a>+an_VSA	bising	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	TRUE		NA		
+ber+bondong<a>+an_VSA	bondong	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	TRUE		NA		
+ber+cengkram<v>+an_VSA	cengkram	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+ciprat<v>+an_VSA	ciprat	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+coba<v>+an_VSA	coba	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"typo for ""percobaan"""	NA		
+ber+cumbu<n>+an_VSA	cumbu	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA	kiss	
+ber+datar<a>+an_VSA	datar	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	FALSE	"based on ""dataran""?"	NA		
+ber+degup<n>+an_VSA	degup	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		sound
+ber+deret<n>+an_VSA	deret	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE	"KBBI has ""berderet-deret"""	NA		
+ber+desah<n>+an_VSA	desah	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		sound
+ber+desir<n>+an_VSA	desir	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		sound
+ber+efbe<n>+an_VSA	efbe	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+gagas<v>+an_VSA	gagas	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"based on ""gagasan""?"	NA		
+ber+gayut<v>+an_VSA	gayut	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		v		plurality of the subject
+ber+gejolak<n>+an_VSA	gejolak	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+gelandang<n>+an_VSA	gelandang	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		v		random action
+ber+gemeretak<v>+an_VSA	gemeretak	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		sound
+ber+gemeretup<v>+an_VSA	gemeretup	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		sound
+ber+geriap<a>+an_VSA	geriap	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	TRUE		NA		sound
+ber+goncang<v>+an_VSA	goncang	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE	"KBBI has ""berguncangan"""	v		
+ber+gulung<v>+an_VSA	gulung	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+gumul<v>+an_VSA	gumul	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		v		
+ber+guncang<v>+an_VSA	guncang	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		v		
+ber+hadap<v>+an_VSADASHber+tatap<v>+an_VSA	hadap	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		v		
+ber+halau<v>+an_VSA	halau	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"typo for ""berhaluan"""	NA		
+ber+hasil<n>+an_VSA	hasil	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	FALSE	"based on ""berhasil"" and part of ""keberhasilan""."	NA		
+ber+henti<v>+an_VSA	henti	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"part of ""pemberhentian"""	NA		
+ber+hias<v>+an_VSA	hias	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"based on ""hiasan"""	NA		"have ""hiasan"""
+ber+hujan<n>+an_VSA	hujan	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+jalan<n>+an_VSA	jalan	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+jalin<v>+an_VSA	jalin	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		v		
+ber+jamin<v>+an_VSA	jamin	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"based on ""jaminan""?"	NA		
+ber+jerit<n>+an_VSA	jerit	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		sound
+ber+juta<c>+an_VSA	juta	c	ber-_an	ber-_c_an	ber-	an	TRUE	1	TRUE		NA		
+ber+kakak<n>+an_VSADASHyang<s>_S--	kakak	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE	laughter onomatopea	NA		sound
+ber+kalah<a>+an_VSA	kalah	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+kangen<a>+an_VSA	kangen	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	TRUE		NA		
+ber+kawan<n>+an_VSA	kawan	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		v		
+ber+keroyok<v>+an_VSA	keroyok	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+kerumun<v>+an_VSA	kerumun	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+kobar<v>+an_VSA	kobar	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+kolong<n>+an_VSA	kolong	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+kucur<v>+an_VSA	kucur	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE	"KBBI has ""bercucuran"""	NA		
+ber+kunjung<v>+an_VSA	kunjung	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+lebih<a>+an_VSADASHoverwriting<x>_X--	lebih	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	TRUE		a		
+ber+letup<v>+an_VSA	letup	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+libur<v>+an_VSA	libur	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+main<v>+an_VSA	main	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+naung<v>+an_VSA	naung	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"based on ""naungan"""	NA		
+ber+nyanyi<v>+an_VSA	nyanyi	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+panggil<v>+an_VSA	panggil	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	FALSE	"based on ""panggilan""?"			have
+ber+panjang<a>+an_VSA	panjang	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	TRUE		NA		
+ber+pantul<n>+an_VSA	pantul	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+payung<n>+an_VSA	payung	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+pental<pre-cat>+an_VSA	pental	pre-cat	ber-_an	ber-_pre-cat_an	ber-	an	TRUE	1	TRUE		NA		
+ber+perabot<n>+an_VSA	perabot	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+pijar<n>+an_VSA	pijar	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+pinggir<n>+an_VSA	pinggir	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	FALSE	"based on ""pinggiran"""			
+ber+punggung<n>+an_VSA	punggung	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE	saling memunggungi	NA		
+ber+putar<v>+an_VSA	putar	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+putus<a>+an_VSA	putus	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		adv		
+ber+ragam<n>+an_VSA	ragam	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+rangkai<v>+an_VSA	rangkai	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+rebah<v>+an_VSA	rebah	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+rentet<n>+an_VSA	rentet	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		v		repeated action
+ber+sa<f>+an_VSA	sa	f	ber-_an	ber-_f_an	ber-	an	TRUE	1	FALSE				
+ber+saing<v>+an_VSA	saing	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		v		
+ber+salin<v>+an_VSA	salin	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		NA		
+ber+sambar<v>+an_VSA	sambar	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE		v		repeated random action
+ber+sandal<n>+an_VSA	sandal	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE		NA		
+ber+sandar<n>+an_VSA	sandar	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	FALSE	"based on ""sandaran"""	v		
+ber+sanding<v>+an_VSA	sanding	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+sangku<n>+an_VSA	sangku	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE				
+ber+seling<v>+an_VSA	seling	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+sembur<v>+an_VSA	sembur	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+semi<n>+an_VSA	semi	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE				
+ber+semilir<a>+an_VSA	semilir	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	TRUE				
+ber+serabut<n>+an_VSA	serabut	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE				
+ber+sikut<n>+an_VSA	sikut	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE				
+ber+simbah<v>+an_VSA	simbah	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+siur<v>+an_VSA	siur	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+surat<n>+an_VSA	surat	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE				
+ber+susul<v>+an_VSA	susul	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+taha<f>+an_VSA	taha	f	ber-_an	ber-_f_an	ber-	an	TRUE	1	FALSE				
+ber+tambal<v>+an_VSA	tambal	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+tampil<v>+an_VSA	tampil	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+tanggal<v>+an_VSA	tanggal	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+telepon<n>+an_VSA	telepon	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE				
+ber+tidur<v>+an_VSA	tidur	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+tingkah<n>+an_VSA	tingkah	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE				
+ber+tolak<v>+an_VSA	tolak	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+topik<n>+an_VSA	topik	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE				
+ber+tukar<v>+an_VSA	tukar	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+urut<n>+an_VSADASHlangkah<n>_NSD	urut	n	ber-_an	ber-_n_an	ber-	an	TRUE	1	TRUE				
+ber+wajib<a>+an_VSA	wajib	v	ber-_an	ber-_v_an	ber-	an	TRUE	1	TRUE				
+ber+yakin<a>+an_VSA	yakin	a	ber-_an	ber-_a_an	ber-	an	TRUE	1	TRUE				
