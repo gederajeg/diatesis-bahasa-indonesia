@@ -18,28 +18,34 @@
 
 # ==== codes above have been run! ====
 
-ber_an0 <- read_tsv("data/ber_an.tsv") 
+library(tidyverse)
+ber_an0 <- readr::read_tsv("data/ber_an.tsv") 
 ber_an <- ber_an0 |> 
   filter(ok) |> 
   group_by(root_morphind, root_pos_morphind, affix_morphind_wclass) |> 
-  summarise(n = sum(n)) |> 
+  summarise(n = sum(n), .groups = "drop") |> 
   arrange(desc(n))
+ber_an
 ber_an_type_by_pos <- ber_an |> 
   group_by(root_pos_morphind) |> 
   summarise(n_type = n_distinct(root_morphind), .groups = "drop") |> 
   arrange(desc(n_type))
+ber_an_type_by_pos
 ber_an_hapax_by_pos <- ber_an |> 
   filter(n == 1) |> 
   group_by(root_pos_morphind) |> 
   summarise(n_hpx = n_distinct(root_morphind), .groups = "drop") |> 
   arrange(desc(n_hpx))
+ber_an_hapax_by_pos
 ber_an_tokens_by_pos <- ber_an |> 
   group_by(root_pos_morphind) |> 
   summarise(tokens = sum(n), .groups = "drop") |> 
   arrange(desc(tokens))
+ber_an_tokens_by_pos
 ber_an_productivity <- ber_an_tokens_by_pos |> 
   left_join(ber_an_type_by_pos) |> 
   left_join(ber_an_hapax_by_pos)
+ber_an_productivity
 
 ber_an_words <- read_lines('data/ber_an_wordform.txt')
 ber_an_words_rgx <- ber_an_words |> paste(collapse = "|") %>% paste("(", ., ")\\b", sep = "")
