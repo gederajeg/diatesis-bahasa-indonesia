@@ -1,3 +1,5 @@
+library(tidyverse)
+
 freqlist_all <- read_rds("/Users/Primahadi/Library/CloudStorage/GoogleDrive-primahadi_wijaya@unud.ac.id/My Drive/2022-07-30-tatabahasa-indonesia-kontemporer/freqlist_all.rds")
 
 genres_files <- "/Users/Primahadi/Library/CloudStorage/GoogleDrive-primahadi_wijaya@unud.ac.id/My Drive/2022-07-30-tatabahasa-indonesia-kontemporer/genres_file_names_save.txt"

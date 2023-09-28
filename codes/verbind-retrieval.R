@@ -1,3 +1,5 @@
+library(tidyverse)
+
 verbs <- readr::read_tsv(file = "https://raw.githubusercontent.com/gederajeg/afiksasi-verba-bahasa-indonesia/main/verbs_main.txt")
 
 gdrive_path <- "/Users/Primahadi/Library/CloudStorage/GoogleDrive-primahadi_wijaya@unud.ac.id/My Drive/2022-07-30-tatabahasa-indonesia-kontemporer/"
