@@ -1,13 +1,38 @@
 ---
-title: "Kajian korpus kuantitatif terhadap diatesis dalam bahasa Indonesia"
+title: "Kajian korpus kuantitatif terhadap aspek-aspek diatesis dalam bahasa Indonesia"
 author:
   - name:
       given: Gede Primahadi Wijaya
       family: Rajeg
+    corresponding: true
+    orcid: 0000-0002-2047-8621
+    affiliation: 
+      - id: oxford
+        name: University of Oxford
+        department: Faculty of Linguistics, Philology and Phonetics
+        city: Oxford
+        country: UK
+      - id: unud
+        name: Universitas Udayana
+        department: Bachelor of English Literature
+        city: Denpasar
+        country: Indonesia
   - name:
       given: Ketut
       family: Artawa
-abstract: "Ini adalah abstrak"
+    orcid: 0000-0003-3759-1783
+    affiliation:
+      - id: unud
+        name: Universitas Udayana
+        department: Bachelor of English Literature & Doctoral Program of Linguistics
+        city: Denpasar
+        country: Indonesia
+abstract: "Makalah ini menampilkan kajian korpus kuantitatif guna (i) meninjau kembali sejumlah fitur-fitur diatesis dalam bahasa Indonesia yang telah diajukan pada buku-buku acuan terdahulu, dan (ii) menawarkan sudut pandang baru terkait adanya preferensi leksikal dan idiosinkrasi dalam tatabahasa secara luas. Terkait tipe AGEN diatesis pasif *di*- dan objektif, kami menunjukkan bahwa gagasan terdahulu masih didukung oleh data, namun juga menemukan adanya ketimpangan preferensi bentuk AGEN pronomina terhadap verba tertentu, yang dapat mencerminkan konseptualisasi berbeda atas kejadian yang dirujuk verba tersebut. Analisis terhadap diatesis medial *ber*- dan *ber*-/-*an* menunjukkan bahwa diatesis medial merupakan suatu konstruksi dengan beragam makna yang menunjukkan perbedaan produktifitas pada tataran semantis. Terakhir, kami juga menunjukkan bahwa fenomena yang dipandang bersifat alternasi antara aktif/pasif (khususnya konstruksi aktif [*meN*-+v] vs. pasif [*di*-+v]) juga menunjukkan adanya ketimpangan dan preferensi leksikal terkait verba mana yang lebih khas muncul dengan konstruksi diatesis tertentu dan bagaimana kekhasan leksikal tersebut mengungkapkan nuansa semantis dari konstruksi gramatikal tersebut."
+keywords: 
+  - sintaksis
+  - linguistik korpus kuantitatif
+  - diatesis
+  - bahasa Indonesia
 format-links: false
 format:
   html: 
@@ -44,10 +69,13 @@ bibliography: references.bib
 #| echo: false
 #| label: setup
 #| warning: false
+#| message: false
 
 library(tidyverse)
 library(ggtext)
 library(corplingr)
+library(collostructions)
+library(flextable)
 source("codes/word_use_in_corpus.R")
 ```
 
@@ -65,37 +93,37 @@ Dalam bahasa Indonesia (BI), terdapat tiga jenis diatesis. Diatesis aktif memeta
 
 Dalam makalah ini, pasif pada contoh (@pass-di) disebut dengan "pasif *di*-" sedangkan pasif pada contoh (@objective) disebut dengan "pasif pronominal", seperti yang diterapkan pada buku TBIK [@moeliono2017, 471]. Contoh (@objective) dilabeli pasif pronomina karena disebutkan bahwa hanya subjek pronomina yang dapat digunakan pada konstruksi pasif seperti pada (@objective) [@moeliono2017, 471-472]. Kajian teoretis lain seperti oleh Arka dan Manning [-@arka2008, 52] menyebut diatesis pada (@objective) sebagai "diatesis objek" (*Object Voice*). Selain ketiga diatesis di atas, kami juga mengulas diatesis medial yang secara formal dimarkahi dengan *ber-* dan *ber-*/*-an* (@sec-medial).
 
-Makalah ini memusatkan pembahasan pada bagaimana keberlimpahan data dan analisis kuantitatif dapat dimanfaatkan untuk meninjau kembali sejumlah gagasan terkait ciri-ciri diatesis, dan untuk menjelajahi isu terkini terkait kajian relasi gramatikal dan diatesis.
+Makalah ini memusatkan pembahasan pada bagaimana keberlimpahan data dan analisis kuantitatif dapat dimanfaatkan untuk meninjau kembali sejumlah gagasan terkait ciri-ciri diatesis (@sec-passive-objective), dan menjelajahi isu terkini atas kajian relasi gramatikal dan diatesis (@sec-dca).
 
 # Kajian pustaka
 
 Buku tata bahasa baku BI [@alwi2000; @sneddon2010; @moeliono2017] telah mengulas bentuk kata kerja penanda kalimat aktif dan "kaidah umum untuk pembentukan kalimat pasif dari kalimat aktif" [@alwi2000, 345]. Pernyataan sebelumnya bahwa kalimat pasif dibentuk dari kalimat aktif mengindikasikan bahwa kalimat aktif mendahului (atau menjadi sumber dari) kalimat pasif. Arah perubahan tunggal dari aktif ke pasif tersebut juga dinyatakan secara eksplisit: "Gantilah prefiks *meng*- dengan *di*- pada P" [@alwi2000, 345; bdk. @moeliono2017, 469], di mana P adalah unit predikat/kata kerja pada kalimat. Kajian kuantitatif terhadap data korpus dalam makalah ini (@sec-dca) akan menunjukkan bahwa bentuk pasif tidak harus memiliki bentuk aktif, dan oleh karena itu, bentuk pasif mesti dipandang sebagai suatu unit konstruksi tersendiri yang bukan dan tidak selalu merupakan transformasi dari bentuk aktif.
 
-Sebelum penulisan makalah ini, kajian korpus kuantitatif dan eksperimental termutakhir atas diatesis BI [@rra:2020; @rajeg2022] juga telah menunjukkan bahwa bentuk pasif berbeda dengan bentuk aktif dari segi preferensi semantisnya (yaitu kecenderungan mengungkapkan makna tertentu dalam bentuk tertentu) dan mesti dipandang sebagai unit konstruksi mandiri. Misalnya, makna 'mewajibkan' dari verba *kenai* lebih signifikan diasosiasikan dengan bentuk pasif *dikenai* dan tidak pernah diungkapkan dalam bentuk aktif *mengenai*, yang mengungkapkan arti fisik [@rra:2020]. Perbedaan makna ini juga menunjukkan bahwa makna tertentu dapat langsung diungkapkan dalam bentuk pasif tanpa perlu memiliki bentuk aktifnya. Kajian eksperimental [@rajeg2022] juga menunjukkan bahwa penutur merekam, dalam khasanah kebahasaan mereka, bentuk diatesis yang dominan digunakan untuk mengungkapkan makna tertentu dari suatu verba. Preferensi semantis ini juga mengindikasikan bahwa komponen yang dipandang secara tradisional sebagai suatu kaidah tata bahasa (misalnya alternasi aktif-pasif) memiliki kekhasan leksikal (yang akan juga ditunjukkan pada @sec-dca).
+Sebelum penulisan makalah ini, kajian korpus kuantitatif dan eksperimental termutakhir atas diatesis BI [@rra:2020; @rajeg2022] juga telah menunjukkan bahwa bentuk pasif berbeda dengan bentuk aktif dari segi preferensi semantisnya (yaitu kecenderungan mengungkapkan makna tertentu dalam bentuk tertentu) dan mesti dipandang sebagai unit konstruksi mandiri. Misalnya, makna 'mewajibkan' dari verba *kenai* lebih signifikan diasosiasikan dengan bentuk pasif *dikenai* dan tidak pernah diungkapkan dalam bentuk aktif *mengenai*, yang mengungkapkan arti fisik [@rra:2020]. Perbedaan makna ini juga menunjukkan bahwa makna tertentu dapat langsung diungkapkan dalam bentuk pasif tanpa perlu memiliki bentuk aktifnya. Kajian eksperimental [@rajeg2022] juga menunjukkan bahwa penutur merekam, dalam khasanah kebahasaan mereka, bentuk diatesis yang dominan digunakan untuk mengungkapkan makna tertentu dari suatu verba. Preferensi semantis ini juga mengindikasikan bahwa komponen yang dipandang secara tradisional sebagai suatu kaidah tata bahasa (misalnya alternasi aktif-pasif) memiliki kekhasan leksikal (yang akan juga ditunjukkan pada @sec-dca). Kemudian, ulasan fungsi, makna dan produktivitas pemarkah diatesis aktif *meN*- beserta kaitannya dengan transitivitas telah dibahas pada tulisan lain terkait proyek ini oleh Rajeg dan Denistia [@rajeg2023]; makalah kali ini menitikberatkan pada fitur diatesis pasif dan objek (@sec-passive-objective) yang tidak dibahas pada tulisan tersebut.
 
-Selanjutnya, beberapa kajian teoretis terkait diatesis medial dalam BI dan bahasa terkait (mis. bahasa Bali) telah dilakukan dalam kurun waktu sepuluh tahun terakhir [@udayana2013; @udayana2021; @beavers2022]. Secara umum, ketiga kajian terdahulu tersebut membahas aspek sintaksis dan semantis dari diatesis medial BI. Salah satu analisis yang diajukan oleh Udayana [@udayana2021] dan Beaver dan Udayana [@beavers2022] adalah bahwa *ber-* berfungsi untuk meniadakan salah satu argumen dari verba transitif dasar yang melekat pada *ber-*. Makalah kami memusatkan analisis produktifitas semantis bentukan verba dalam diatesis medial (@sec-medial). Kami akan menunjukkan bahwa produktifitas suatu diatesis berdasarkan satu afiks dapat berbeda pada tataran semantis.
+Selanjutnya, beberapa kajian teoretis terkait diatesis medial dalam BI dan bahasa terkait (mis. bahasa Bali) telah dilakukan dalam kurun waktu sepuluh tahun terakhir [@udayana2013; @udayana2021; @beavers2022]. Secara umum, ketiga kajian terdahulu tersebut membahas aspek sintaksis dan semantis dari diatesis medial BI. Salah satu analisis yang diajukan oleh Udayana [@udayana2021] dan Beaver dan Udayana [@beavers2022] adalah bahwa *ber-* berfungsi untuk meniadakan salah satu argumen dari verba transitif dasar yang melekat pada *ber-*. Tulisan terkait lainnya [@rajeg2023] juga telah mengulas secara kualitatif beragam arti *ber*-, beserta produktifitas morfologisnya namun bukan produktifitas semantisnya. Makalah kami memusatkan analisis produktifitas semantis bentukan verba dalam diatesis medial (@sec-medial). Kami akan menunjukkan bahwa produktifitas suatu diatesis berdasarkan satu afiks dapat berbeda pada tataran semantis.
 
 # Metodologi {#sec-metodologi}
 
 Sumber data makalah ini adalah Korpus Referensi Tata Bahasa Indonesia Kontemporer (TBIK) yang dibangun oleh Pusat Pengembangan dan Pelindungan Bahasa dan Sastra, Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.
 
-Selain digunakan sebagai sumber-sumber contoh dan juga dianalisis secara manual terkait sejumlah fitur-fitur diatesis yang diteliti, korpus tersebut diolah lebih lanjut secara komputasional dalam hal analisis pemecahan komponen morfologis menggunakan *MorphInd* [@larasati2011] dan dibantu dengan *MALINDO Morph* [@nomoto2018]. Luaran analisis komputasional tersebut kemudian diperiksa kembali secara manual. Selanjutnya, data morfologis tersebut digunakan untuk kajian produktifitas morfologis verba untuk topik bab buku lain dalam seri ini [@rajeg2023]. Pada makalah ini, bank data verba tersebut, yaitu *VerbInd*[^1] [@rajeg], akan digunakan sebagai data kuantitatif distribusi diatesis berkaitan dengan bentuk morfologinya.
+Selain digunakan sebagai sumber-sumber contoh dan juga dianalisis secara manual terkait sejumlah fitur-fitur diatesis yang diteliti, korpus tersebut diolah lebih lanjut secara komputasional dalam hal analisis pemecahan komponen morfologis menggunakan *MorphInd* [@larasati2011] dan dibantu dengan *MALINDO Morph* [@nomoto2018]. Luaran analisis komputasional tersebut kemudian diperiksa kembali secara manual. Selanjutnya, data morfologis tersebut digunakan untuk kajian produktifitas morfologis verba untuk topik bab buku lain dalam seri ini [@rajeg2023]. Pada makalah ini, bank data verba tersebut, yaitu *VerbInd*[^1] [@rajeg], akan digunakan sebagai data kuantitatif distribusi diatesis berkaitan dengan bentuk morfologi dan maknanya (mis. pada @sec-medial).
 
 [^1]: <https://gederajeg.github.io/database-verba-bahasa-indonesia/>
 
-Makalah ini juga akan menampilkan satu model analisis kuantitatif yang dapat dilakukan dengan data kuantitatif dari korpus dalam konteks kajian alternasi (morfo)sintaksis, dan juga interaksi antara unsur leksikal dan konstruksi gramatikal [@stefanowitsch2003; @lier2022]. Gries dan Stefanowitsch [@gries2004] mengajukan metode yang kami sebut "Analisis Koleksem Khas" (Distinctive Collexeme Analysis \[DCA\]) guna menelusuri preferensi leksikal verba terhadap sepasang konstruksi yang (i) mirip secara semantis (mis. konstruksi *BE GOING TO*+*Infinitive* vs. *WILL*+*Infinitive* dalam bahasa Inggris), dan/atau (ii) yang menunjukkan alternasi (seperti konstruksi objek ganda vs. konstruksi datif). Salah satu pasangan konstruksi yang dikaji oleh Gries dan Stefanowitsch [@gries2004] adalah konstruksi aktif dan pasif bahasa Inggris, dengan fokus preferensi verba yang cenderung muncul pada salah satu dari kedua konstruksi tersebut. DCA juga telah diterapkan pada data bahasa Indonesia untuk kajian (i) preferensi verba terhadap negasi *tak* vs. *tidak* [@rajeg2018], (ii) preferensi akar kata ajektiva terhadap afiks kausatif PER- dan -KAN [@rajeg2021], dan (iii) perbedaan semantis verba sinonim *perbesar* vs. *besarkan* dengan afiks kausatif PER- dan -KAN [@rajeg2019]. Penerapan DCA untuk kajian alternasi diatesis telah diterapkan dalam bahasa Besemah (Melayu Polinesia Barat, di Sumatra) [@mcdonnell2016]. McDonnell [-@mcdonnell2016] menemukan adanya preferensi leksikal antara verba tertentu yang lebih sering muncul dalam diatesis aktif dibandingkan pasif dalam bahasa Besemah. Ulasan lebih lanjut terkait mekanisme dalam DCA akan dijelaskan di awal @sec-dca-how. Data korpus TBIK yang melimpah memungkin kita untuk menentukan preferensi leksikal di antara afiksasi penanda diatesis BI. Diatesis yang dibandingkan adalah antara *meN*- aktif dan *di*- pasif, dan *di*- pasif vs. *ter*- yang disebut pasif statis [@arka2010]. Makalah ini akan menampilkan akar kata mana yang lebih sering digunakan dalam diatesis aktif *meN*- vs. *di*- dan antara *di*- dan *ter*-.
+Makalah ini juga akan menampilkan satu model analisis kuantitatif yang dapat dilakukan dengan data kuantitatif dari korpus dalam konteks kajian alternasi (morfo)sintaksis, dan juga interaksi antara unsur leksikal dan konstruksi gramatikal [@stefanowitsch2003; @lier2022]. Gries dan Stefanowitsch [@gries2004] mengajukan metode yang dalam BI kami sebut “Analisis Koleksem Khas” (terjemahan dari label aslinya, yaitu *Distinctive Collexeme Analysis* dan yang seterusnya akan disebut dengan \[DCA\]). DCA berfungsi untuk menelusuri preferensi leksikal verba terhadap sepasang konstruksi yang (i) mirip secara semantis (mis. konstruksi *BE GOING TO*+*Infinitive* vs. *WILL*+*Infinitive* dalam bahasa Inggris), dan/atau (ii) yang menunjukkan alternasi (seperti konstruksi objek ganda vs. konstruksi datif). Salah satu pasangan konstruksi yang dikaji oleh Gries dan Stefanowitsch [@gries2004] adalah konstruksi aktif dan pasif bahasa Inggris, dengan fokus preferensi verba yang cenderung muncul pada salah satu dari kedua konstruksi tersebut. DCA juga telah diterapkan pada data bahasa Indonesia untuk kajian (i) preferensi verba terhadap negasi *tak* vs. *tidak* [@rajeg2018], (ii) preferensi akar kata ajektiva terhadap afiks kausatif PER- dan -KAN [@rajeg2021], dan (iii) perbedaan semantis verba sinonim *perbesar* vs. *besarkan* dengan afiks kausatif PER- dan -KAN [@rajeg2019]. Penerapan DCA untuk kajian alternasi diatesis telah diterapkan dalam bahasa Besemah (Melayu Polinesia Barat, di Sumatra) [@mcdonnell2016]. McDonnell [-@mcdonnell2016] menemukan adanya preferensi leksikal antara verba tertentu yang lebih sering muncul dalam diatesis aktif dibandingkan pasif dalam bahasa Besemah. Ulasan lebih lanjut terkait mekanisme dalam DCA akan dijelaskan di awal @sec-dca-how.^[Penulisan dan analisis kuantitatif dalam makalah ini dilakukan secara komputasional menggunakan [Quarto](https://quarto.org) melalui peranti pemrograman [RStudio](https://posit.co/products/open-source/rstudio/). Berkas Quarto dan data akan tersedia terbuka pada [https://github.com/gederajeg/diatesis-bahasa-indonesia](https://github.com/gederajeg/diatesis-bahasa-indonesia)]
+
+
 
 # Hasil dan pembahasan
 
-## Kajian korpus atas sejumlah fitur kunci tipe diatesis
+## Kajian korpus atas sejumlah fitur kunci diatesis pasif *di*- dan diatesis objek {#sec-passive-objective}
 
-### Kemunculan eksplisit AGEN pada diatesis pasif *di*-
+### Kemunculan eksplisit AGEN pada diatesis pasif *di*- {#sec-agent-encoding-di}
 
-Sejumlah buku tatabahasa (mis. [@sneddon2010, 257; @moeliono2017, 470]) menyebutkan bahwa frasa yang menyatakan AGEN (yang ditandai dengan kata *oleh*) bersifat opsional/manasuka. Pengecualiannya adalah frase *oleh* wajib muncul jika verba dan *oleh* dipisahkan oleh kata/frasa lain yang menunjukkan keterangan (perhatikan contoh (@oleh-wajib)).
+Sejumlah buku tatabahasa (mis. [@sneddon2010, 257; @moeliono2017, 470]) menyebutkan bahwa frasa yang menyatakan AGEN (yang ditandai dengan kata *oleh*) bersifat opsional/manasuka. Pengecualiannya adalah frase *oleh* wajib muncul jika verba dan *oleh* dipisahkan oleh kata/frasa lain yang menunjukkan keterangan (perhatikan contoh (@oleh-wajib)). Namun, kami juga menemukan bahwa *oleh* dapat dihilangkan meskipun terdapat kemunculan kata setelah verba dan sebelum AGEN (contoh (@oleh-hilang)).
 
 (@oleh-wajib) Semua *ditolak* **halus** *oleh* mereka. (H1A11007)
-
-Namun, kami juga menemukan bahwa *oleh* dapat dihilangkan meskipun terdapat kemunculan kata setelah verba dan sebelum AGEN.
 
 (@oleh-hilang) (...) seorang yang *dikenal* **baik** Presiden Soekarno. (H1A17003)
 
@@ -143,7 +171,7 @@ agent_encoding_by_genre <- potential_passive |>
 #| label: fig-long-short-passive
 #| fig-cap: "Persentase (tidak) diungkapkannya AGEN pada 50 sampel kalimat pasif *di*- untuk masing-masing ragam teks."
 #| fig-cap-location: bottom
-#| out-width: "80%"
+#| out-width: "75%"
 
 agent_encoding_by_genre |> 
   mutate(AGENT_ENCODED = if_else(AGENT_ENCODED == TRUE, "ya", "tidak")) |> 
@@ -156,22 +184,27 @@ agent_encoding_by_genre |>
        y = "%",
        x = "Ragam teks") +
   coord_flip() +
-  scale_fill_discrete(breaks = c("ya", "tidak"))
+  scale_fill_discrete(breaks = c("ya", "tidak")) +
+  theme(axis.text = element_text(size = 10),
+        axis.title = element_text(size = 12),
+        legend.text = element_text(size = 10),
+        legend.title = element_text(size = 12),
+        legend.position = "top")
 ```
 
 Secara umum, peran AGEN lebih sering tidak diungkapkan secara eksplisit (median = `r round(pull(filter(summarise(group_by(agent_encoding_by_genre, AGENT_ENCODED), med = median(perc_by_genre)), !AGENT_ENCODED), med), 2)`%) pada sampel data dari keseluruhan ragam teks yang diteliti, dan sangat jarang diungkapkan eksplisit (median = `r round(pull(filter(summarise(group_by(agent_encoding_by_genre, AGENT_ENCODED), med = median(perc_by_genre)), AGENT_ENCODED), med), 2)`%). Temuan ini memberikan dukungan kuantitatif terkait fungsi dasar dari diatesis pasif, yaitu pelatarbelakangan AGEN (*defocusing*). Hal ini dapat dimotivasi atas keberadaan AGEN yang tidak penting dan/atau telah diketahui sebelumnya.
 
-Yang juga kami temukan adalah bahwa terdapat keberimbangan antara cara mengungkapkan AGEN ketika peran ini disebutkan secara eksplisit. Buku tatabahasa menyebutkan bahwa AGEN dapat secara opsional ditandai dengan *oleh* (contoh (@oleh-opsional)) ataupun tidak ditandai *oleh* dan muncul sebagai (pro)nomina (contoh (@oleh-nomina)). Kedua cara ini memiliki frekuensi yang sama pada sampel yang kami teliti (yaitu sama-sama digunakan sebanyak `r agent_phrase_type |> filter(AGENT_PHRASE_TYPE!="pron-klitik-nya") |> pull(n) |> unique()` kali atau `r agent_phrase_type |> filter(AGENT_PHRASE_TYPE!="pron-klitik-nya") |> pull(perc) |> unique()`% dari total `r sum(agent_phrase_type$n)` data yang mengungkapkan AGEN secara eksplisit).
+Yang juga kami temukan adalah terdapat keberimbangan antara cara mengungkapkan AGEN ketika peran ini disebutkan secara eksplisit. Buku tatabahasa menyebutkan bahwa AGEN dapat secara opsional ditandai dengan *oleh* (contoh (@oleh-opsional)) ataupun tidak ditandai *oleh* dan muncul sebagai (pro)nomina (contoh (@oleh-nomina)). Kedua cara ini memiliki frekuensi yang sama pada sampel yang kami teliti (yaitu sama-sama digunakan sebanyak `r agent_phrase_type |> filter(AGENT_PHRASE_TYPE!="pron-klitik-nya") |> pull(n) |> unique()` kali atau `r agent_phrase_type |> filter(AGENT_PHRASE_TYPE!="pron-klitik-nya") |> pull(perc) |> unique()`% dari total `r sum(agent_phrase_type$n)` data yang mengungkapkan AGEN secara eksplisit).
 
 (@oleh-opsional) Perusahaan ini *dimiliki* **oleh** \[satu orang\]~AGEN~ (...). (I1H19001)
 
 (@oleh-nomina) Pemberitahuan LAPS dikeluarkan dari Daftar LAPS sebagaimana dimaksud pada angka 3 *disampaikan* \[OJK\]~AGEN~ kepada LAPS melalui surat. (L1H16001)
 
-Temuan ini secara tentatif dapat menunjukkan secara kuantitatif apa yang dimaksud dengan konsep opsionalitas/mana-suka dari penggunaan *oleh* dalam pengungkapan AGEN verba pasif *di*-.
+Temuan ini secara tentatif dapat menunjukkan secara kuantitatif apa yang dimaksud dengan konsep mana-suka dari penggunaan *oleh* dalam pengungkapan AGEN verba pasif *di*-.
 
 Cara lain pengungkapan AGEN yang ditemukan adalah penggunaan akhiran -*nya* (n = `r agent_phrase_type |> filter(AGENT_PHRASE_TYPE=="pron-klitik-nya") |> pull(n) |> unique()`; `r agent_phrase_type |> filter(AGENT_PHRASE_TYPE=="pron-klitik-nya") |> pull(perc) |> unique()` %) yang langsung dilekatkan pada verba pasifnya (contoh (@agen-klitik)).
 
-(@agen-klitik) Seseorang mendapat- kan haknya dikarenakan *dipenuhi**nya*** kewajiban yang dimiliki. (E1C17001)
+(@agen-klitik) Seseorang mendapat-kan haknya dikarenakan *dipenuhi**nya*** kewajiban yang dimiliki. (E1C17001)
 
 Setelah mengamati tendensi pengungkapan AGEN pada sampel 600 butir kalimat, @sec-agent-pronoun-di-passive membahas tipe AGEN pada diatesis pasif *di*-.
 
@@ -197,23 +230,19 @@ di_agent_pronoun <- bind_rows(select(di_first_person, 1:5, pronomina),
   mutate(pronomina_lex = str_to_lower(str_extract(`Query item`, "((?<=oleh\\s)[a-zA-Z]+$|(?<=oleh)[a-zA-Z]+$)")))
 ```
 
-Sneddon dkk. [@sneddon2010, 258] menyatakan pasif *di*- digunakan jika AGEN adalah pronomina ketiga (mis. *dia*, *ia*, *mereka*) atau nomina. Namun, Sneddon dkk. [@sneddon2010, 259] juga menyebutkan bahwa pasif *di*- mulai sering digunakan dengan Agen pronomina pertama (mis. *saya*, *aku*, *kami*, dsb.) dan pronomina kedua (mis. *kamu*, *Anda*, dsb.).
+Sneddon dkk. [@sneddon2010, 258] menyatakan pasif *di*- digunakan jika AGEN adalah pronomina ketiga (mis. *dia*, *ia*, *mereka*) atau nomina. Namun, Sneddon dkk. [@sneddon2010, 259] juga menyebutkan bahwa pasif *di*- mulai sering digunakan dengan AGEN pronomina pertama (mis. *saya*, *aku*, *kami*, dsb.) dan pronomina kedua (mis. *kamu*, *Anda*, dsb.).
 
 Untuk meninjau kembali gagasan tersebut di dalam korpus, kami melakukan pencarian melalui CQP Web bentuk *di*- yang diikuti dengan *oleh* dan beragam jenis pronomina bentuk pertama, kedua dan ketiga. Karena pencarian ini bersifat kompleks, kami memanfaatkan fitur CQP Syntax pada CQP Web. Berikut ini adalah pola pencarian yang kami gunakan:
 
--   Pola pencarian untuk pronomina pertama
+-   `("di[a-z]+" "oleh" "saya|diri saya|diri kami|kami|diri kita|kita|diri aku|aku|diri hamba|hamba|daku|diriku"|"di[a-z]+" "olehku")` (Pola pencarian untuk pronomina pertama)
 
-    -   `("di[a-z]+" "oleh" "saya|diri saya|diri kami|kami|diri kita|kita|diri aku|aku|diri hamba|hamba|daku|diriku"|"di[a-z]+" "olehku")`
+-   `("di[a-z]+" "oleh" "diri kamu|kamu|diri engkau|engkau|dikau|dirimu|anda|Anda|diri kau|diri anda|diri Anda|kau"|"di[a-z]+" "olehmu|olehkau")` (Pola pencarian untuk pronomina kedua)
 
--   Pola pencarian untuk pronomina kedua
+-   `("di[a-z]+" "oleh" "dia|diri dia|mereka|diri beliau|beliau|ia|dirinya|diri mereka"|"di[a-z]+" "olehnya")` (Pola pencarian untuk pronomina ketiga)
 
-    -   `("di[a-z]+" "oleh" "diri kamu|kamu|diri engkau|engkau|dikau|dirimu|anda|Anda|diri kau|diri anda|diri Anda|kau"|"di[a-z]+" "olehmu|olehkau")`
+Luaran tiap-tiap pencarian tersebut kami sarikan melalui @fig-agent-pronoun-for-di-passive-VISUALISATION.
 
--   Pola pencarian untuk pronomina ketiga
-
-    -   `("di[a-z]+" "oleh" "dia|diri dia|mereka|diri beliau|beliau|ia|dirinya|diri mereka"|"di[a-z]+" "olehnya")`
-
-Luaran tiap-tiap pencarian tersebut kami sarikan melalui @fig-agent-pronoun-for-di-passive-VISUALISATION .
+&nbsp;
 
 ```{r}
 #| label: agent-pronoun-for-di-passive-COUNT
@@ -251,19 +280,29 @@ di_agent_pron_1 |>
   labs(y = "Frekuensi",
        fill = "",
        x = "Tipe pronomina") +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        axis.text.x.bottom = element_text(size = 11),
+        axis.title.x.bottom = element_text(size = 13),
+        axis.text.y = element_text(size = 11),
+        axis.title.y = element_text(size = 13))
 
 di_agen_pron_2 |> 
   ggplot(aes(x = pronomina_lex, y = n, fill = pronomina)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   scale_fill_discrete(breaks = c("orang kedua (2)", "orang pertama (1)", "orang ketiga (3)")) +
-  labs(x = "Bentuk leksikal",
+  labs(x = NULL,
        y = "Frekuensi",
-       fill = "Tipe pronomina")
+       fill = "Tipe pronomina") +
+  theme(axis.text.x = element_text(size = 11),
+        axis.title.x = element_text(size = 13),
+        axis.text.y = element_text(size = 10.5),
+        axis.title.y = element_text(size = 13),
+        legend.text = element_text(size = 10),
+        legend.title = element_text(size = 13))
 ```
 
-Data pada @fig-agent-pronoun-for-di-passive-VISUALISATION-1 menunjukkan bahwa Agen pronomina pertama (contoh (@agent-first-person) berikut) dan kedua (@agent-second-person) juga dapat digunakan, meskipun secara signifikan tidak sedominan Agen pronomina bentuk ketiga ($\chi^{2}$ = `r round(di_agen_pron_1_chisq$statistic, 2)`, *df* = `r di_agen_pron_1_chisq$parameter`, *p*~goodness-of-fit~ `r if_else(di_agen_pron_1_chisq$p.value < 0.001, "< 0.001", toupper(format(di_agen_pron_1_chisq$p.value, digits = 3)))`).
+Data pada @fig-agent-pronoun-for-di-passive-VISUALISATION-1 menunjukkan bahwa AGEN pronomina pertama (contoh (@agent-first-person) berikut) dan kedua (@agent-second-person) juga dapat digunakan, meskipun secara signifikan tidak sedominan AGEN pronomina bentuk ketiga ($\chi^{2}$ = `r round(di_agen_pron_1_chisq$statistic, 2)`, *df* = `r di_agen_pron_1_chisq$parameter`, *p*~goodness-of-fit~ `r if_else(di_agen_pron_1_chisq$p.value < 0.001, "< 0.001", toupper(format(di_agen_pron_1_chisq$p.value, digits = 3)))`).
 
 (@agent-first-person) ...keahlian yang sejak dulu dikembangkan Pak AB dan _diteruskan oleh_ __*saya*__ (H1A20004)
 
@@ -324,13 +363,15 @@ ov_agent_pronomina <- ov_agent_pronomina |>
   mutate(AGENT_LEX = fct_relevel(AGENT_LEX, ov_agent_pronomina$AGENT_LEX))
 ```
 
-Selain pasif *di*-, buku TBBI menjelaskan tipe pasif kedua, yang disebut dengan pasif pronomina (atau yang oleh Arka dan Manning [@voicean2008] disebut diatesis objek) seperti pada contoh (@hiraukan-ov) berikut (dan contoh (@objective) pada @sec-pengantar):
+Selain pasif *di*-, buku TBBI menjelaskan tipe pasif kedua, yang disebut dengan pasif pronomina (atau yang oleh Arka dan Manning [@voicean2008] disebut diatesis objek) seperti pada contoh (@hiraukan-ov) berikut (dan contoh (@objective) pada @sec-pengantar). Bentuk pasif *di*- ditampilkan pada (@hiraukan-pass).
 
-(@hiraukan-ov) \[Panas terik matahari\]~TEMA~ tak \[ia\]~AGEN~ _**hiraukan**_ demi mendapatkan penghasilan (B1Z19008: 2019)
+(@hiraukan-ov) \[Panas terik matahari\]~TEMA~ tak \[ia\]~AGEN~ _**hiraukan**_ demi mendapatkan penghasilan (B1Z19008)
 
-Perbedaan pasif pronomina dengan pasif *di*- adalah verba yang tidak dimarkahi *di*- dan posisi AGEN (yaitu *ia* pada contoh @hiraukan-ov) yang mendahului verbanya. Bentuk ini disebut pasif pronomina karena diasumsikan hanya digunakan jika AGEN adalah pronomina persona (bukan nomina biasa) [@moeliono2017, 470-471]. Dengan data korpus, kita dapat meninjau apakah tipe pasif kedua ini (@hiraukan-ov) hanya digunakan dengan AGEN pronomina persona saja dan seberapa tinggi frekuensinya.
+(@hiraukan-pass) [Rasa sakit itu]~TEMA~ tak lagi _**di**hiraukan_ [Komar]~AGEN~ (D1A14002)
 
-Sebagai ilustrasi, @fig-OV-agent-berikan menampilkan tipe Agen diatesis pasif pronomina untuk verba *berikan*.
+Perbedaan pasif pronomina dengan pasif *di*- (@hiraukan-pass) adalah (i) verba yang tidak dimarkahi *di*- dan (ii) posisi AGEN (yaitu *ia* pada contoh (@hiraukan-ov)) yang mendahului verbanya. Bentuk seperti (@hiraukan-ov) disebut pasif pronomina karena diasumsikan hanya digunakan jika AGEN adalah pronomina persona (bukan nomina biasa) [@moeliono2017, 470-471]. Berdasarkan data korpus, kami meninjau apakah tipe pasif objek/pronomina hanya digunakan dengan AGEN pronomina persona saja dan seberapa tinggi frekuensinya.
+
+Sebagai ilustrasi, @fig-OV-agent-berikan menampilkan tipe AGEN diatesis pasif pronomina untuk verba *berikan*.
 
 ```{r}
 #| label: fig-OV-agent-berikan
@@ -345,7 +386,9 @@ ggplot(ov_agent_berikan,
        aes(x = AGENT_TYPE,
            y = Freq)) +
   geom_bar(stat = "identity") +
-  labs(y = "Frekuensi", x = "")
+  labs(y = "Frekuensi", x = "") +
+  theme(axis.text = element_text(size = 9.25),
+        axis.title = element_text(size = 12))
 
 ov_agent_pronomina1 <- ov_agent_pronomina |> 
   left_join(di_agen_pron_2 |> 
@@ -371,17 +414,22 @@ ggplot(ov_agent_pronomina1,
            fill = pronomina)) +
   geom_bar(stat = "identity") +
   scale_fill_discrete(breaks = c("orang ketiga (3)", "orang pertama (1)", "orang kedua (2)")) +
-  labs(y = "Frekuensi", x = "Bentuk leksikal", fill = "Tipe pronomina")
+  labs(y = "Frekuensi", x = "Bentuk leksikal", fill = "Tipe pronomina") +
+  theme(axis.text = element_text(size = 9.25),
+        axis.title = element_text(size = 12),
+        legend.text = element_text(size = 10),
+        legend.title = element_text(size = 12),
+        legend.position = "top")
 
 ```
 
-Data korpus pada @fig-OV-agent-berikan-1 menunjukkan bahwa pronomina adalah tipe AGEN dominan dalam konstruksi diatesis objek (atau pasif pronomina menurut Moeliono dkk. [@moeliono2017]) untuk *berikan*. Hal ini sejalan dengan (i) deskripsi pada TBBI terkait pencirian diatesis objek dan jenis AGEN-nya, serta berlaku khusus untuk verba *berikan*. Pembaca dapat melakukan penelitian lanjutan untuk verba lainnya. Namun, dominasi AGEN pronomina tersebut tidak bersifat absolut, karena tipe Agen lain terbukti muncul digunakan meskipun proporsinya secara signifikan sangat minor ($\chi^{2}$ = `r round(ov_agent_berikan_chisq$statistic, 2)`, *df* = `r ov_agent_berikan_chisq$parameter`, *p*~goodness-of-fit~ `r if_else(ov_agent_berikan_chisq$p.value < 0.001, "< 0.001", toupper(format(ov_agent_berikan_chisq$p.value, digits = 3)))`). Tipe Agen lain tersebut ialah nomina (mis. *guru* pada contoh (@agent-guru)), nomina diri (*Shopee* pada contoh (@agent-shopee)), dan nomina kekerabatan (@agent-kinship) yang dapat diinterpretasikan dalam fungsinya sebagai kata ganti orang kedua.
+Data korpus pada @fig-OV-agent-berikan-1 menunjukkan bahwa pronomina adalah tipe AGEN dominan dalam konstruksi diatesis objek (atau pasif pronomina menurut Moeliono dkk. [@moeliono2017]) untuk *berikan*. Hal ini sejalan dengan deskripsi pada TBBI terkait pencirian diatesis objek dan jenis AGEN-nya, serta berlaku khusus untuk verba *berikan*. Pembaca dapat melakukan penelitian lanjutan untuk verba lainnya. Namun, dominasi AGEN pronomina tersebut tidak bersifat absolut, karena tipe AGEN lain terbukti muncul digunakan meskipun proporsinya secara signifikan sangat minor ($\chi^{2}$ = `r round(ov_agent_berikan_chisq$statistic, 2)`, *df* = `r ov_agent_berikan_chisq$parameter`, *p*~goodness-of-fit~ `r if_else(ov_agent_berikan_chisq$p.value < 0.001, "< 0.001", toupper(format(ov_agent_berikan_chisq$p.value, digits = 3)))`). Tipe AGEN lain tersebut ialah nomina (mis. *guru* pada contoh (@agent-guru)), nomina diri (*Shopee* pada contoh (@agent-shopee)), dan nomina kekerabatan (@agent-kinship) yang dapat diinterpretasikan dalam fungsinya sebagai kata ganti orang kedua.
 
-(@agent-guru) ... mereka hanya mampu meniru cara yang _**guru**_ berikan (F1B11008)
+(@agent-guru) ... mereka hanya mampu meniru cara yang _**guru**_ *berikan* (F1B11008)
 
-(@agent-shopee) ... pagelaran program edukasi yang _**Shopee**_ berikan (K1N120003)
+(@agent-shopee) ... pagelaran program edukasi yang _**Shopee**_ *berikan* (K1N120003)
 
-(@agent-kinship) Atas perhatian dan izin yang _**Bapak**_ berikan, saya ucapkan banyak terima kasih (E1B17001)
+(@agent-kinship) Atas perhatian dan izin yang _**Bapak**_ *berikan*, saya ucapkan banyak terima kasih (E1B17001)
 
 Berikutnya, @fig-OV-agent-berikan-2 juga menunjukkan bahwa untuk *berikan*, tidak semua bentuk pronomina memiliki distribusi seimbang sebagai AGEN.
 
@@ -460,15 +508,11 @@ ov_agent_ajukan_pronomina <- ov_agent_ajukan_pronomina |>
   mutate(AGENT_LEX = fct_relevel(AGENT_LEX, ov_agent_ajukan_pronomina$AGENT_LEX))
 ```
 
-Terdapat juga kemungkinan bahwa tipe Agen ditentukan oleh kespesifikan makna verbanya. Sebagai contoh, dari total `r nrow(filter(anugerahkan, !is.na(AGENT_LEX)))` kemunculan *anugerahkan* dalam konstruksi diatesis objek, `r nrow(filter(anugerahkan, !is.na(AGENT_LEX), AGENT_TYPE == "nomina"))` diisi oleh nomina, yaitu *Allah (SWT)* dan *Tuhan*. Dari sudut pandang semantik, kemunculan *Allah (SWT)* dan *Tuhan* dimotivasi dari makna akar kata *anugerahkan*, yaitu *anugerah* yang juga bermakna 'kurnia (dari Tuhan)' pada KBBI Daring[^2].
-
-[^2]: https://kbbi.kemdikbud.go.id/entri/anugerah
-
-Yang lebih menarik adalah terdapat pula tendensi perbedaan pronomina terkait verba tertentu dalam diatesis objek. Sebagai contoh, kami tampilkan persentase Agen pronomina untuk *ajukan*, *berikan*, dan *ceritakan*.
+Terdapat juga kemungkinan bahwa tipe AGEN ditentukan oleh kespesifikan makna verbanya. Sebagai contoh, dari total `r nrow(filter(anugerahkan, !is.na(AGENT_LEX)))` kemunculan *anugerahkan* dalam konstruksi diatesis objek, `r nrow(filter(anugerahkan, !is.na(AGENT_LEX), AGENT_TYPE == "nomina"))` diisi oleh nomina, yaitu *Allah (SWT)* dan *Tuhan*. Dari sudut pandang semantik, kemunculan *Allah (SWT)* dan *Tuhan* dimotivasi dari makna akar kata *anugerahkan*, yaitu *anugerah* yang juga bermakna 'kurnia (dari Tuhan)' pada KBBI Daring^[https://kbbi.kemdikbud.go.id/entri/anugerah]. Yang lebih menarik adalah terdapat pula tendensi perbedaan pronomina terkait verba tertentu dalam diatesis objek. Sebagai contoh, kami tampilkan persentase AGEN pronomina untuk *ajukan*, *berikan*, dan *ceritakan* pada @fig-pronoun-agent-comparison.
 
 ```{r}
 #| label: fig-pronoun-agent-comparison
-#| fig-cap: "Distribusi AGEN pronomina dalam diatesis objektif untuk **ajukan**, **berikan**, dan **ceritakan**"
+#| fig-cap: "Distribusi (%) tipe AGEN pronomina dalam diatesis objek untuk **ajukan**, **berikan**, dan **ceritakan**"
 #| out-width: "85%"
 
 ov_agent_pronomina_all <- ov_agent_pronomina |> 
@@ -492,7 +536,8 @@ ov_agent_pronomina_all |>
   facet_wrap(~verba, labeller = label_both) +
   labs(y = "%",
        x = "",
-       fill = "Pronomina") +
+       fill = "Tipe pronomina") +
+  theme(strip.text = element_text(size = 10)) +
   scale_fill_discrete(breaks = c("orang kedua (2)", "orang pertama (1)", "orang ketiga (3)")) # +
   # scale_fill_manual(values = c("#009E73", "#F0E442", "#0072B2"),
   #                    breaks = c("ceritakan", "berikan", "ajukan"))
@@ -500,9 +545,11 @@ ov_agent_pronomina_all |>
 
 ```
 
+Jika kita melihat @fig-pronoun-agent-comparison, terdapat ketimpangan frekuensi penggunaan bentuk pronomina sebagai AGEN diatesis objek untuk ketiga verba, yang dapat mencerminkan pemahaman berbeda terhadap ketiga verba tersebut. Misalnya, kejadian *(men)ceritakan* sesuatu tampaknya lebih bersifat personal jika melihat paling tingginya pronomina pertama tunggal *aku* dan *saya*, sebaliknya *berikan* dan *ajukan* lebih bersifat kolektif berdasarkan paling tingginya bentuk pronomina pertama jamak *kami* dan *kita* untuk kedua verba tersebut. Kemudian, *berikan* dan *ajukan* tampak membawa nuansa formal mengingat, untuk pronomina kedua, AGEN kedua verba ini didominasi oleh bentuk formal *Anda*; sebaliknya untuk *ceritakan*, AGEN pronomina kedua yang paling sering bersifat kurang formal dan menunjukkan kedekatan pembicaranya, yaitu *kau*.
+
 ### Kemunculan diatesis objek dalam klausa {#sec-ov-in-clause}
 
-Fitur yang belum dibahas pada TBBI edisi terdahulu adalah tendensi dominan (lihat @fig-OV-in-rel-clause) kemunculan diatesis objek dalam klausa relatif (contoh (@rel-ajukan)-(@rel-ceritakan) berikut, dan (@agen-guru)-(@agen-kinship) pada @sec-agent-OV), dibandingkan dalam klausa utama (contoh (@ov-arka-manning-2008)) seperti yang lumrah dicontohkan dalam literatur-literatur terdahulu.
+Fitur yang belum dibahas pada TBBI edisi terdahulu adalah tendensi dominan (lihat @fig-OV-in-rel-clause) kemunculan diatesis objek dalam klausa relatif (contoh (@rel-ajukan)-(@rel-ceritakan) berikut, dan (@agent-guru)-(@agent-kinship) pada @sec-agent-OV), dibandingkan dalam klausa utama (contoh (@ov-arka-manning-2008)) seperti yang lumrah dicontohkan dalam literatur-literatur terdahulu.
 
 (@ov-arka-manning-2008) Buku itu saya baca [@arka2008, 49]
 
@@ -524,32 +571,37 @@ ov_in_relcl_n <- ov_in_relcl |>
 
 ```{r}
 #| label: fig-OV-in-rel-clause
-#| fig-cap: "Kecenderungan diatesis objek untuk tiga verba dalam klausa relatif penjelas inti nomina"
-#| out-width: "70%"
+#| fig-cap: "Distribusi diatesis objek untuk tiga verba dalam klausa relatif dan klausa utama"
+#| out-width: "60%"
 
 ov_in_relcl_n |> 
   ggplot(aes(x = verba, y = perc, fill = tipe_klausa_ov)) + 
   geom_bar(stat = "identity", position = "dodge") +
   labs(y = "Persenatse",
        x = "Verba",
-       fill = "Tipe klausa Diatesis Objek")
+       fill = "Tipe klausa") +
+  theme(axis.text = element_text(size = 10),
+        axis.title = element_text(size = 12),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 10),
+        legend.position = "top")
 ```
 
 @fig-OV-in-rel-clause menampilkan distribusi diatesis objek pada klausa utama dan klausa relatif untuk tiga verba yang juga dijadikan contoh pada @fig-pronoun-agent-comparison. Contoh kalimat ketiga verba ini ditampilkan berikut ini.
 
-(@rel-ajukan) ... sesuai dengan kandidat yang hendak mereka **ajukan** (B2C13040)
+(@rel-ajukan) ... sesuai dengan kandidat **yang** hendak mereka _**ajukan**_ (B2C13040)
 
-(@rel-berikan) Bantuan yang telah Henny dan YTP **berikan** berupa ujian paket A , B , dan C (B3B17002)
+(@rel-berikan) Bantuan **yang** telah Henny dan YTP _**berikan**_ berupa ujian paket A , B , dan C (B3B17002)
 
-(@rel-ceritakan) Kisah-kisah yang Gio **ceritakan** setiap mampir pulang ... (D1A16002)
+(@rel-ceritakan) Kisah-kisah **yang** Gio _**ceritakan**_ setiap mampir pulang ... (D1A16002)
 
-Tendensi seperti pada @fig-OV-in-rel-clause mengindikasikan bahwa diatesis objek lebih lumrah difungsikan sebagai penjelas nomina dibandingkan sebagai suatu proposisi pada klausa utama. Selain itu, tendensi fungsi penjelas nomina untuk diatesis objek juga dapat dipandang mempertegas fungsi diatesis objek yang menonjolkan peran BUKAN-AGEN (*Non-Agentive*) sebagai fokus utama (yaitu subjek gramatikal klausa); peran BUKAN-AGEN ini diisi oleh inti nomina dalam frase nomina yang dijelaskan oleh klausa relatif diatesis objek seperti pada contoh (@rel-ajukan) sampai (@rel-berikan).
+Tendensi seperti pada @fig-OV-in-rel-clause mengindikasikan bahwa diatesis objek lebih lumrah difungsikan sebagai penjelas nomina dibandingkan sebagai suatu proposisi pada klausa utama. Selain itu, tendensi fungsi penjelas nomina untuk diatesis objek juga dapat dipandang mempertegas fungsi diatesis objek yang menonjolkan peran bukan-AGEN (*Non-Agentive*) sebagai fokus utama (yaitu subjek gramatikal klausa); peran bukan-AGEN ini diisi oleh inti nomina dalam frase nomina yang dijelaskan oleh klausa relatif diatesis objek seperti pada contoh (@rel-ajukan) sampai (@rel-berikan).
 
 Penelitian lebih lanjut dapat melihat distribusi klausa verba yang lain ketika digunakan dalam diatesis objek. Kajian terkait lainnya yang dapat dilakukan adalah perbandingan diatesis pasif *di*- dan diatesis objek untuk suatu verba terkait distribusi kedua diatesis ini pada klausa utama dan klausa relatif.
 
-## Diatesis Medial, Refleksif dan Resiprokal {#sec-medial}
+## Diatesis Medial {#sec-medial}
 
-### Awalan *ber-*
+### Awalan *ber-* {#sec-ber-middle}
 
 ```{r}
 #| label: ber-middle
@@ -559,10 +611,28 @@ Penelitian lebih lanjut dapat melihat distribusi klausa verba yang lain ketika d
 #| error: false
 
 ber <- readr::read_tsv("data/ber1000.tsv") |> 
-  mutate(semantic_types = if_else(str_detect(semantic_types, 'reciprocal'), 'reciprocal', semantic_types))
+  mutate(semantic_types = if_else(str_detect(semantic_types, 'reciprocal'), 
+                                  'reciprocal', semantic_types),
+         semantic_types = if_else(str_detect(semantic_types, 'speech'),
+                                  'speech-actions', semantic_types),
+         semantic_types = if_else(str_detect(semantic_types, '[12]\\-participants?'),
+                                  'emotion', semantic_types),
+         semantic_types = if_else(str_detect(semantic_types, 'desiderative'),
+                                  'desiderative/intentive', semantic_types),
+         semantic_types = if_else(root_morphind %in% c("martabat", "bakat"), 
+                                  "reflexive-indirect", semantic_types),
+         semantic_types = if_else(root_morphind == "baring", 
+                                  "body-posture-change", semantic_types),
+         semantic_types = if_else(root_morphind == "budidaya", 
+                                  "reflexive-indirect-middle", semantic_types),
+         semantic_types = if_else(root_morphind == "laga", 
+                                  "reciprocal", semantic_types)) |> 
+  group_by(root_morphind, semantic_types, root_pos_morphind) |> 
+  summarise(n = sum(n))
 ber <- ber |> 
   group_by(semantic_types) |> 
   mutate(is_hapax = if_else(n == 1, TRUE, FALSE)) |> 
+  arrange(desc(n)) |> 
   ungroup()
 ber_stats <- ber |> 
   group_by(semantic_types) |> 
@@ -579,17 +649,19 @@ ber_stats <- ber |>
 ber_stats_top10 <- ber_stats |> 
   slice_max(order_by = n_type, n = 10)
 ber_stats_top10 <- ber_stats_top10 |> 
-  mutate(sem_idn = c("resiprokal", "refleksif medial taklangsung", "pendandanan diri (*grooming*)", "refleksif taklangsung posesif (*inalienable possession*)", "aksi verbal (*speech action*)", "kognisi", "pergerakan berpindah (*translational motion*)", "posisi(onal)", "aksi/aktivitas tubuh lainnya", "medial emosi (1 partisipan)", "kejadian/keadaan spontan terkait PENDENGARAN"))
+  mutate(sem_idn = c("resiprokal", "refleksif medial taklangsung", "pendandanan diri (*grooming*)", "refleksif taklangsung posesif (*inalienable possession*)", "aksi verbal (*speech action*)", "kognisi", "pergerakan berpindah (*translational motion*)", "posisional", "emosi", "aktivitas tubuh lainnya"))
 
 ```
 
 Diatesis medial (*middle voice*) menyatakan kejadian di mana peran AGEN dan peran bukan-AGEN merupakan entitas (*referent*) yang sama (perhatikan contoh (@ber-reflexive)). Dalam bahasa Indonesia, diatesis ini dimarkahi dengan *ber-* [@kemmer1993, 16; @shibatani2007; @udayana2013; @udayana2021, 10; @beavers2022].
 
-(@ber-reflexive) Mereka tampak berebut untuk bersalaman dan **berswafoto** dengan Presiden Jokowi (ekotmm02002020043).
+Pada contoh (@ber-reflexive), peran AGEN yaitu *mereka* menginisiasi aksi swafoto sekaligus merupakan peran yang bukan-AGEN (yaitu peran PASIEN) yang menjadi objek foto dari aksi memfoto mereka, sehingga efek yang timbul dari aksi berswafoto tersebut kembali pada inisiator/AGEN. 
 
-Pada contoh (@ber-reflexive), peran AGEN yaitu *mereka* menginisiasi aksi swafoto sekaligus merupakan peran yang bukan-AGEN (yaitu peran PASIEN) yang menjadi objek foto dari aksi memfoto mereka, sehingga efek yang timbul dari aksi berswafoto tersebut kembali pada inisiator/AGEN. Dalam literatur diatesis medial, makna/interpretasi yang dinyatakan oleh **berswafoto** disebut makna ‘refleksif’, khususnya ‘refleksif medial tak langsung’ (“*indirect middle*”) [@kemmer1993, 78]. Makna ini dicirikan sebagai aksi yang secara normatif dan sewajarnya dilakukan untuk keuntungan seseorang (“*actions that one __normally__ or __necessarily__ performs for one own’s benefit*”) [@kemmer1993, 78, penekanan sesuai kutipan aslinya] (bandingkan juga dengan pencirian refleksif pada Zúñiga dan Kittilä [-@zúñiga2019, 153]).
+(@ber-reflexive) Mereka tampak berebut untuk bersalaman dan _**ber**swafoto_ dengan Presiden Jokowi (ekotmm02002020043).
 
-Bentuk dengan awalan *ber-* sebagai pemarkah diatesis dapat mengungkapkan sejumlah makna [@zúñiga2019, 151]. Selain makna dalam ranah refleksif seperti pada contoh (@ber-reflexive), makna lain yang juga banyak dibahas adalah makna ‘resiprokal’ atau ‘timbal-balik’. Dalam situasi resiprokal, subjek verba *ber-* secara alamiah dipandang terdiri atas dua atau lebih partisipan, dan sejumlah partisipan ini secara bersamaan merupakan AGEN dan juga bukan-AGEN [@zúñiga2019, 153; bandingkan juga @kemmer1993, 96*ff*]. Salah satu contoh prototipikal kejadian yang secara alamiah menyatakan arti resiprokal dalam konstruksi verba *ber-* adalah *bertarung* (contoh (@ber-reciprocal)) (dan juga *bersisian* yang merupakan gabungan afiks *ber-*/*-an* [lihat @sec-ber-an]).
+Dalam literatur diatesis medial, makna/interpretasi yang dinyatakan oleh **berswafoto** disebut makna ‘refleksif’, khususnya ‘refleksif medial tak langsung’ (“*indirect middle*”) [@kemmer1993, 78]. Makna ini dicirikan sebagai aksi yang secara normatif dan sewajarnya dilakukan untuk keuntungan seseorang (“*actions that one __normally__ or __necessarily__ performs for one own’s benefit*”) [@kemmer1993, 78, penekanan sesuai kutipan aslinya] (bandingkan juga dengan pencirian refleksif pada Zúñiga dan Kittilä [-@zúñiga2019, 153]).
+
+Bentuk dengan awalan *ber-* sebagai pemarkah diatesis dapat mengungkapkan sejumlah makna [@zúñiga2019, 151]. Selain makna dalam ranah refleksif seperti pada contoh (@ber-reflexive), makna lain yang juga banyak dibahas adalah makna ‘resiprokal’ atau ‘timbal-balik’. Keberagaman makna yang diungkapkan oleh bentuk verba *ber-* mendukung pernyataan Zúñiga dan Kittilä [-@zúñiga2019, 169] bahwa verba bermarkah morfologis penanda diatesis medial bisa merujuk pada kejadian refleksif dan resiprokal. Dalam situasi resiprokal, subjek verba *ber-* secara alamiah dipandang terdiri atas dua atau lebih partisipan, dan sejumlah partisipan ini secara bersamaan merupakan AGEN dan juga bukan-AGEN [@zúñiga2019, 153; bandingkan juga @kemmer1993, 96*ff*]. Salah satu contoh prototipikal kejadian yang secara alamiah menyatakan arti resiprokal dalam konstruksi verba *ber-* adalah *bertarung* (contoh (@ber-reciprocal)) (dan juga *bersisian* yang merupakan gabungan afiks *ber-*/*-an* [lihat @sec-ber-an]).
 
 (@ber-reciprocal) banyak pembaca yang ingin melihat kita _**ber**tarung_ _**ber**sisi**an**_ ... (D1A18004)
 
@@ -598,7 +670,9 @@ Makalah ini menampilkan bagaimana data kuantitatif (yang telah dianalisis secara
 ```{r eval=TRUE}
 #| label: fig-ber-semantics
 #| fig-cap: "Distribusi token, tipe, dan hapax untuk tipe semantis dari *ber-*"
-#| out-width: "90%"
+#| out-width: "95%"
+
+
 ber_stats_top10_fig <- ber_stats_top10 |> 
   select(sem_idn, matches("^perc_")) |> 
   pivot_longer(cols = -sem_idn, 
@@ -617,9 +691,12 @@ ber_stats_top10_fig |>
   facet_wrap(~diss) + 
   coord_flip() + 
   scale_x_discrete(limits = rev(levels(ber_stats_top10_fig$sem_idn))) +
-  theme(axis.text.y.left = element_markdown(), 
-        legend.position = "none") +
-  labs(y = NULL, fill = NULL, x = "Semantik") 
+  theme(axis.text.y.left = element_markdown(size = 8.5), 
+        axis.title.y.left = element_text(size = 12),
+        axis.text.x.bottom = element_text(size = 7.5),
+        legend.position = "none",
+        strip.text = element_text(size = 10)) +
+  labs(y = NULL, fill = NULL, x = NULL) 
 ```
 
 ```{r message=FALSE, warning=FALSE, eval=FALSE, include=FALSE}
@@ -646,56 +723,90 @@ df_temp <- ber |>
   mutate(roots = paste("*", root_morphind, "* (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))
 ```
 
-@fig-ber-semantics menampilkan tiga pengukuran produktifitas medan semantik diatesis medial dengan *ber-*. Pengurutan didasarkan atas persentase frekuensi tipe (`% tipe`). Pengukuran lain adalah (persentase) frekuensi token (`% token`, yaitu total kemunculan bentukan kata untuk tiap-tiap kategori/medan semantik dalam korpus) dan (persentase) frekuensi hapax (`% hapax`, yaitu bentukan *ber-* untuk tiap-tiap kategori semantik yang hanya ditemukan satu kali dalam korpus).
+@fig-ber-semantics menampilkan tiga pengukuran produktifitas medan semantik diatesis medial dengan *ber-*. Pengurutan didasarkan atas persentase frekuensi tipe (`% tipe`). Pengukuran lain adalah (persentase) frekuensi token (`% token`, yaitu total kemunculan bentukan kata untuk tiap-tiap kategori/medan semantik dalam korpus) dan (persentase) frekuensi hapax (`% hapax`, yaitu bentukan *ber-* untuk tiap-tiap kategori semantik yang hanya ditemukan satu kali dalam korpus). Keberagaman tipe kategori semantis diatesis medial *ber-* mendukung gagasan dari Zúñiga dan Kittilä [-@zúñiga2019, 174] yang menyatakan bahwa diatesis medial sebaiknya dipandang sebagai konstruksi dengan jejaring makna berbeda, dibandingkan hanya sebagai suatu bentuk verba.
 
-Dapat diperhatikan bahwa diatesis medial *ber-* paling produktif digunakan dalam ranah semantis ‘resiprokal’/‘timbal-balik’, baik dari segi proporsi jumlah bentukan kata (`% tipe`), kekerapan penggunaan kata-kata tersebut dalam korpus (`% token`), maupun jumlah bentukan kata yang berupa hapax (yang dapat mengindikasikan tingkat produktifitas potensial dari suatu bentukan kata/tipe semantis). Pola yang menarik pada @fig-ber-semantics ditunjukkan oleh kategori semantik ‘pendandanan diri’ (*grooming*) (lihat (@ber-grooming)).
+Dapat diperhatikan pada @fig-ber-semantics bahwa diatesis medial *ber-* paling produktif digunakan dalam ranah semantis ‘resiprokal’/‘timbal-balik’, baik dari segi proporsi jumlah bentukan kata (`% tipe`), kekerapan penggunaan kata-kata tersebut dalam korpus (`% token`), maupun jumlah bentukan kata yang berupa hapax (yang dapat mengindikasikan tingkat produktifitas potensial dari suatu bentukan kata/tipe semantis). Perhatikan contoh (@reciprocal-hapax) yang menampilkan 10 bentukan hapax acak untuk kategori ‘timbal-balik’, dan (@reciprocal-top-10) yang menampilan sepuluh bentukan teratas kategori ‘timbal-balik’ (nilai di dalam kurung menunjukan frekuensi token/kekerapan). 
 
-(@ber-grooming) contoh *grooming*.
+(@reciprocal-top-10) `r ber |> filter(str_detect(semantic_types, '^reciprocal')) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")`
 
-(@ber-grooming-1) contoh *grooming* lain 1
+(@reciprocal-hapax) `r ber |> filter(str_detect(semantic_types, "^reciprocal$"), is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", n, ")", sep = ""), paste("_ber**", root_morphind, "**_ (", n, ")", sep = ""))) |> slice_sample(n = 10) |> pull(exs) |> paste(collapse = "; ")`
 
-(@ber-grooming-2) contoh *grooming* lain 2
+Pola yang menarik pada @fig-ber-semantics ditunjukkan oleh kategori semantik ‘pendandanan diri’ (*grooming*). Meskipun kategori ‘*grooming*’ tidak kerap digunakan (frekuensi tokennya minim), namun kategori ini salah satu yang paling produktif dihasilkan mengingat lebih tingginya jumlah bentukan kata (`% tipe`) dan juga bentukan hapax (`% hapax`) dibandingkan penggunaannya dalam teks. Sepuluh bentuk kata teratas kategori ini ditampilkan pada (@ber-grooming) sedangkan contoh hapaxnya ditunjukkan pada (@ber-grooming-hapax).
 
-Meskipun kategori ‘*grooming*’ tidak kerap digunakan (frekuensi tokennya minim), namun kategori ini salah satu yang paling produktif dihasilkan mengingat lebih tingginya jumlah bentukan kata (`% tipe`) dan juga bentukan hapax (`% hapax`) dibandingkan penggunaannya dalam teks.
+(@ber-grooming) `r ber |> filter(str_detect(semantic_types, 'grooming')) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")`
 
-Kategori ‘refleksif taklangsung posesif’ digunakan khusus untuk bentukan *ber-* yang akar katanya merujuk pada kepemilikan lekat/tak lepas (*inalienable possession*), utamanya akar kata nomina yang merujuk pada anggota tubuh (lihat contoh (@refleksif-bodypart)) [@kemmer1993, 77]. Kategori ini dapat dipandang memiliki kedekatan dengan pendandanan diri (*grooming*), yang melibatkan aksi terkait area di sekitar tubuh [@kemmer1993, 77].
+(@ber-grooming-hapax) `r ber |> filter(str_detect(semantic_types, 'grooming'), is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> pull(exs) |> paste(collapse = "; ")`
 
-(@refleksif-bodypart) contoh *bodypart* possessive.
+Kategori ‘refleksif taklangsung posesif’ digunakan khusus untuk bentukan *ber-* yang akar katanya merujuk pada kepemilikan lekat/tak lepas (*inalienable possession*), utamanya akar kata nomina yang merujuk pada anggota tubuh atau yang berkaitan dengan diri (lihat contoh sepuluh bentukan dengan frekuensi tertinggi pada (@refleksif-bodypart) dan bentukan hapax pada (@refleksif-bodypart-hapax)) [@kemmer1993, 77].
 
-(@refleksif-bodypart-1) contoh *bodypart* possessive 1.
+(@refleksif-bodypart) `r ber |> filter(str_detect(semantic_types, '^reflexive-indirect$')) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")`
 
-(@refleksif-bodypart-2) contoh *bodypart* possessive 2.
+(@refleksif-bodypart-hapax) `r ber |> filter(str_detect(semantic_types, '^reflexive-indirect$'), is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> pull(exs) |> paste(collapse = "; ")`
 
+Kategori ‘refleksif taklangsung posesif’ ini dapat dipandang memiliki kedekatan dengan pendandanan diri (*grooming*), yang melibatkan kejadian terkait diri [@kemmer1993, 77].
 
+Kategori semantis selanjutnya dikategorikan oleh Kemmer [-@kemmer1993, 130] di bawah payung semantik medial [kejadian mental]{.smallcaps}, yaitu ‘aksi verbal’ (“*speech actions*” [@kemmer1993, 133]), ‘kognisi’ [@kemmer1993, 134], dan ‘emosi’ [@kemmer1993, 128]. Kategori ‘aksi verbal’ dapat mengandung nuansa emotif ataupun berupa vokalisasi emosi. Contoh (@speech-action) menampilkan sepuluh aksi verba tertinggi dan hapaxnya ditunjukkan pada (@speech-hapax).
 
--   Kemmer [-@kemmer1993, 15] membedakan *middle marker* (penanda morfosintaksis untuk kejadian terkait diatesis medial) dan *middle uses*/*middle situation types* (kejadian yang diungkapkan oleh penanda diatesis medial).
+(@speech-action) `r ber |> filter(str_detect(semantic_types, '^speech-actions$')) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")`
 
-    -   Kemmer [-@kemmer1993, 16] *ber*- adalah pendanda diatesis medial
-    -   *middle situation* diungkapkan oleh kategori semantis verba berbeda [@kemmer1993, 16]:
-        -   *grooming* dan *body care* (mis. verba *washing* and *getting dressed*, and *shaving* and *bathing*)
-        -   *non-translational motion* (pergerakan badan tanpa perubahan posisi, seperti *twisting*, *turning*, *bowing*, *stretching*, *nodding*)
-        -   *change in body posture* (mis. *lying down*, *sitting down*, *standing up*, *kneeling down*, *squatting*)
-        -   KETIGA KATEGORI DI ATAS DIANGGAP BIASANYA SEBAGAI REFLEXIVE **BUT** THAT IS NOT THE CASE [@kemmer1993, 17]. Dua kategori semantis lain yang dipayungi analisis reflexive adalah
-            -   *indirect middle* (mis. *acquiring* / *receiving* verb \[*beroleh*, *berterima*\], or *asking/requesting* verb)
-            -   *naturally reciprocal events* -- "actions or states in which the relationship among two participants is usually or necessarily mutual or reciprocal" (Kemmer 1993: 17) (mis. *fighting*, *embracing*, *meeting*, *greeting*, *conversing*)
-        -   *translational motion* ("self-induced motion of an animate entity along a path in space" [@kemmer1993, 18]) -- *going*, *coming*, *walking*, *flying*, *running*, and *leaping*.
-        -   *emotion middle* (verbs of being *angry*, *firghtened*, *sad* or *happy*)
-        -   *speech action of emotive type* and *emotional overtones* speech action (confess, admit, boast)
-        -   *cognition middle*
-        -   *spontaneous events* (e.g., *growing*, *rotting*, *dying out*, *falling apart*, *evaporating*)
-        -   Middle marker can be the same with reflexive marker [@kemmer1993, 25]
+(@speech-hapax) `r ber |> filter(str_detect(semantic_types, '^speech-actions$'), is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> pull(exs) |> paste(collapse = "; ")`
 
--   Identifikasi verba yang berada pada ranah diatesis medial merujuk lampiran dalam Kemmer (1993) yang memberikan daftar tipe semantis dan contoh bahasa Inggris untuk verba berdiatesis medial.
+Selanjutnya, kategori ‘kognisi’ mengindikasikan proses berpikir yang dampaknya (*affectedness*) juga melekat pada penggagas proses berpikir tersebut (yaitu AGEN). Perhatikan contoh-contohnya pada (@ber-kognisi) dan (@ber-kognisi-hapax).
 
-    -   arti bahasa Indonesia verba tersebut dicari pada kamus Indonesia-Inggris [@stevens2004].
-    -   kemudian kemunculan verba tersebut beserta frekuensinya dicari di korpus
+(@ber-kognisi) `r ber |> filter(str_detect(semantic_types, '^cognition-middle$')) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")`
 
-Zúñiga dan Kittilä [-@zúñiga2019, 169] menjelaskan middle-form verbs bisa merujuk pada kejadian reflexive dan reciprocal (ketika subjeknya jamak).
+(@ber-kognisi-hapax) `r ber |> filter(str_detect(semantic_types, '^cognition-middle$'), is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> pull(exs) |> paste(collapse = "; ")`
 
-Zúñiga dan Kittilä [-@zúñiga2019, 174] menyatakan bahwa diatesis medial sebaiknya dipandang sebagai konstruksi dengan jejaring makna berbeda, dibandingkan hanya dipandang sebagai suatu bentuk verba.
+Kategori ‘emosi’ bermarkah medial *ber-* mengindikasikan dampak (*affectedness*) emosi yang melekat pada PENGALAM (*Experiencer*) [@kemmer1993, 130] (perhatikan contoh (@ber-emosi) dan (@ber-emosi-hapax)).
+
+(@ber-emosi) `r ber |> filter(str_detect(semantic_types, '^emotion$')) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")`
+
+(@ber-emosi-hapax) `r ber |> filter(str_detect(semantic_types, '^emotion$'), is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> pull(exs) |> paste(collapse = "; ")`
+
+Tiga kategori terakhir pada @fig-ber-semantics merupakan bagian dari ranah [aksi tubuh]{.smallcaps} (“*body action domain*”) [@kemmer1993, 67-71]. Yang pertama yaitu ‘posisional’. Pencirian yang diberikan oleh Kemmer [-@kemmer1993, 269] untuk kategori ini adalah adanya acuan terhadap konfigurasi/bentuk/postur tubuh atau objek yang dikaitkan dengan adanya objek penopang (“*supporting object*”). Sepuluh verba teratas dalam korpus yang masuk kategori semantik ini ditampilkan pada (@ber-posture) (bentuk hapaxnya pada (@ber-posture-hapax)).
+
+(@ber-posture) `r ber |> filter(str_detect(semantic_types, '^positional')) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")`
+
+(@ber-posture-hapax) `r ber |> filter(str_detect(semantic_types, '^positional'), is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> pull(exs) |> paste(collapse = "; ")`
+
+Kategori selanjutnya dari ranah [aksi tubuh]{.smallcaps} adalah ‘pergerakan berpindah’ [@kemmer1993, 69]. Kategori ini direalisasikan oleh verba gerakan yang menyatakan peran Figur (benda yang bergerak) berpindah dari suatu lokasi ke lokasi lainnya (perhatikan contoh (@ber-trans-motion) dan (@ber-trans-motion-hapax)).
+
+(@ber-trans-motion) `r ber |> filter(str_detect(semantic_types, '^trans')) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")`
+
+(@ber-trans-motion-hapax) `r ber |> filter(str_detect(semantic_types, '^trans'), is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> pull(exs) |> paste(collapse = "; ")`
+
+Terakhir, kategori ‘aktivitas tubuh lainnya’ yang Kemmer [-@kemmer1993, 268] contohkan dengan *scratch* (‘menggaruk’), *sneeze* (‘bersin’), *cough* (‘batuk’), *breathe* (‘bernafas’), dan *masturbate* (‘masturbasi’). Berikut ditampilkan bentukan dengan frekuensi tertinggi (@ber-body-others) dan hapax (@ber-body-others-hapax) yang masuk kategori ‘aktivitas tubuh lainnya’).
+
+(@ber-body-others) `r ber |> filter(str_detect(semantic_types, 'body.action.?.others')) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")`
+
+(@ber-body-others-hapax) `r ber |> filter(str_detect(semantic_types, 'body.action.?.others'), is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> pull(exs) |> paste(collapse = "; ")`
+
 
 ```{r message=FALSE, error=FALSE, eval=FALSE, include=FALSE, echo=FALSE}
 #| label: ber-middle-OLD
+
+# -   Kemmer [-@kemmer1993, 15] membedakan *middle marker* (penanda morfosintaksis untuk kejadian terkait diatesis medial) dan *middle uses*/*middle situation types* (kejadian yang diungkapkan oleh penanda diatesis medial).
+# 
+#     -   Kemmer [-@kemmer1993, 16] *ber*- adalah pendanda diatesis medial
+#     -   *middle situation* diungkapkan oleh kategori semantis verba berbeda [@kemmer1993, 16]:
+#         -   *grooming* dan *body care* (mis. verba *washing* and *getting dressed*, and *shaving* and *bathing*)
+#         -   *non-translational motion* (pergerakan badan tanpa perubahan posisi, seperti *twisting*, *turning*, *bowing*, *stretching*, *nodding*)
+#         -   *change in body posture* (mis. *lying down*, *sitting down*, *standing up*, *kneeling down*, *squatting*)
+#         -   KETIGA KATEGORI DI ATAS DIANGGAP BIASANYA SEBAGAI REFLEXIVE **BUT** THAT IS NOT THE CASE [@kemmer1993, 17]. Dua kategori semantis lain yang dipayungi analisis reflexive adalah
+#             -   *indirect middle* (mis. *acquiring* / *receiving* verb \[*beroleh*, *berterima*\], or *asking/requesting* verb)
+#             -   *naturally reciprocal events* -- "actions or states in which the relationship among two participants is usually or necessarily mutual or reciprocal" (Kemmer 1993: 17) (mis. *fighting*, *embracing*, *meeting*, *greeting*, *conversing*)
+#         -   *translational motion* ("self-induced motion of an animate entity along a path in space" [@kemmer1993, 18]) -- *going*, *coming*, *walking*, *flying*, *running*, and *leaping*.
+#         -   *emotion middle* (verbs of being *angry*, *firghtened*, *sad* or *happy*)
+#         -   *speech action of emotive type* and *emotional overtones* speech action (confess, admit, boast)
+#         -   *cognition middle*
+#         -   *spontaneous events* (e.g., *growing*, *rotting*, *dying out*, *falling apart*, *evaporating*)
+#         -   Middle marker can be the same with reflexive marker [@kemmer1993, 25]
+
+
+# -   Identifikasi verba yang berada pada ranah diatesis medial merujuk lampiran dalam Kemmer (1993) yang memberikan daftar tipe semantis dan contoh bahasa Inggris untuk verba berdiatesis medial.
+# 
+#     -   arti bahasa Indonesia verba tersebut dicari pada kamus Indonesia-Inggris [@stevens2004].
+#     -   kemudian kemunculan verba tersebut beserta frekuensinya dicari di korpus
 
 # grooming with ber-
 # readxl::read_xlsx("data/ber.xlsx") |> 
@@ -708,27 +819,135 @@ Zúñiga dan Kittilä [-@zúñiga2019, 174] menyatakan bahwa diatesis medial seb
 #   write_tsv("data/ber_natural-reciprocal.tsv")
 # natural_reciprocal_event <- read_tsv("data/ber_natural-reciprocal.tsv")
 
+
+# -   Terdapat enam belas kategori utama yang diajukan oleh Kemmer (1993). Makalah ini tidak akan membahas keseluruhan kategori tersebut karena dibatasi waktu dalam menganalisis secara manual keseluruhan data yang melimpah. Namun, makalah ini akan memfokuskan pada XXX kategori dan menunjukkan bahwa data korpus dapat memperkaya contoh-contoh yang ditemukan terkait kategori tersebut yang mungkin akan sulit diperoleh secara intuitif. Salah satu kategori yang banyak dibahas adalah *grooming* dan *body care* (yaitu aktifitas mendandani diri dan perawatan diri). Kategori ini juga yang pertama dibahas oleh Kemmer [-@kemmer1993, 16] sebagai kategori lumrah.
+#     -   hal yang dapat disarikan dari presentasi tadi adalah bahwa data korpus dapat menunjukkan bukti seberapa produktif skema morfologis untuk diatesis medial dengan tipe semantis *grooming* dan *body care*.
+
 ```
 
--   Terdapat enam belas kategori utama yang diajukan oleh Kemmer (1993). Makalah ini tidak akan membahas keseluruhan kategori tersebut karena dibatasi waktu dalam menganalisis secara manual keseluruhan data yang melimpah. Namun, makalah ini akan memfokuskan pada XXX kategori dan menunjukkan bahwa data korpus dapat memperkaya contoh-contoh yang ditemukan terkait kategori tersebut yang mungkin akan sulit diperoleh secara intuitif. Salah satu kategori yang banyak dibahas adalah *grooming* dan *body care* (yaitu aktifitas mendandani diri dan perawatan diri). Kategori ini juga yang pertama dibahas oleh Kemmer [-@kemmer1993, 16] sebagai kategori lumrah.
-    -   hal yang dapat disarikan dari presentasi tadi adalah bahwa data korpus dapat menunjukkan bukti seberapa produktif skema morfologis untuk diatesis medial dengan tipe semantis *grooming* dan *body care*.
--   arti dari bentuk *ber*-/-*an* telah dibahas pada naskah terkait proyek buku kali ini [lihat @rajeg2023]
--   
--   isu dominan dengan *ber*-/-*an* adalah adanya bentuk yang pangkal katanya adalah bentukan dengan -*an*, seperti *anggap**an***. Bentuk -*an* nomina ini kemudian digunakan dalam konstruksi *ber*- dan mengungkapkan arti 'memiliki' dari *ber*-. Kerancuan tersebut diatasi dengan pengecekan manual.
--   Seperti pada analisis *ber*- sebelumnya, kami secara kualitatif akan menampilkan beberapa contoh bentukan *ber*-/-*an* dan kategori makna yang diungkapkan. Selain mengungkapkan makna resiprokal, *ber*-/-*an* juga dapat mengungkapkan arti kejadian tak beraturan. Beberapa contoahnya adalah:
-    -   ber-/-an with random action meaning.
 
 ### Konfiks *ber-*/*-an* {#sec-ber-an}
 
+```{r message=FALSE, warning=FALSE, error=FALSE}
+#| label: ber-an
+
+ber_an0 <- readr::read_tsv("data/ber_an.tsv") |> 
+  mutate(semantics = if_else(root_morphind %in% c("jual"), 
+                             "reciprocal", semantics),
+         semantics = if_else(root_morphind %in% c("kakak"), 
+                             "reciprocal-personal-relationship", semantics),
+         semantics = if_else(root_morphind %in% c("cengkram"), 
+                             "reciprocal-(spatial-)relationship", semantics),
+         semantics = if_else(root_morphind %in% c("lebih", "bising", "gayut", "gejolak", "hujan"),
+                             "random event", semantics))
+
+ber_an_sem <- ber_an0 |> 
+  filter(ok) |> 
+  group_by(root_morphind, root_pos_morphind, semantics) |> 
+  summarise(n = sum(n), .groups = "drop") |> 
+  arrange(desc(n)) |> 
+  mutate(sem_gen = if_else(str_detect(semantics, "reciprocal"),
+                           "reciprocal", semantics))
+
+ber_an <- ber_an0 |> 
+  filter(ok) |> 
+  group_by(root_morphind, root_pos_morphind, affix_morphind_wclass) |> 
+  summarise(n = sum(n), .groups = "drop") |> 
+  arrange(desc(n))
+ber_an_type_by_pos <- ber_an |> 
+  group_by(root_pos_morphind) |> 
+  summarise(n_type = n_distinct(root_morphind), .groups = "drop") |> 
+  arrange(desc(n_type))
+ber_an_hapax_by_pos <- ber_an |> 
+  filter(n == 1) |> 
+  group_by(root_pos_morphind) |> 
+  summarise(n_hpx = n_distinct(root_morphind), .groups = "drop") |> 
+  arrange(desc(n_hpx))
+ber_an_tokens_by_pos <- ber_an |> 
+  group_by(root_pos_morphind) |> 
+  summarise(tokens = sum(n), .groups = "drop") |> 
+  arrange(desc(tokens))
+ber_an_productivity <- ber_an_tokens_by_pos |> 
+  left_join(ber_an_type_by_pos) |> 
+  left_join(ber_an_hapax_by_pos)
+
+ber_sem_prod <- ber_an_sem |> 
+  filter(!is.na(semantics)) |>
+  mutate(is_hapax = if_else(n == 1, TRUE, FALSE)) |> 
+  group_by(sem_gen) |> 
+  summarise(type = n_distinct(root_morphind), 
+            token = sum(n), 
+            hapax = sum(is_hapax),
+            .groups = "drop") |> 
+  mutate(perc_type = round(type/sum(type) * 100, 1),
+         perc_token = round(token/sum(token) * 100, 1),
+         perc_hapax = round(hapax/sum(hapax) * 100, 1))
+```
+
+
+Sneddon dkk. [-@sneddon2010, 111-114] mengajukan dua kategori semantis utama untuk verba dengan konfiks *ber-*/*-an*, yang berkaitan dengan diatesis medial pada @sec-ber-middle sebelumnya: ‘resiprokal/timbal-balik’ (mis. _ber**salam**an_, _ber**dekat**an_ [@sneddon2010, 111]) dan ‘kejadian tak beraturan’ (“*random action* _**ber**_-...-_**an**_ *verbs*”) (mis. _ber**desing**an_, _ber**gugur**an_, _ber**lari**an_ [@sneddon2010, 113]). Kedua kategori semantis ini sekilas telah disebutkan pada naskah terkait lain oleh Rajeg dan Denistia [@rajeg2023] yang mengkaji afiksasi verba dalam konteks produktifitas morfologis, bukan semantis yang akan dilakukan pada makalah kali ini. 
+
+Dalam basis data *VerbInd* [@rajeg] yang kami gunakan, terdapat `r ber_an0 |> select(root_morphind) |> distinct() |> nrow()` bentukan kata yang diawali dengan rangkaian karakter *ber-* dan diakhiri dengan -*an*, namun hanya `r nrow(ber_an_sem)` yang relevan mencerminkan konstruksi medial *ber*-/-*an* (setelah dianalisis lebih lanjut secara manual satu-per-satu). Analisis kualitatif yang kami lakukan terhadap basis data *ber*-/-*an* ini adalah pengelompokan tiap-tiap bentuk ke dalam kedua kategori semantis utama di atas. Terdapat `r nrow(filter(ber_an_sem, is.na(semantics)))` butir data (hanya `r round(nrow(filter(ber_an_sem, is.na(semantics)))/nrow(ber_an_sem)*100, 1)`% dari total `r nrow(ber_an_sem)` data) yang tidak dapat kami kelompokkan dengan pasti dan tidak diikutkan dalam analisis yang ditampilkan selanjutnya.
+
+```{r}
+#| label: fig-ber-an-semantics
+#| fig-cap: "Distribusi token, tipe, dan hapax untuk tipe semantis dari *ber-*/*-an*"
+#| out-width: "55%"
+
+ber_sem_prod_plot <- ber_sem_prod |> 
+  pivot_longer(cols = -sem_gen, names_to = "dist", values_to = "vals") |> 
+  mutate(dist = if_else(str_detect(dist, "^perc_"),
+                        str_replace(dist, "^perc_", "% "),
+                        dist)) |> 
+  mutate(sem_gen = if_else(sem_gen == "random event",
+                           "kejadian tak beraturan", "resiprokal")) |> 
+  mutate(dist = factor(dist, levels = c("type", "token", "hapax", "% type", "% token", "% hapax")),
+         sem_gen = factor(sem_gen, levels = c("resiprokal", "kejadian tak beraturan")))
+
+ber_sem_prod_plot |> 
+  arrange(sem_gen, dist) |> 
+  filter(str_detect(dist, "\\%")) |> 
+  ggplot(aes(x = sem_gen, 
+             y = vals, 
+             fill = dist)) + 
+  geom_col(position = "dodge") + 
+  facet_wrap(~dist) + 
+  coord_flip() + 
+  scale_x_discrete(limits = rev(levels(ber_sem_prod_plot$sem_gen))) +
+  theme(axis.text.y.left = element_markdown(), 
+        legend.position = "none",
+        axis.text.y = element_text(size = 12),
+        axis.title.y = element_text(size = 14),
+        axis.text.x = element_text(size = 11),
+        strip.text = element_text(size = 12)) +
+  labs(y = NULL, fill = NULL, x = NULL)
+```
+
+Dari segi frekuensi token, makna ‘resiprokal’ (n=`r ber_sem_prod |> filter(sem_gen == "reciprocal") |> pull(token) |> prettyNum(big.mark = ".", decimal.mark = ",")`; contoh (@ber-an-reciprocal-top-10) dan (@ber-an-reciprocal-hapax)) jauh lebih produktif digunakan dibandingkan dengan ‘kejadian tak beraturan’ (`r ber_sem_prod |> filter(sem_gen == "random event") |> pull(token) |> prettyNum(big.mark = ".", decimal.mark = ",")`) (ketimpangan proporsi ini juga ditampilkan pada @fig-ber-an-semantics). Sedangkan dari segi jumlah bentukan kata (frekuensi tipe), keduanya berimbang (sama-sama memiliki `r ber_sem_prod |> pull(type) |> unique()` bentuk). Yang menarik dari tren pada @fig-ber-an-semantics adalah, kategori semantis ‘kejadian tak beraturan’ memiliki potensi lebih produktif mengingat kategori ini memiliki jumlah hapax yang lebih tinggi dibandingkan ‘resiprokal’ (perhatikan panel `% hapax`). Berikut ini ((@ber-an-reciprocal-top-10) dan (@ber-an-reciprocal-hapax)) ditampilkan contoh-contoh bentuk verba diatesis medial dengan *ber*-/*-an* bermakna ‘resiprokal’.
+
+(@ber-an-reciprocal-top-10) `r ber_an_sem |> filter(sem_gen == "reciprocal") |> arrange(desc(n)) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**an_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**an_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")` 
+
+(@ber-an-reciprocal-hapax) `r ber_an_sem |> filter(!is.na(semantics)) |> mutate(is_hapax = if_else(n == 1, TRUE, FALSE)) |> filter(sem_gen == "reciprocal", is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**an_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**an_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> pull(exs) |> paste(collapse = "; ")`
+
+Selanjutnya, contoh-contoh verba diatesis medial *ber*-/-*an* dengan makna ‘kejadian tak beraturan’ ditampilkan pada (@ber-an-random) dan (@ber-an-random-hapax) (untuk bentuk hapax, diambil sepuluh contoh acak).
+
+(@ber-an-random) `r ber_an_sem |> filter(sem_gen == "random event") |> arrange(desc(n)) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**an_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**an_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_max(order_by = n, n = 10) |> pull(exs) |> paste(collapse = "; ")`
+
+(@ber-an-random-hapax) `r ber_an_sem |> filter(!is.na(semantics)) |> mutate(is_hapax = if_else(n == 1, TRUE, FALSE)) |> filter(sem_gen == "random event", is_hapax) |> mutate(exs = if_else(str_detect(root_morphind, "^r"), paste("_be**", root_morphind, "**an_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""), paste("_ber**", root_morphind, "**an_ (", prettyNum(n, big.mark = ".", decimal.mark = ","), ")", sep = ""))) |> slice_sample(n = 10) |>  pull(exs) |> paste(collapse = "; ")`
+
+Salah satu isu dominan dalam analisis terhadap bentuk *ber*-/-*an* adalah adanya bentuk yang pangkal katanya adalah bentukan dengan -*an*, seperti _anggap**an**_ (terdapat `r nrow(ber_an0 |> filter(!is.na(remark), !ok) |> count(remark) |> filter(str_detect(remark, "base")))` kasus seperti ini dalam basis data). Bentuk -*an* nomina ini kemudian digunakan dalam konstruksi *ber*- dan mengungkapkan arti ‘memiliki’ dari *ber*-. Kerancuan tersebut dapat diatasi dengan pengecekan manual.
+
 ## Kajian kuantitatif atas preferensi leksikal dalam diatesis: Analisis Koleksem Khas (*Distinctive Collexeme Analysis*) {#sec-dca}
 
-Analisis Koleksem Khas (*Distinctive Collexeme Analysis* \[DCA\]) adalah salah satu dari gugusan metodologi kuantitatif di bawah payung Analisis Kolostruksional (*Collostructional Analysis* \[CollAna\]) [@stefanowitsch2003; @stefanowitsch2013]. CollAna memfasilitasi kajian kuantitatif atas keterkaitan antara leksikon/unsur leksikal dan konstruksi gramatikal. Kajian tersebut bertujuan untuk mengungkap batasan distribusi dan juga ciri semantis konstruksi gramatikal dalam suatu bahasa. Beberapa contohnya telah diberikan pada @sec-metodologi, misalnya melihat verba mana yang memiliki asosiasi statistik kuat terhadap konstruksi dwitransitif dan konstruksi datif, serta kontribusi semantis verba khas tersebut (yaitu *koleksem khas*) terhadap pencirian semantis yang membedakan konstruksi dwitransitif dan konstruksi datif [@gries2004]. Kajian terhadap lingkup distribusi verba terhadap, dan batasan semantis, konstruksi gramatikal (misalnya diatesis) merupakan salah satu aspek teoretis dari teori Gramatika Konstruksional (*Construction Grammar* \[CxG\]) [@goldberg2013 ; @hilpert2020 ; @fried2015] . Salah satu asumsi mendasar dari CxG adalah bahwa bahasa terdiri atas konstruksi, yaitu keberpasangan antara bentuk dan makna pada tingkatan yang berbeda, mulai dari konstruksi yang spesifik (seperti kata) hingga yang abstrak (seperti konstruksi sintaksis) [@goldberg2013, 17].
+Analisis Koleksem Khas (*Distinctive Collexeme Analysis* \[DCA\]) adalah salah satu dari gugusan metodologi kuantitatif di bawah payung Analisis Kolostruksional (*Collostructional Analysis* \[CollAna\]) [@stefanowitsch2003; @stefanowitsch2013]. CollAna memfasilitasi kajian kuantitatif atas keterkaitan antara leksikon/unsur leksikal dan konstruksi gramatikal. Kajian tersebut bertujuan untuk mengungkap batasan distribusi dan juga ciri semantis konstruksi gramatikal dalam suatu bahasa. Beberapa contohnya telah diberikan pada @sec-metodologi, misalnya melihat verba mana yang memiliki asosiasi statistik kuat terhadap konstruksi dwitransitif dan konstruksi datif, serta kontribusi semantis verba khas tersebut (yaitu *koleksem khas*) terhadap pencirian semantis yang membedakan konstruksi dwitransitif dan konstruksi datif [@gries2004]. Kajian batasan semantis dan lingkup distribusi verba untuk suatu konstruksi gramatikal (misalnya diatesis) merupakan salah satu aspek teoretis kunci dari teori Gramatika Konstruksional (*Construction Grammar* \[CxG\]) [@goldberg2013 ; @hilpert2020 ; @fried2015] . Salah satu asumsi mendasar dari CxG adalah bahwa bahasa terdiri atas konstruksi, yaitu keberpasangan antara bentuk dan makna pada tingkatan yang berbeda, mulai dari konstruksi yang spesifik (seperti kata) hingga yang abstrak (seperti konstruksi sintaksis) [@goldberg2013, 17].
 
 Berdasarkan konteks teoretis dalam CxG yang dijelaskan pada paragraf sebelumnya, yaitu interaksi antara leksikon dan konstruksi gramatikal, dan batasan distribusi konstruksi gramatikal, DCA digunakan untuk mengungkap perbedaan di antara dua konstruksi gramatikal yang mirip secara semantis/secara fungsional. Perbedaan tersebut dapat berkaitan dengan batasan distribusi dan parameter yang digunakan untuk melihat perbedaan tersebut adalah asosiasi statistik unsur leksikal yang dapat muncul dengan konstruksi tersebut melalui DCA.
 
+Data korpus melimpah TBIK dapat diolah secara kuantitatif untuk mengukur preferensi leksikal di antara afiksasi penanda diatesis BI. Sebagai contoh penerapan DCA, diatesis yang dibandingkan adalah antara *meN*- aktif dan *di*- pasif. Makalah ini akan (i) menampilkan akar kata mana yang lebih sering digunakan dalam diatesis aktif *meN*- dibandingkan dengan *di*- dan (ii) mengulas apakah preferensi leksikal tersebut mencerminkan perbedaan semantis antara *meN*- dan *di*-.
+
 ### Landasan kuantitatif dari DCA {#sec-dca-how}
 
-DCA bekerja dengan memanfaatkan data frekuensi yang diperoleh dari korpus. Rancangan dasar dari analisis kuantitatif dalam DCA adalah tabulasi silang frekuensi pada tabel dua dimensi seperti pada @tbl-dca-schema dan realisasi konkritnya dengan data frekuensi pada @tbl-dca-riil untuk verba *bilang* pada diatesis aktif *meN*- dan *di*-.
+DCA bekerja dengan memanfaatkan data frekuensi (token) yang diperoleh dari korpus. Rancangan dasar dari analisis kuantitatif dalam DCA adalah tabulasi silang frekuensi dalam tabel dua dimensi seperti pada @tbl-dca-schema.
 
 ```{r}
 #| label: tbl-dca-schema
@@ -736,9 +955,13 @@ DCA bekerja dengan memanfaatkan data frekuensi yang diperoleh dari korpus. Ranca
 #| message: false
 #| warning: false
 
-matrix(data = c("A - Frek. V dengan Cxn 1", "B - Frek. Vlainnya dengan Cxn 1", "C - Frek. V dengan Cxn 2", "D - Frek. Vlainnya dengan Cxn 2"), nrow = 2, byrow = TRUE, dimnames = list(Konstruksi = c("Konstruksi (Cxn) 1 ", "Konstruksi (Cxn) 2"), Verba = c("Akar verba V", "Akar verba Lainnya"))) |> knitr::kable()
+matrix(data = c("A [*Frek. V dengan Cxn 1*]", "B [*Frek. Vlainnya dengan Cxn 1*]", "C [*Frek. V dengan Cxn 2*]", "D [*Frek. Vlainnya dengan Cxn 2*]"), nrow = 2, byrow = TRUE, dimnames = list(Konstruksi = c("Konstruksi (Cxn) 1 ", "Konstruksi (Cxn) 2"), Verba = c("Akar verba V", "Akar verba Lainnya"))) |> knitr::kable()
 
 ```
+
+&nbsp;
+
+@tbl-dca-schema menunjukkan bahwa, untuk suatu akar verba V, kita memerlukan frekuensi token akar tersebut ketika muncul dalam konstruksi 1 (sel A) dan konstruksi 2 (sel C) yang dibandingkan. Frekuensi token akar verba lainnya dengan kedua konstruksi (sel B dan D) juga diperlukan. Realisasi konkrit dari @tbl-dca-schema dicontohkan dengan data frekuensi pada @tbl-dca-riil untuk verba *bilang* pada diatesis aktif *meN*- dan *di*-.
 
 ```{r}
 #| label: tbl-dca-riil
@@ -762,18 +985,100 @@ dimnames(bilang_dca)[[2]][3] <- "Total baris"
 bilang_dca |> knitr::kable()
 ```
 
-Nilai di dalam kurung pada @tbl-dca-riil adalah "frekuensi harapan" [@rajeg2019, 71; @rajeg2019a], yaitu frekuensi yang diharapkan muncul dalam korpus jika kita berasumsi bahwa proporsi diatesis aktif dan pasif seharusnya (secara teoretis) berimbang untuk *bilang*. Akan tetapi, @tbl-dca-riil menunjukkan bahwa terdapat ketimpangan antara frekuensi pengamatan (yang riil diperoleh dari korpus) dan frekuensi harapan untuk *bilang* terhadap kemunculannya pada diatesis aktif dan pasif *di*-. Pembaca dapat melihat kajian Rajeg dan Rajeg [-@rajeg2019, 71; -@rajeg2019a] terkait cara menghitung frekuensi harapan.
+&nbsp;
 
-Selanjutnya, frekuensi riil dalam keempat sel (A, B, C, D) pada @tbl-dca-riil menjadi masukan data untuk uji signifikansi statistik, seperti uji Fisher-Yates Exact atau Chi-Square. Dalam konteks DCA, uji signifikansi digunakan untuk menentukan apakah ditemukan signifikansi statistik atas ketimpangan antara frekuensi kemunculan/pengamatan suatu koleksem (seperti *bilang*) dalam korpus dan frekuensi yang diharapkan terhadap konstruksi aktif *meN*- dan *di*-.
+Nilai di dalam kurung pada @tbl-dca-riil adalah “frekuensi harapan” [@rajeg2019, 71; @rajeg2019a], yaitu frekuensi yang diharapkan muncul dalam korpus jika kita berasumsi bahwa proporsi diatesis aktif dan pasif seharusnya (secara teoretis) berimbang untuk *bilang* (dengan kata lain, seharusnya *bilang* dapat secara silih berganti muncul di kedua diatesis dan, secara statistik, distribusi *bilang* pada kedua diatesis tidak berbeda signifikan). Akan tetapi, @tbl-dca-riil menunjukkan bahwa terdapat ketimpangan antara frekuensi (token) pengamatan (yang riil diperoleh dari korpus) dan frekuensi harapan untuk *bilang* terhadap kemunculannya pada diatesis aktif *meN*- dan pasif *di*-. Pembaca dapat melihat kajian Rajeg dan Rajeg [-@rajeg2019, 71; -@rajeg2019a] terkait cara menghitung frekuensi harapan.
 
-Uji statistik menunjukkan bahwa terdapat ketimpangan yang signifikan (tidak merupakan suatu kebetulan) antara frekuensi pengamataan dan harapan untuk *bilang* terhadap kedua diatesis tersebut. Secara khusus, ditemukan bahwa *bilang* secara signifikan lebih sering digunakan dalam diatesis pasif *di*- dari apa yang diharapkan, dan lebih jarang digunakan dari yang diharapkan pada diatesis aktif *meN*-. Dengan kata lain, bentuk *dibilang* lebih lazim dibandingkan *membilang*.
+Selanjutnya, frekuensi riil dalam keempat sel (A, B, C, D) pada @tbl-dca-riil menjadi masukan data untuk uji signifikansi statistik, seperti uji Fisher-Yates Exact, Chi-Square, atau Log-likelihood (yang akan digunakan pada makalah ini). Dalam konteks DCA, uji signifikansi digunakan untuk menentukan apakah ditemukan signifikansi statistik atas ketimpangan antara frekuensi kemunculan/pengamatan suatu koleksem (seperti *bilang*) dalam korpus dan frekuensi yang diharapkan terhadap konstruksi aktif *meN*- dan *di*-.
 
-Untuk analisis DCA yang tuntas, kalkulasi seperti pada @tbl-dca-riil diulang untuk tiap-tiap akar verba yang paling sedikit muncul satu kali dalam korpus dengan satu dari kedua konstruksi yang dibandingkan. Kemudian, tiap-tiap verba diurutkan berdasarkan derajat kekhasan (*Distinctiveness*) terhadap salah satu dari kedua konstruksi tersebut.
+Uji statistik menunjukkan bahwa terdapat ketimpangan yang signifikan (tidak merupakan suatu kebetulan) antara frekuensi pengamataan dan harapan untuk *bilang* terhadap kedua diatesis tersebut. Secara khusus, ditemukan bahwa *bilang* secara signifikan lebih sering digunakan dalam diatesis pasif *di*- dari apa yang diharapkan, dan lebih jarang digunakan dari yang diharapkan pada diatesis aktif *meN*-. Dengan kata lain, bentuk *dibilang* lebih lazim dibandingkan *membilang*. Untuk analisis DCA yang tuntas, kalkulasi seperti pada @tbl-dca-riil diulang untuk tiap-tiap akar verba yang paling sedikit muncul satu kali dalam korpus dengan satu dari kedua konstruksi yang dibandingkan. Kemudian, tiap-tiap verba diurutkan berdasarkan derajat kekhasan (*Distinctiveness*) terhadap salah satu dari kedua konstruksi tersebut. Komputasi DCA dilakukan dengan modul `collostructions` [@flach2021] untuk bahasa pemrograman R [@rcore2022].
+
+### Analisis Koleksem Khas untuk *meN*- vs. *di*- {#sec-dca-av-pass}
+
+
+
+```{r message=FALSE, warning=FALSE}
+#| label: dca-av-di
+tb2 <- readr::read_tsv("data/DCA-input-me-vs-di.tsv")
+dca_logll <- collostructions::collex.dist(tb2)
+
+intransitive_me <- c("angguk", "nikah", "turun", 
+                     "alir", "tular", "hilang", "serah", "lompat",
+                     "nyala", "tinggal",
+                     "tonjol", "inap", "luncur", "jelma", "hindar", "tunduk", "layang",
+                     "limpah", "ledak", "dongak", "letus", "lingkar", "rangkak",
+                     "jalar", "ringkuk", "bungkuk", "nyanyi", "julang", "endap",
+                     "cuat", "singkir", "ungsi", "loncat", "geliat", "susut", "rambat",
+                     "leleh", "renung", "susup", "kucur", "rekah", "lambung", "rebak",
+                     "rangsek", "jelajah", "kemuka", "apung", "urung", "hambur", "kembara",
+                     "lambai", "rajalela", "tancap", "sembul", "sangkut",
+                     "rembet", "rembes", "luap", "julur", "gumpal", "erang", "pancar",
+                     "layat", "igau", "bolos", "ciut", "tukik", "bangkang", "tangis", "aku", "langkah", "geleng", "tari", "keluh", "lintas", "rata", "terus", "rokok", "laju", "jauh", "baik")
+
+## distinctive for di- ======
+freq_di <- format(sum(tb2$di), big.mark = ".", decimal.mark = ",")
+dist_for_di <- dca_logll |> 
+  filter(ASSOC == "di", SIGNIF != "ns") |>
+  # filter(!COLLEX %in% c("perhatikan", "perbaiki", "mengerti", "masak", "luar")) |> 
+  arrange(desc(COLL.STR.LOGL)) |> 
+  select(COLLEX, freq_di = O.CXN1, freq_me = O.CXN2, ASSOC, COLL.STR.LOGL, SIGNIF, SHARED)  |>  
+  slice_max(n = 20, order_by = COLL.STR.LOGL) |> 
+  mutate(`Koleksem (N~*di*~ : N~*meN*-~)`= paste("*", COLLEX, "* (", 
+                                             prettyNum(freq_di, big.mark = ".", decimal.mark = ","), 
+                                             " : ", 
+                                             prettyNum(freq_me, big.mark = ".", decimal.mark = ","), ")", 
+                                             sep = ""), 
+         `Kekhasan (*di*-)` = format(round(COLL.STR.LOGL, 2), big.mark = ".", decimal.mark = ","))
+
+## distinctive for me- ======
+freq_me <- format(sum(tb2$me), big.mark = ".", decimal.mark = ",")
+dist_for_me <- dca_logll |> 
+  filter(ASSOC == "me", SIGNIF != "ns") |> 
+  filter(!COLLEX %in% intransitive_me) |> 
+  arrange(desc(COLL.STR.LOGL)) |> 
+  select(COLLEX, freq_di = O.CXN1, freq_me = O.CXN2, ASSOC, COLL.STR.LOGL, SIGNIF, SHARED) |> 
+  slice_max(n = 20, order_by = COLL.STR.LOGL) |> 
+  mutate(`Koleksem (N~*meN*~ : N~*di*-~)`= paste("*", COLLEX, "* (", 
+                                             prettyNum(freq_me, big.mark = ".", decimal.mark = ","), 
+                                             " : ", 
+                                             prettyNum(freq_di, big.mark = ".", decimal.mark = ","), ")", 
+                                             sep = ""), 
+         `Kekhasan (*meN*-)` = format(round(COLL.STR.LOGL, 2), big.mark = ".", decimal.mark = ","))
+
+```
+
+@tbl-av-vs-di menampilkan luaran standar DCA [@gries2004], dengan fokus pada dua puluh koleksem dengan derajat kekhasan (kolom `Kekhasan (...)`) tertinggi dan signifikan untuk untuk [*di*-+v] (bagian kiri) dan [*meN*-+v] (kanan). Semakin tinggi kekhasannya, semakin kuat koleksem tersebut berasosiasi khas dengan diatesis yang dimaksud. Nilai dalam kurung setelah bentuk koleksem menunjukkan frekuensi koleksem tersebut untuk masing-masing diatesis. Misalnya, *tuju* muncul `r dca_logll |> filter(COLLEX=='tuju') |> pull(O.CXN2) |> prettyNum(big.mark = ".", decimal.mark = ",")` kali dengan *meN*- (*menuju*) dan hanya `r dca_logll |> filter(COLLEX=='tuju') |> pull(O.CXN1) |> prettyNum(big.mark = ".", decimal.mark = ",")` kali dengan *di*- (*dituju*). Data pada @tbl-av-vs-di kemudian dapat diulas secara kualitatif guna melihat perbedaan fungsional atau semantis di antara kedua konstruksi tersebut. 
+
+
+```{r}
+#| label: tbl-av-vs-di
+#| tbl-cap: "Dua puluh (20) koleksem khas teratas untuk [*di*-+v] (panel kiri) dan [*meN*-+v] (panel kanan)"
+#| tbl-cap-location: top
+tb_print <- dist_for_di |> 
+  select(8:9) |> 
+  bind_cols(dist_for_me |> 
+              select(8:9))
+tb_print |> knitr::kable()
+# tb_print |>   flextable() |> 
+#   add_header_row(colwidths = c(2, 2),
+#                  values = c("Koleksem khas untuk [*di*-+v]", 
+#                             "Koleksem khas untuk [*meN*-+v]")) |> 
+#   autofit()
+```
+
+&nbsp;
+
+Setelah mengamati tipe verba yang khas untuk *meN*- dan *di*-, terlihat adanya preferensi semantis yang dapat mencirikan fungsi kedua diatesis tersebut. Untuk *meN*- sebagian besar koleksem verbal khas merujuk pada kejadian yang bersifat dinamis dan agentif (aksional), yaitu *tuju*, *cari*, *buat*, *bantu*, *coba*, *dorong*, *capai*, *lawan*, *ganggu*, *tarik*, *jaga*, *cakup*^[Arti *mencakup* adalah menangkap dengan mulut atau juga mencedok (dengan tangan) (https://kbbi.kemdikbud.go.id/entri/mencakup).], *jawab*, dan *toleh*. Hal ini dapat mengindikasikan kesesuaian antara makna aksional/dinamis verba tersebut dan makna prototipikal konstruksi aktif *meN*- yang memusatkan perhatiannya pada aliran energi dari AGEN/Subjek ke peran bukan AGEN (mis. PENDERITA).
+
+Di sisi lain, koleksem khas untuk pasif *di*- memiliki lebih banyak verba yang merujuk pada kejadian yang statis (termasuk yang bersifat mental), seperti *isi*, *anggap*, *kenal*, *percaya*, *duga*, *banding*, *terima*, *mengerti*, dan *hitung*. Kekhasan ini dapat dipandang sebagai pencirian pasif *di*- yang memusatkan pada keadaan akhir dibandingkan proses menuju keadaan tersebut. Tentu terdapat juga sejumlah verba khas untuk *di*- yang bersifat aksional, agentif, dan dinamis, seperti *gelar*, *susun*, *tanya*, *ubah*, *setor*, *sebut*.
+
+Selain pencirian kualitatif seperti di atas, DCA juga menunjukkan bahwa terdapat verba yang hanya ditemukan dalam korpus dalam konstruksi pasif [*di*-+v] namun tidak dalam [*meN*-+v] (begitupun sebaliknya), atau verba yang perbedaan frekuensinya sangat jauh di antara kedua diatesis tersebut. Contohnya, bentuk _**di**percaya_, yang tidak pernah digunakan dalam bentuk _**mem**percaya_, namun mesti dalam bentuk _**mem**percaya**i**_ (bandingkan [@moeliono2017, 131-132]). Hal ini menunjukkan bahwa pasif adalah konstruksi yang memiliki fungsi/makna dan tidak seutuhnya merupakan transformasi dari aktif (lihat juga [@rice1987]). Bentuk pasif *dipercaya* mungkin langsung dihasilkan mengingat fungsi pasif yang menonjolkan peran bukan AGEN (dalam hal ini sesuatu/orang yang dipercayai) sebagai argumen inti subjek, sehingga bentuk *dipercaya* memenuhi fungsi pasif tersebut. Contoh lain adalah *mengerti*, yang memiliki bentuk pasif _**di**mengerti_ namun akar tersebut merupakan gabungan diatesis aktif *meN*- dengan *erti*. Sekali lagi, bentuk pasif *dimengerti* bersifat spesifik secara leksikal dan cukup terpatri mengingat tingginya frekuensi bentuk ini. 
+
+Satu aspek lain yang ditunjukkan DCA adalah adanya ketimpangan besar antara distribusi suatu verba dengan kedua diatesis, seperti misalnya bentuk _**di**banding_ (N=`r dca_logll |> filter(COLLEX=='banding') |> pull(O.CXN1) |> prettyNum(big.mark = ".", decimal.mark = ",")`) lebih dominan dibandingkan _**mem**banding_ (N=`r dca_logll |> filter(COLLEX=='banding') |> pull(O.CXN2) |> prettyNum(big.mark = ".", decimal.mark = ",")`). Ketimpangan ini juga dapat menunjukkan bahwa (i) bentuk aktif _**mem**banding_ mungkin dihasilkan atas dasar analogi terhadap tingginya bentuk pasif _**di**banding_ atau (ii) berupa kesalahan menulis untuk bentuk aktif yang lebih kerap dengan akhiran -*kan*, yaitu _**mem**banding**kan**_.
+
 
 # Simpulan
 
--   Implikasi kespesifikan leksikal dalam tata bahasa
-    -   Kajian di bahasa Inggris juga menunjukkan bahwa terdapat kelompok frasa verba berpreposisi yang tidak memiliki bentuk pasif @rice1987
--   Menemukan sejumlah verba yang menunjukkan pelesapan akhiran pada bentuk pasif namun mempertahankannya pada bentuk aktif [lihat @moeliono2017, 131-132]
+Makalah ini mengulas sejumlah fitur sintaksis, semantis, dan leksikal untuk diatesis dalam bahasa Indonesia, utamanya diatesis pasif, diatesis objek, diatesis medial, dan preferensi leksikal diatesis aktif *meN*- vs. pasif *di*-. @sec-agent-encoding-di menunjukkan bahwa pasif *di*- di semua ragam teks lebih sering meninggalkan peran AGEN implisit. Kami juga memberikan bukti kuantitatif terkait gagasan terdahulu [@sneddon2010; @moeliono2017] bahwa (i) pronomina ketiga yang dominan sebagai tipe AGEN pasif *di*- (@fig-agent-pronoun-for-di-passive-VISUALISATION) dan (ii) pronomina secara umum (dibandingkan tipe lainnya) adalah tipe AGEN dominan untuk (sejumlah sampel verba dengan) diatesis objek (@fig-OV-agent-berikan dan @fig-pronoun-agent-comparison). Akan tetapi, dengan data korpus melimpah, kami juga menunjukkan adanya preferensi leksikal untuk suatu verba berdiatesis objek terkait bentuk pronomina mana yang lebih sering muncul sebagai AGEN dan bagaimana preferensi tersebut mencerminkan konseptualisasi berbeda terhadap kejadian yang dirujuk verba tersebut (@fig-pronoun-agent-comparison). Selanjutnya, @sec-medial menunjukkan bahwa makna ‘resiprokal/timbal-balik’ adalah yang paling produktif untuk pemarkah medial *ber*- di ketiga pengukuran produktifitas (lihat @fig-ber-semantics pada @sec-ber-middle) dan makna yang sama lebih kerap digunakan dalam korpus untuk *ber*-/-*an* namun memiliki produktifitas potensial yang lebih rendah dibandingkan makna ‘kejadian tak beraturan’ (lihat @fig-ber-an-semantics pada @sec-ber-an). Terakhir, kami mencontohkan penerapan analisis kuantitatif mutakhir, “Analisis Koleksem Khas” (DCA) (@sec-dca). DCA digunakan dalam menjelajahi sekaligus menguji temuan terdahulu terkait adanya kespesifikan/preferensi leksikal dalam suatu konstruksi gramatikal [@gries2004; @rajeg2021; @lier2022], seperti halnya konstruksi diatesis. Luaran DCA kemudian diulas secara kualitatif untuk menunjukkan bahwa preferensi leksikal tersebut mengungkap kandungan semantis dan fungsional dari konstruksi gramatikal (khususnya untuk studi kasus [*meN*-+v] vs. [*di*-+v]; @sec-dca-av-pass) yang cenderung dipandang sebagai formula tanpa kandungan semantis.
 
 # Daftar pustaka {.unnumbered}
