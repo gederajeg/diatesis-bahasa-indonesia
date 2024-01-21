@@ -1,0 +1,1 @@
+Your query “("di[a-z]+" "oleh" "diri kamu|kamu|diri engkau|engkau|dikau|dirimu|anda|Anda|diri kau|diri anda|diri Anda|kau"|"di[a-z]+" "olehmu|olehkau")” returned 15 matches in 12 different texts (in 29,987,513 words [17,277 texts]; frequency: 0.500 instances per million words), sorted on node word (15 hits)

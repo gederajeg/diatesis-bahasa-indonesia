@@ -1,0 +1,1 @@
+Your query “("di[a-z]+" "oleh" "saya|diri saya|diri kami|kami|diri kita|kita|diri aku|aku|diri hamba|hamba|daku|diriku"|"di[a-z]+" "olehku")” returned 51 matches in 45 different texts (in 29,987,513 words [17,277 texts]; frequency: 1.701 instances per million words), sorted on node word (51 hits)

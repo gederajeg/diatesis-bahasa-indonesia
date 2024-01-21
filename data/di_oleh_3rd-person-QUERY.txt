@@ -1,0 +1,1 @@
+Your query “("di[a-z]+" "oleh" "dia|diri dia|mereka|diri beliau|beliau|ia|dirinya|diri mereka"|"di[a-z]+" "olehnya")” returned 332 matches in 218 different texts (in 29,987,513 words [17,277 texts]; frequency: 11.071 instances per million words), sorted on node word (332 hits)
