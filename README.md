@@ -28,7 +28,7 @@ Cara mengutip repositori ini (dalam format
 > Rajeg, G. P. W., & Artawa, K. (2024). Data, Quarto Notebook, dan Kode
 > pemrograman R untuk “Kajian korpus kuantitatif terhadap aspek-aspek
 > diatesis dalam bahasa Indonesia” (Version 0.0.1) \[Data set\]
-> <https://github.com/gederajeg/diatesis-bahasa-indonesia>
+> <https://doi.org/10.5281/zenodo.10615406>
 
 Material pendukung (termasuk
 [data](https://github.com/gederajeg/diatesis-bahasa-indonesia/tree/main/data)

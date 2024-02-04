@@ -24,6 +24,6 @@ knitr::opts_chunk$set(
 
 Cara mengutip repositori ini (dalam format [APA](https://apastyle.apa.org/style-grammar-guidelines/references/examples)):
 
-> Rajeg, G. P. W., & Artawa, K. (2024). Data, Quarto Notebook, dan Kode pemrograman R untuk “Kajian korpus kuantitatif terhadap aspek-aspek diatesis dalam bahasa Indonesia” (Version 0.0.1) [Data set] https://github.com/gederajeg/diatesis-bahasa-indonesia
+> Rajeg, G. P. W., & Artawa, K. (2024). Data, Quarto Notebook, dan Kode pemrograman R untuk “Kajian korpus kuantitatif terhadap aspek-aspek diatesis dalam bahasa Indonesia” (Version 0.0.1) [Data set] https://doi.org/10.5281/zenodo.10615406
 
 Material pendukung (termasuk [data](https://github.com/gederajeg/diatesis-bahasa-indonesia/tree/main/data) dan [kode pemrograman R](https://github.com/gederajeg/diatesis-bahasa-indonesia/tree/main/codes)) untuk bab buku terkait alternasi diatesis dalam rangka kolaborasi penulisan Tata Bahasa Indonesia Kontemporer (TBIK) berbasis korpus. Naskah untuk bab buku tersebut kami tulis menggunakan [*Quarto*](https://quarto.org/) guna (i) menggabungkan narasi teks dan kode pemrograman R untuk analisis kuantitatif dan visualisasi, serta (ii) transparansi dan “keterciptaan ulang” (*reproducibility*) luaran analisis kuantitatif dan visualisasi. Berkasi *Quarto* ini dapat dilihat pada [`rajeg_artawa_2023-02-06-voice-cxn-for-tbik.qmd`](https://github.com/gederajeg/diatesis-bahasa-indonesia/blob/main/rajeg_artawa_2023-02-06-voice-cxn-for-tbik.qmd).
