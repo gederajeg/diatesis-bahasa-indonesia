@@ -1,0 +1,37 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Data, Quarto Notebook, dan Kode pemrograman R untuk
+  “Kajian korpus kuantitatif terhadap aspek-aspek diatesis
+  dalam bahasa Indonesia”
+message: >-
+  If you use this dataset, please cite it using the metadata
+  from this file.
+type: dataset
+authors:
+  - given-names: Gede Primahadi Wijaya
+    family-names: Rajeg
+    email: gede.rajeg@ling-phil.ox.ac.uk
+    affiliation: University of Oxford & Udayana University
+    orcid: 'https://orcid.org/0000-0002-2047-8621'
+  - given-names: Ketut
+    family-names: Artawa
+    affiliation: Udayana University
+    orcid: 'https://orcid.org/0000-0003-3759-1783'
+identifiers:
+  - type: url
+    value: 'https://github.com/gederajeg/diatesis-bahasa-indonesia'
+    description: GitHub repository
+keywords:
+  - diatesis
+  - voice alternation
+  - alternasi diatesis
+  - linguistik korpus kuantitatif
+  - quantitative corpus linguistics
+  - Indonesian linguistics
+  - morphosyntax
+license: CC-BY-NC-SA-4.0
+version: 0.0.1
+date-released: '2024-02-04'
