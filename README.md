@@ -6,7 +6,7 @@ Rajeg](https://www.ling-phil.ox.ac.uk/people/gede-rajeg)
 <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>
 & [Ketut Artawa](https://udayananetworking.unud.ac.id/professor/1784)
 <a itemprop="sameAs" content="https://orcid.org/0000-0003-3759-1783" href="https://orcid.org/0000-0003-3759-1783" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>
-<br /> *Created*: 04 February, 2024 ; *Updated*: 06 February, 2024
+<br /> *Created*: 04 February, 2024 ; *Updated*: 18 February, 2024
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
@@ -41,6 +41,8 @@ Naskah untuk bab buku tersebut kami tulis menggunakan
 [*Quarto*](https://quarto.org/) guna (i) menggabungkan narasi teks dan
 kode pemrograman R untuk analisis kuantitatif dan visualisasi, serta
 (ii) transparansi dan “keterciptaan ulang” (*reproducibility*) luaran
-analisis kuantitatif dan visualisasi. Berkasi *Quarto* ini dapat dilihat
-pada
+analisis kuantitatif dan visualisasi. Berkas *Quarto* ini telah
+[diterbitkan
+daring](https://gederajeg.github.io/diatesis-bahasa-indonesia/) dan kode
+sumbernya dapat dilihat pada
 [`rajeg_artawa_2023-02-06-voice-cxn-for-tbik.qmd`](https://github.com/gederajeg/diatesis-bahasa-indonesia/blob/main/rajeg_artawa_2023-02-06-voice-cxn-for-tbik.qmd).
