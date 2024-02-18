@@ -13,9 +13,16 @@ author:
         department: Faculty of Linguistics, Philology and Phonetics
         city: Oxford
         country: UK
+        url: https://www.ling-phil.ox.ac.uk
       - id: unud
         name: Universitas Udayana
         department: Bachelor of English Literature
+        city: Denpasar
+        country: Indonesia
+        url: https://fib.unud.ac.id
+      - id: cirhss
+        name: Centre for Interdisciplinary Research on the Humanities and Social Sciences (CIRHSS)
+        url: https://www.cirhss.org
         city: Denpasar
         country: Indonesia
   - name:
@@ -26,13 +33,19 @@ author:
     affiliation:
       - id: unud
         name: Universitas Udayana
-        department: Bachelor of English Literature & Doctoral Program of Linguistics
+        department: Bachelor of English Literature
+        city: Denpasar
+        country: Indonesia
+        url: https://fib.unud.ac.id
+      - id: cirhss
+        name: Centre for Interdisciplinary Research on the Humanities and Social Sciences (CIRHSS)
+        url: https://www.cirhss.org
         city: Denpasar
         country: Indonesia
 title-prefix: "Diatesis bahasa Indonesia"
 date: 2024-02-04
 date-modified: now
-abstract: "Makalah ini menampilkan kajian korpus kuantitatif guna (i) meninjau kembali sejumlah fitur diatesis dalam bahasa Indonesia yang diajukan pada buku-buku acuan terdahulu, dan (ii) menawarkan sudut pandang baru terkait adanya preferensi leksikal dan idiosinkrasi dalam tata bahasa secara luas. Terkait tipe AGEN diatesis pasif *di*- dan diatesis non-aktor, kami menunjukkan bahwa gagasan terdahulu masih didukung oleh data. Akan tetapi, ditemukan juga ketimpangan preferensi bentuk AGEN pronomina terhadap verba tertentu, yang dapat mencerminkan konseptualisasi berbeda atas kejadian yang dirujuk verba tersebut. Analisis terhadap diatesis medial *ber*- dan *ber*-/-*an* menunjukkan bahwa diatesis medial merupakan suatu konstruksi dengan beragam makna yang menunjukkan perbedaan produktivitas pada tataran semantis. Terakhir, kami juga menunjukkan bahwa fenomena yang dipandang bersifat alternasi antara aktif/pasif (khususnya konstruksi aktif [*meN*-+v] vs. pasif [*di*-+v]) juga menunjukkan adanya preferensi leksikal terkait (i) verba mana yang lebih khas muncul dalam konstruksi diatesis tertentu dan (ii) bagaimana kekhasan leksikal tersebut mengungkap nilai semantis dari konstruksi gramatikal tersebut."
+abstract: "Makalah ini menampilkan kajian korpus kuantitatif guna (i) meninjau kembali sejumlah fitur diatesis dalam bahasa Indonesia yang diajukan pada buku-buku acuan terdahulu, dan (ii) menawarkan sudut pandang baru terkait adanya preferensi leksikal dan idiosinkrasi dalam tata bahasa secara luas. Terkait tipe AGEN diatesis pasif *di*- (PASS) dan diatesis non-aktor (*undergoer voice* [UV]), kami menunjukkan bahwa gagasan terdahulu masih didukung oleh data. Akan tetapi, ditemukan juga ketimpangan preferensi bentuk AGEN pronomina terhadap verba tertentu, yang dapat mencerminkan konseptualisasi berbeda atas kejadian yang dirujuk verba tersebut. Analisis terhadap diatesis medial *ber*- dan *ber*-/-*an* menunjukkan bahwa diatesis medial merupakan suatu konstruksi dengan beragam makna yang menunjukkan perbedaan produktivitas pada tataran semantis. Terakhir, kami juga menunjukkan bahwa fenomena yang dipandang bersifat alternasi antara aktif/pasif (khususnya konstruksi aktif [*meN*-+v] vs. pasif [*di*-+v]) juga menunjukkan adanya preferensi leksikal terkait (i) verba mana yang lebih khas muncul dalam konstruksi diatesis tertentu dan (ii) bagaimana kekhasan leksikal tersebut mengungkap nilai semantis dari konstruksi gramatikal tersebut."
 keywords: 
   - sintaksis
   - linguistik korpus kuantitatif
@@ -111,7 +124,7 @@ library(flextable)
 source("codes/word_use_in_corpus.R")
 ```
 
-# Pendahuluan^[Penulis berterima kasih kepada I Wayan Arka dan tim peninjau atas komentar dan saran yang diberikan pada versi awal makalah ini. Segala kekurangan yang masih ditemukan merupakan tanggung jawab penulis.] {#sec-pengantar}
+# Pendahuluan^[Penulis berterima kasih kepada I Wayan Arka dan tim peninjau, M. Umar Muslim, atas komentar dan saran yang diberikan pada versi awal makalah ini. Segala kekurangan yang masih ditemukan merupakan tanggung jawab penulis.] {#sec-pengantar}
 
 Menurut Zúñiga dan Kittilä [-@zúñiga2019, 4], **diatesis** merujuk pada bagaimana partisipan (atau peran semantis \[*semantic role*\]) dalam suatu kejadian (yang diungkapkan oleh predikat verbal) dipetakan pada peran gramatikal dalam suatu kalimat. Peran gramatikal meliputi subjek, objek, pelengkap (*complement*), dan keterangan (*adjunct*), sedangkan peran semantis bisa meliputi AGEN/PELAKU, PENDERITA (*patient*), TEMA, PENERIMA, PENGALAM, STIMULUS, SUMBER, TUJUAN AKHIR (*goal*), dll. [@zúñiga2019, 4]. Dalam kalimat, pemetaan peran semantis pada peran gramatikal tersebut ditunjukkan melalui apa yang disebut dengan pemarkahan diatesis, atau *grammatical voice*. Pemarkahan ini terpusat pada predikat verbal dari kalimat. Selain dari sudut pandang pemarkahan morfologi dan pemilihan argumen/peran semantis yang dijadikan subjek kalimat, diatesis secara konseptual dalam Linguistik Kognitif (utamanya *Cognitive Grammar* [@langacker_cognitive_2008, 382-386; @maldonado_grammatical_2007]) dipandang sebagai “strategi alternasi” ketika mengkonseptualisasikan, dan menonjolkan partisipan dalam, suatu kejadian (lihat juga [@shibatani_conceptual_2006]).
 
@@ -399,13 +412,13 @@ ov_agent_pronomina <- ov_agent_pronomina |>
   mutate(AGENT_LEX = fct_relevel(AGENT_LEX, ov_agent_pronomina$AGENT_LEX))
 ```
 
-Selain pasif *di*-, buku TBBBI mengajukan tipe pasif kedua, yang disebut dengan pasif pronomina seperti pada contoh (@hiraukan-ov) berikut (dan contoh (@objective) pada @sec-pengantar). Seperti disebutkan pada @sec-pengantar, kalimat pada (@hiraukan-ov) bukanlah kalimat pasif namun merupakan diatesis non-aktor (OV/UV) berdasarkan bukti-bukti pada kajian sebelumnya [@arka_voice_2003; @arka2008]; sehingga label "pasif" tidak lagi digunakan dalam makalah ini untuk konstruksi seperti pada (@hiraukan-ov). Bentuk diatesis pasif *di*- ditampilkan pada (@hiraukan-pass).
+Selain pasif *di*-, buku TBBBI mengajukan tipe pasif kedua seperti pada contoh (@hiraukan-ov) berikut (dan contoh (@objective) pada @sec-pengantar). Seperti disebutkan pada @sec-pengantar, kalimat pada (@hiraukan-ov) bukanlah kalimat pasif namun merupakan diatesis non-aktor (OV/UV) berdasarkan bukti-bukti pada kajian sebelumnya [@arka_voice_2003; @arka2008]; sehingga label "pasif" tidak lagi digunakan dalam makalah ini untuk konstruksi seperti pada (@hiraukan-ov). Bentuk diatesis pasif *di*- ditampilkan pada (@hiraukan-pass).
 
 (@hiraukan-ov) \[Panas terik matahari\]~TEMA~ tak \[ia\]~AGEN~ _**hiraukan**_ demi mendapatkan penghasilan (B1Z19008)
 
 (@hiraukan-pass) [Rasa sakit itu]~TEMA~ tak lagi _**di**hiraukan_ [Komar]~AGEN~ (D1A14002)
 
-Perbedaan OV/UV dengan pasif *di*- (@hiraukan-pass) adalah (i) verba yang tidak dimarkahi *di*- dan (ii) posisi AGEN (yaitu *ia* pada contoh (@hiraukan-ov)) yang mendahului verbanya. Selain itu pasif *di*- secara sintaksis bersifat intransitif (karena AGEN-nya dapat dihilangkan dan/atau mengisi posisi argumen non-inti [@arka_voice_2003]) sedangkan OV/UV adalah transitif. Bentuk seperti (@hiraukan-ov) disebut pasif pronomina dalam TBBBI karena diasumsikan hanya digunakan jika AGEN-nya adalah pronomina persona (bukan nomina biasa) [@moeliono2017, 470-471]. Berdasarkan data korpus, kami meninjau apakah OV/UV hanya digunakan dengan AGEN pronomina persona saja dan seberapa tinggi frekuensinya.
+Perbedaan OV/UV dengan pasif *di*- (@hiraukan-pass) adalah (i) verba yang tidak dimarkahi *di*- dan (ii) posisi AGEN (yaitu *ia* pada contoh (@hiraukan-ov)) yang mendahului verbanya. Selain itu pasif *di*- secara sintaksis bersifat intransitif (karena AGEN-nya dapat dihilangkan dan/atau mengisi posisi argumen non-inti [@arka_voice_2003]) sedangkan OV/UV adalah transitif. Bentuk seperti (@hiraukan-ov) dalam TBBBI diasumsikan hanya digunakan jika AGEN-nya adalah pronomina persona (bukan nomina biasa) [@moeliono2017, 470-471]. Berdasarkan data korpus, kami meninjau apakah OV/UV hanya digunakan dengan AGEN pronomina persona saja dan seberapa tinggi frekuensinya.
 
 Sebagai ilustrasi, @fig-OV-agent-berikan menampilkan tipe AGEN pada OV/UV untuk verba *berikan*.
 

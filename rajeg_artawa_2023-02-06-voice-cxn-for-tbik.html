@@ -2,10 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Gede Primahadi Wijaya Rajeg">
+<meta name="author" content="Ketut Artawa">
 <meta name="dcterms.date" content="2024-02-04">
 <meta name="keywords" content="sintaksis, linguistik korpus kuantitatif, diatesis, bahasa Indonesia">
 
@@ -24,7 +26,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -60,6 +62,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -92,9 +95,38 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <meta name="citation_title" content="Kajian korpus kuantitatif terhadap aspek-aspek diatesis dalam bahasa Indonesia">
-<meta name="citation_abstract" content="Makalah ini menampilkan kajian korpus kuantitatif guna (i) meninjau kembali sejumlah fitur diatesis dalam bahasa Indonesia yang diajukan pada buku-buku acuan terdahulu, dan (ii) menawarkan sudut pandang baru terkait adanya preferensi leksikal dan idiosinkrasi dalam tata bahasa secara luas. Terkait tipe AGEN diatesis pasif *di*- dan diatesis non-aktor, kami menunjukkan bahwa gagasan terdahulu masih didukung oleh data. Akan tetapi, ditemukan juga ketimpangan preferensi bentuk AGEN pronomina terhadap verba tertentu, yang dapat mencerminkan konseptualisasi berbeda atas kejadian yang dirujuk verba tersebut. Analisis terhadap diatesis medial *ber*- dan *ber*-/-*an* menunjukkan bahwa diatesis medial merupakan suatu konstruksi dengan beragam makna yang menunjukkan perbedaan produktivitas pada tataran semantis. Terakhir, kami juga menunjukkan bahwa fenomena yang dipandang bersifat alternasi antara aktif/pasif (khususnya konstruksi aktif [*meN*-+v] vs. pasif [*di*-+v]) juga menunjukkan adanya preferensi leksikal terkait (i) verba mana yang lebih khas muncul dalam konstruksi diatesis tertentu dan (ii) bagaimana kekhasan leksikal tersebut mengungkap nilai semantis dari konstruksi gramatikal tersebut.">
+<meta name="citation_abstract" content="Makalah ini menampilkan kajian korpus kuantitatif guna (i) meninjau kembali sejumlah fitur diatesis dalam bahasa Indonesia yang diajukan pada buku-buku acuan terdahulu, dan (ii) menawarkan sudut pandang baru terkait adanya preferensi leksikal dan idiosinkrasi dalam tata bahasa secara luas. Terkait tipe AGEN diatesis pasif *di*- (PASS) dan diatesis non-aktor (*undergoer voice* [UV]), kami menunjukkan bahwa gagasan terdahulu masih didukung oleh data. Akan tetapi, ditemukan juga ketimpangan preferensi bentuk AGEN pronomina terhadap verba tertentu, yang dapat mencerminkan konseptualisasi berbeda atas kejadian yang dirujuk verba tersebut. Analisis terhadap diatesis medial *ber*- dan *ber*-/-*an* menunjukkan bahwa diatesis medial merupakan suatu konstruksi dengan beragam makna yang menunjukkan perbedaan produktivitas pada tataran semantis. Terakhir, kami juga menunjukkan bahwa fenomena yang dipandang bersifat alternasi antara aktif/pasif (khususnya konstruksi aktif [*meN*-+v] vs. pasif [*di*-+v]) juga menunjukkan adanya preferensi leksikal terkait (i) verba mana yang lebih khas muncul dalam konstruksi diatesis tertentu dan (ii) bagaimana kekhasan leksikal tersebut mengungkap nilai semantis dari konstruksi gramatikal tersebut.">
 <meta name="citation_keywords" content="sintaksis,linguistik korpus kuantitatif,diatesis,bahasa Indonesia">
+<meta name="citation_author" content="Gede Primahadi Wijaya Rajeg">
+<meta name="citation_author" content="Ketut Artawa">
 <meta name="citation_publication_date" content="2024-02-04">
 <meta name="citation_cover_date" content="2024-02-04">
 <meta name="citation_year" content="2024">
@@ -201,32 +233,48 @@ div.csl-indent {
 </div>
 
 
-<div class="quarto-title-meta-author">
+<div class="quarto-title-meta-author column-page-right">
   <div class="quarto-title-meta-heading">Authors</div>
   <div class="quarto-title-meta-heading">Affiliations</div>
   
     <div class="quarto-title-meta-contents">
     <p class="author"><a href="https://www.ling-phil.ox.ac.uk/people/gede-rajeg">Gede Primahadi Wijaya Rajeg</a> <a href="https://orcid.org/0000-0002-2047-8621" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
+            <a href="https://www.ling-phil.ox.ac.uk">
             University of Oxford
+            </a>
           </p>
         <p class="affiliation">
+            <a href="https://fib.unud.ac.id">
             Universitas Udayana
+            </a>
+          </p>
+        <p class="affiliation">
+            <a href="https://www.cirhss.org">
+            Centre for Interdisciplinary Research on the Humanities and Social Sciences (CIRHSS)
+            </a>
           </p>
       </div>
-      <div class="quarto-title-meta-contents">
+    <div class="quarto-title-meta-contents">
     <p class="author"><a href="https://udayananetworking.unud.ac.id/professor/1784">Ketut Artawa</a> <a href="https://orcid.org/0000-0003-3759-1783" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
-    <div class="quarto-title-meta-contents">
+  <div class="quarto-title-meta-contents">
         <p class="affiliation">
+            <a href="https://fib.unud.ac.id">
             Universitas Udayana
+            </a>
+          </p>
+        <p class="affiliation">
+            <a href="https://www.cirhss.org">
+            Centre for Interdisciplinary Research on the Humanities and Social Sciences (CIRHSS)
+            </a>
           </p>
       </div>
-    </div>
+  </div>
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-right">
 
       
     <div>
@@ -239,7 +287,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">February 7, 2024</p>
+      <p class="date-modified">February 18, 2024</p>
     </div>
   </div>
     
@@ -255,12 +303,20 @@ div.csl-indent {
   
 <div>
   <div class="abstract">
-    <div class="abstract-title">Abstract</div>
-    Makalah ini menampilkan kajian korpus kuantitatif guna (i) meninjau kembali sejumlah fitur diatesis dalam bahasa Indonesia yang diajukan pada buku-buku acuan terdahulu, dan (ii) menawarkan sudut pandang baru terkait adanya preferensi leksikal dan idiosinkrasi dalam tata bahasa secara luas. Terkait tipe AGEN diatesis pasif <em>di</em>- dan diatesis non-aktor, kami menunjukkan bahwa gagasan terdahulu masih didukung oleh data. Akan tetapi, ditemukan juga ketimpangan preferensi bentuk AGEN pronomina terhadap verba tertentu, yang dapat mencerminkan konseptualisasi berbeda atas kejadian yang dirujuk verba tersebut. Analisis terhadap diatesis medial <em>ber</em>- dan <em>ber</em>-/-<em>an</em> menunjukkan bahwa diatesis medial merupakan suatu konstruksi dengan beragam makna yang menunjukkan perbedaan produktivitas pada tataran semantis. Terakhir, kami juga menunjukkan bahwa fenomena yang dipandang bersifat alternasi antara aktif/pasif (khususnya konstruksi aktif [<em>meN</em>-+v] vs.&nbsp;pasif [<em>di</em>-+v]) juga menunjukkan adanya preferensi leksikal terkait (i) verba mana yang lebih khas muncul dalam konstruksi diatesis tertentu dan (ii) bagaimana kekhasan leksikal tersebut mengungkap nilai semantis dari konstruksi gramatikal tersebut.
+    <div class="block-title">Abstract</div>
+    Makalah ini menampilkan kajian korpus kuantitatif guna (i) meninjau kembali sejumlah fitur diatesis dalam bahasa Indonesia yang diajukan pada buku-buku acuan terdahulu, dan (ii) menawarkan sudut pandang baru terkait adanya preferensi leksikal dan idiosinkrasi dalam tata bahasa secara luas. Terkait tipe AGEN diatesis pasif <em>di</em>- (PASS) dan diatesis non-aktor (<em>undergoer voice</em> [UV]), kami menunjukkan bahwa gagasan terdahulu masih didukung oleh data. Akan tetapi, ditemukan juga ketimpangan preferensi bentuk AGEN pronomina terhadap verba tertentu, yang dapat mencerminkan konseptualisasi berbeda atas kejadian yang dirujuk verba tersebut. Analisis terhadap diatesis medial <em>ber</em>- dan <em>ber</em>-/-<em>an</em> menunjukkan bahwa diatesis medial merupakan suatu konstruksi dengan beragam makna yang menunjukkan perbedaan produktivitas pada tataran semantis. Terakhir, kami juga menunjukkan bahwa fenomena yang dipandang bersifat alternasi antara aktif/pasif (khususnya konstruksi aktif [<em>meN</em>-+v] vs.&nbsp;pasif [<em>di</em>-+v]) juga menunjukkan adanya preferensi leksikal terkait (i) verba mana yang lebih khas muncul dalam konstruksi diatesis tertentu dan (ii) bagaimana kekhasan leksikal tersebut mengungkap nilai semantis dari konstruksi gramatikal tersebut.
+  </div>
+</div>
+
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p>sintaksis, linguistik korpus kuantitatif, diatesis, bahasa Indonesia</p>
   </div>
 </div>
 
 </header>
+
 
 <hr>
 <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a> <a href="https://doi.org/10.5281/zenodo.10615406"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.10615406.svg" class="img-fluid" alt="DOI"></a> <a href="http://dx.doi.org/10.6084/m9.figshare.25142834"><img src="https://img.shields.io/badge/doi-10.6084/m9.figshare.25142834-blue.svg?style=flat&amp;labelColor=gainsboro&amp;logoWidth=40&amp;logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAFAAAAAZCAYAAACmRqkJAAAKi0lEQVR4Ae3ZaVBUV97H8evuE0EfH32MmkcfoyAuGjXKgkvMaFRAFuiloemWvRuEXlgEBREXBYJiXAQUFeKocUniQiKogAJhQWwWENDEjLNYvjFLzUzNkplEZb5kTme6nCRjKlOpSZlb9SmL2%2Ffcuv3re87%2FnKP0TYfOcslqPMbt63xBKuh09MTxgi7HKT1Sj1TvKp%2BMkZB6%2FXT8c4AjUYPyVdfb7Qs6HTIJ8EHe7Ul%2B152CphDabRQ0uMr7%2FRQgh%2B8qU6%2FBiPDVGv0jq0uGE94b0ZZ3j%2B25MTetoMsh%2FWD91OBqT9%2Fsehd5EqGV17nKMzTqOHvaRMMLEp7qACfinq%2FW1BBx5ZxB13x5X3Jr1v%2Fz9pUcaHU63PiicjrhvXfNRbY1Th49Q6Y1vu6zyqSjzX3aVIgf4OkKToxhgxpd5OMzV0bYE4CRN1Chu34pnTfwnV03FiTlfzDRXBHo6dfgIq8sX6ByV6vjthGc0UdrrPPVGFQBxlSjzJQWENVUZkebceiLpyM8IZSx7O7Zl4JivUNMZX5h8Rt4%2B2L0llKfgu6JKa%2BXvpB5bZ48%2Ba3F6lil2pDkE2rODzCsU0VUnNFHNZQqdS3lx3Utl%2FMILQcfYt5TEeC1GSprgAq0XlgYGLQyxJTlr0uK0DVX7E5s2ZtOgHvLw5fLK9xVmcqguEj%2F2LXbwsvPBkZZKl4j5NcIKinaUsLbejFWZ7m8Do2cmwnb4cFqArRwx3TEYzi%2Bz7DTD0uhxnj8cAEWWUZK%2BTcdhh4pmTWUsW01Y1uCUmNY7Rtqzo5svJSS0poVXtg6yVj7sn9qunek3j8xPVXXeMFoaDkev6lDF7ene7Y5r2taNAXmEBXaP69zevaOjuUeeZ0zhzJuPsM5CdYvOhZVqBMhBqIVDt8zwGdQjR4of9AA%2BXJjUFpww7GodnHAQca4srDAWCXjW3pETal%2BbfumuOLKqSm17vIQtWr1Uu3JYy6JbXuXFbRN1R8pm5byxtG5CcdOz9EUVc7I5IeQEWQ7wWVwzwrsRn%2BbAFeiCxNsKv5Y9P03BFgjAlT90AGOQy2T47fObl00ocFZHl%2B2UGXw0RjzNUWHTPFthckHWh18al8KsGuaFigVVzlKuY%2BG9z37qvuoGlelpsJVldrgrFjbOE%2BeWe8uW18W84qCqc4s7tmCIgzI75hs%2FaJKNFu7rF%2BIIIhr%2BmIQ%2Btn8LQkDMQOeWAYnDHgsQI3NNU7W9j4h5t72o%2FEyvLEQ%2F%2Bu7ymzbOxbCAeOxAgtghz6YgOVYiufEOUlqu0M37ho%2BYn%2FnpJT8bsejVSt90uqdFdlGmV7hF7cuWXetNCShLX%2BI3nKhN%2ByvCs%2Bs6GQpWB33fzKNQR%2BqWr022yvc94q7spBCY%2Bbzkou6ZfJNPf89ZN%2FdidYHnIsKfIzjCMIc7MAwSJiMPFxGMcKQixGwx07R%2FiEe4CNsxFCbAJvwifj8LkIgYRHa8Lm47jNY8AokmMS5NryPh%2FijOB%2BOX4h7foEuyPHlisMtylJpzu1YspkQ36YbLqnx8F1X4abaqmYs9DGmLlrk4CE9XlHlKZskxfpt%2FUJLzyhV23dG%2BITF72fqo9njEaokwIu8lSbG1N4wx273CrP%2B%2BjniQVZhGrzQjlEioFIRcjDM6MIdjBVtHogvl4W9qIX8sTfwU5SgU%2FzdhdGYLcJ9BzvRID6vgx2SxN8PUI9KnIEWH4n7FuIo%2FoRfYV5vMMV4wHRFs%2BvG%2FKl05ZrDVdP11T7eulK3oNQcz%2FAXcj3DpMePjO44KetDL2lDh%2FmV1S3nNoeWnJb7RSXmMJl%2BI0GmH13rKs8lvEdQwfoWKmCxdmGbAEdgAW5jFiQhBb8WXSYTPSjGCBHaMPR5LMANkOCM%2B%2FgD3MS5Z8W1ElzwW3HNJCSI9tcw2ub%2BO8T5LPTBQBy1nusNcB7ztximI1sIsSSzXb04v3vyusJmx63nMufHXlV6LvpEShDd9x%2FHFYWXVPuSX7%2FD7zmpcjuWRupbyvaHnj8Z7BNsUFCArm70iTRcd5bFEN7oxwJs%2FpoA%2FwfBaLJ2Z2EFbmEsNKL7fYYPUI9DIqj%2Fsgkw0CasW%2BL6RbBDFI7gTZSKzz6Gk02AJ23G3QF4xybYU8INce6s5CJNlTyXhYwKv%2FRWMiEeimquzIhrPpGzuSNCsbvLec2%2Brpmh2e0yu%2FxOp96wv6p8X0xeIZW5Bo2%2F6ucdvb%2FdMWVDm8lX11pRpD16OJ6VyZsrQ8yK%2BVFJ9h4UhwEHDj5JgGE23UkSfoZujMMzSESNCPBT9KAFjqi2rcIYZRPgYmzDQ9xDLSz4%2FGsCPIE%2BNkWrTJy%2FhRrRthpVyJJExbnmG2I%2B6x%2BT%2FHxYyQkzQfJGlufpWy6bYlvPUEgu%2BHlHJA5boo7rE3blnBR7r6mv%2BvCBMYEag%2Faqsyr1%2BIk5a%2Fd2z9zGBDpZ31qulCWk9443Hfg5BuJJAgxAG0ZBEmS4DZ7RKIliMVi0d8UvRUCeuPoNAf4Z%2FmgV13pAwiwR3iffFKBQJM5noB%2F6Y5h45v7Wwf0cDtD1DlMIeiugWmZOy5Cv3RgjX7%2FF4GdMXasOjgurmqdafqpojltml9IjvOJ8NMu9lNL5gQmXdMu0BTefz8loMyoJvivs3VMZvhpjqaig%2FZ8gwJGYIsIKRh%2FY4wh%2Bg%2FGQoxYbREgZ%2BB3uww1V3xKgN%2BrwCNtF4Pvx8NveQCEYX%2BAukhCIYuHZLy%2FyDjHbJQfo7PTK1dEBWqPBX2vS%2B2hNW1XquDURypiwXStCjVWuyrSKQC%2FdoUaHtOT2HENoyal4b40x7rK7ylip9NIV3Jy0P6fD24fl3Ra6uoe3PNqOH2Pw3x%2FC8K8CHIU%2BIpQ7OI8yNOJ9TMJO%2FAU9Nn6PjRiGmm%2FpwgsRLQpKjwjuU%2Fz1CQK0R4G4T4%2FwCHWYKlmcA6xr4SA2EzobXeUa9vh21LgpdKxK8hqd5RsaXWS7S9YvlhU2O7ya3ekXrm%2B9lK3KzFH6a4y5V92Ve5hkM4d02EShMestZekE2IxZX7MWdkAgBtmsi9U2lXEwliAOK%2BGLTowThWIZkrEVSSKYgegPOUxwtFmdaBGLsRgg2qeKtosQDh2GYzbisUIEaPvcQ8T5VGzCKowBk2I3mTVALe4wd4tumKcoaZirSKte4RtVrvXwLrw%2BJXV%2F18Ts3BtLEmOaS0yRtRdMfpGJhTKNMbDJWR5V7eEbUNDtcIQAd1PJMwnuJl6E9KQHY7AAHkzQoBkj8B%2B%2FpTWQ4Maezne1P3x1esLBuqmB%2BbccNhJMGetbM%2BGZIi1V%2FoRyOXB77sKVWuPmrd4RBvYQm9ihVue%2F7xDPGljB50MoJmO%2By36gCGsQovCyCGwOarD9R7PLLXZOJjKZvse%2FDQQSvffG7F1rWrZPiLKUX2DPr1hbfHAKb0kDBSeTed5MQj94Pn1xBMvA%2B2IDYTAkcXzXANPRjHq04ACeFeH9aAIcBC3LOq%2FY5pPDeYtO4yRTmzUhbx9LozCEea8ybaHoxDNmVtPltxSVzxhCm3Asg4Tvs683Aa5wwkD8qP9XbgQqUbb6Tp09U5Os3rWiV4jZv2OuvxPdvht70RfST8fjATZd7P33OYzxZ%2FdF7FwcgqPU0yMR2vMYDulpDfBvw%2BGCdBePpq8AAAAASUVORK5CYII%3D" class="img-fluid" alt="DOI"></a> <br>Berkas dalam repositori GitHub ini berlisensi <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
@@ -273,7 +329,7 @@ div.csl-indent {
 <section id="sec-pengantar" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Pendahuluan<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h1>
 <p>Menurut Zúñiga dan Kittilä <span class="citation" data-cites="zúñiga2019"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 4]</a></span>, <strong>diatesis</strong> merujuk pada bagaimana partisipan (atau peran semantis [<em>semantic role</em>]) dalam suatu kejadian (yang diungkapkan oleh predikat verbal) dipetakan pada peran gramatikal dalam suatu kalimat. Peran gramatikal meliputi subjek, objek, pelengkap (<em>complement</em>), dan keterangan (<em>adjunct</em>), sedangkan peran semantis bisa meliputi AGEN/PELAKU, PENDERITA (<em>patient</em>), TEMA, PENERIMA, PENGALAM, STIMULUS, SUMBER, TUJUAN AKHIR (<em>goal</em>), dll. <span class="citation" data-cites="zúñiga2019"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 4]</a></span>. Dalam kalimat, pemetaan peran semantis pada peran gramatikal tersebut ditunjukkan melalui apa yang disebut dengan pemarkahan diatesis, atau <em>grammatical voice</em>. Pemarkahan ini terpusat pada predikat verbal dari kalimat. Selain dari sudut pandang pemarkahan morfologi dan pemilihan argumen/peran semantis yang dijadikan subjek kalimat, diatesis secara konseptual dalam Linguistik Kognitif (utamanya <em>Cognitive Grammar</em> <span class="citation" data-cites="langacker_cognitive_2008 maldonado_grammatical_2007"><a href="#ref-langacker_cognitive_2008" role="doc-biblioref">[2, pp. 382–386]</a>, <a href="#ref-maldonado_grammatical_2007" role="doc-biblioref">[3]</a></span>) dipandang sebagai “strategi alternasi” ketika mengkonseptualisasikan, dan menonjolkan partisipan dalam, suatu kejadian (lihat juga <span class="citation" data-cites="shibatani_conceptual_2006"><a href="#ref-shibatani_conceptual_2006" role="doc-biblioref">[4]</a></span>).</p>
-<p>Dalam bahasa Indonesia (BI), terdapat empat jenis diatesis: (i) diatesis aktif (<em>active/agentive voice</em>, disingkat [AV]), (ii) diatesis medial (<em>middle voice</em> [MID] (<a href="#sec-medial">§&nbsp;4.2</a>)), (iii) diatesis pasif (<em>passive voice</em> [PASS]), dan (iv) diatesis non-aktor (<em>objective voice</em> [OV] dalam terminologi Arka dan Manning <span class="citation" data-cites="arka2008"><a href="#ref-arka2008" role="doc-biblioref">[5, p. 52]</a></span>, atau yang lebih umum disebut <em>undergoer voice</em> [UV] <span class="citation" data-cites="arka_voice_2003"><a href="#ref-arka_voice_2003" role="doc-biblioref">[6]</a></span>; diatesis non-aktor selanjutnya akan disingkat dengan OV/UV). Diatesis aktif (contoh (1)) memetakan partisipan mirip AGEN (<em>agent-like role</em>) sebagai subjek kalimat (lihat <em>ia</em> pada contoh (1)). Secara morfologis, diatesis aktif BI ditunjukkan oleh pemarkahan predikat verbal dengan awalan <em>meN</em>-.</p>
+<p>Dalam bahasa Indonesia (BI), terdapat empat jenis diatesis: (i) diatesis aktif (<em>active/agentive voice</em>, disingkat [AV]), (ii) diatesis medial (<em>middle voice</em> [MID] (<a href="#sec-medial" class="quarto-xref">§&nbsp;4.2</a>)), (iii) diatesis pasif (<em>passive voice</em> [PASS]), dan (iv) diatesis non-aktor (<em>objective voice</em> [OV] dalam terminologi Arka dan Manning <span class="citation" data-cites="arka2008"><a href="#ref-arka2008" role="doc-biblioref">[5, p. 52]</a></span>, atau yang lebih umum disebut <em>undergoer voice</em> [UV] <span class="citation" data-cites="arka_voice_2003"><a href="#ref-arka_voice_2003" role="doc-biblioref">[6]</a></span>; diatesis non-aktor selanjutnya akan disingkat dengan OV/UV). Diatesis aktif (contoh (1)) memetakan partisipan mirip AGEN (<em>agent-like role</em>) sebagai subjek kalimat (lihat <em>ia</em> pada contoh (1)). Secara morfologis, diatesis aktif BI ditunjukkan oleh pemarkahan predikat verbal dengan awalan <em>meN</em>-.</p>
 <ol class="example" type="1">
 <li>Karena itu ia<sub>AGEN</sub> mulai <em><strong>men</strong>uliskan</em> [ide-ide itu]<sub>TEMA</sub> menjadi rangkaian cerita. (B3Z12025)</li>
 </ol>
@@ -285,20 +341,20 @@ div.csl-indent {
 <ol start="3" class="example" type="1">
 <li>[Hasil penafsiran atas fakta-fakta itu]<sub>TEMA</sub> kita<sub>AGEN</sub> <em>tuliskan</em> menjadi suatu kisah sejarah yang selaras. (G1C20001)</li>
 </ol>
-<p>Dalam <em>Tata Bahasa Baku Bahasa Indonesia</em> (TBBBI) <span class="citation" data-cites="moeliono2017"><a href="#ref-moeliono2017" role="doc-biblioref">[9, pp. 471–472]</a></span>, konstruksi pada contoh (3) dianggap sebagai konstruksi pasif (tipe kedua). Akan tetapi, Arka <span class="citation" data-cites="arka_voice_2003"><a href="#ref-arka_voice_2003" role="doc-biblioref">[6]</a></span>, juga Arka dan Manning <span class="citation" data-cites="arka2008"><a href="#ref-arka2008" role="doc-biblioref">[5]</a></span>, telah menunjukkan bukti-bukti bahwa konstruksi seperti (3) berbeda dengan konstruksi pasif, sehingga dipandang sebagai konstruksi diatesis tersendiri dan disebut diatesis non-aktor (OV/UV), suatu diatesis yang merupakan konsensus mutakhir dari sejumlah kajian diatesis pada bahasa Austronesia <span class="citation" data-cites="arka_voice_2003 riesberg_symmetrical_2014"><a href="#ref-arka_voice_2003" role="doc-biblioref">[6]</a>, <a href="#ref-riesberg_symmetrical_2014" role="doc-biblioref">[11]</a></span>. Selain ketiga diatesis di atas, kami juga mengulas diatesis medial (<a href="#sec-medial">§&nbsp;4.2</a>), utamanya yang dimarkahi dengan awalan <em>ber-</em> (<a href="#sec-ber-middle">§&nbsp;4.2.1</a>) dan konfiks <em>ber-</em>/<em>-an</em> (<a href="#sec-ber-an">§&nbsp;4.2.2</a>).</p>
-<p>Makalah ini memusatkan pembahasan pada bagaimana keberlimpahan data dan analisis kuantitatif dapat dimanfaatkan untuk (i) meninjau kembali sejumlah gagasan terkait ciri-ciri diatesis (<a href="#sec-passive-objective">§&nbsp;4.1</a>), dan (ii) menjelajahi isu terkini atas batasan leksikal suatu konstruksi gramatikal, seperti diatesis (<a href="#sec-dca">§&nbsp;4.3</a>).</p>
+<p>Dalam <em>Tata Bahasa Baku Bahasa Indonesia</em> (TBBBI) <span class="citation" data-cites="moeliono2017"><a href="#ref-moeliono2017" role="doc-biblioref">[9, pp. 471–472]</a></span>, konstruksi pada contoh (3) dianggap sebagai konstruksi pasif (tipe kedua). Akan tetapi, Arka <span class="citation" data-cites="arka_voice_2003"><a href="#ref-arka_voice_2003" role="doc-biblioref">[6]</a></span>, juga Arka dan Manning <span class="citation" data-cites="arka2008"><a href="#ref-arka2008" role="doc-biblioref">[5]</a></span>, telah menunjukkan bukti-bukti bahwa konstruksi seperti (3) berbeda dengan konstruksi pasif, sehingga dipandang sebagai konstruksi diatesis tersendiri dan disebut diatesis non-aktor (OV/UV), suatu diatesis yang merupakan konsensus mutakhir dari sejumlah kajian diatesis pada bahasa Austronesia <span class="citation" data-cites="arka_voice_2003 riesberg_symmetrical_2014"><a href="#ref-arka_voice_2003" role="doc-biblioref">[6]</a>, <a href="#ref-riesberg_symmetrical_2014" role="doc-biblioref">[11]</a></span>. Selain ketiga diatesis di atas, kami juga mengulas diatesis medial (<a href="#sec-medial" class="quarto-xref">§&nbsp;4.2</a>), utamanya yang dimarkahi dengan awalan <em>ber-</em> (<a href="#sec-ber-middle" class="quarto-xref">§&nbsp;4.2.1</a>) dan konfiks <em>ber-</em>/<em>-an</em> (<a href="#sec-ber-an" class="quarto-xref">§&nbsp;4.2.2</a>).</p>
+<p>Makalah ini memusatkan pembahasan pada bagaimana keberlimpahan data dan analisis kuantitatif dapat dimanfaatkan untuk (i) meninjau kembali sejumlah gagasan terkait ciri-ciri diatesis (<a href="#sec-passive-objective" class="quarto-xref">§&nbsp;4.1</a>), dan (ii) menjelajahi isu terkini atas batasan leksikal suatu konstruksi gramatikal, seperti diatesis (<a href="#sec-dca" class="quarto-xref">§&nbsp;4.3</a>).</p>
 </section>
 <section id="kajian-pustaka" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Kajian pustaka</h1>
-<p>Buku-buku tata bahasa BI <span class="citation" data-cites="alwi2000 sneddon2010 moeliono2017"><a href="#ref-moeliono2017" role="doc-biblioref">[9]</a>, <a href="#ref-sneddon2010" role="doc-biblioref">[10]</a>, <a href="#ref-alwi2000" role="doc-biblioref">[12]</a></span> telah mengulas bentuk kata kerja penanda kalimat aktif dan “kaidah umum untuk pembentukan kalimat pasif dari kalimat aktif” <span class="citation" data-cites="alwi2000"><a href="#ref-alwi2000" role="doc-biblioref">[12, p. 345]</a></span>. Akan tetapi, kajian kuantitatif terhadap data korpus dalam makalah ini (<a href="#sec-dca">§&nbsp;4.3</a>), dan yang telah dilakukan sebelumnya <span class="citation" data-cites="rra:2020 rajeg2022"><a href="#ref-rra:2020" role="doc-biblioref">[13]</a>, <a href="#ref-rajeg2022" role="doc-biblioref">[14]</a></span>, akan menunjukkan bahwa bentuk pasif tidak harus memiliki bentuk aktif, dan oleh karena itu, bentuk pasif mesti dipandang sebagai suatu unit konstruksi tersendiri yang bukan dan tidak selalu merupakan transformasi dari bentuk aktif.</p>
-<p>Sebelum penulisan makalah ini, kajian korpus kuantitatif dan eksperimental termutakhir atas diatesis BI <span class="citation" data-cites="rra:2020 rajeg2022"><a href="#ref-rra:2020" role="doc-biblioref">[13]</a>, <a href="#ref-rajeg2022" role="doc-biblioref">[14]</a></span> juga telah menunjukkan bahwa bentuk pasif berbeda dengan bentuk aktif dari segi preferensi semantisnya (yaitu kecenderungan mengungkapkan makna tertentu dalam bentuk tertentu) dan mesti dipandang sebagai unit konstruksi mandiri. Misalnya, makna ‘mewajibkan’ dari verba <em>kenai</em> lebih signifikan diasosiasikan dengan bentuk pasif <em>dikenai</em> dan tidak pernah diungkapkan dalam bentuk aktif <em>mengenai</em>, yang mengungkapkan arti fisik <span class="citation" data-cites="rra:2020"><a href="#ref-rra:2020" role="doc-biblioref">[13]</a></span>. Perbedaan makna ini juga menunjukkan bahwa makna tertentu dapat langsung diungkapkan dalam bentuk pasif tanpa perlu memiliki bentuk aktifnya. Kajian eksperimental <span class="citation" data-cites="rajeg2022"><a href="#ref-rajeg2022" role="doc-biblioref">[14]</a></span> juga menunjukkan bahwa penutur merekam, dalam khasanah kebahasaan mereka, bentuk diatesis yang dominan digunakan untuk mengungkapkan makna tertentu dari suatu verba. Preferensi semantis ini juga mengindikasikan bahwa komponen yang dipandang secara tradisional sebagai suatu kaidah tata bahasa (misalnya alternasi aktif-pasif) memiliki kekhasan dan batasan leksikal <span class="citation" data-cites="lier2022"><a href="#ref-lier2022" role="doc-biblioref">[15]</a></span> (lihat <a href="#sec-dca">§&nbsp;4.3</a>). Kemudian, ulasan fungsi, makna dan produktivitas pemarkah diatesis aktif <em>meN</em>- beserta kaitannya dengan transitivitas telah dibahas pada tulisan lain terkait proyek ini oleh Rajeg dan Denistia <span class="citation" data-cites="rajeg2023"><a href="#ref-rajeg2023" role="doc-biblioref">[16]</a></span>; makalah kali ini menitikberatkan pada fitur diatesis pasif dan non-aktor (OV/UV) (<a href="#sec-passive-objective">§&nbsp;4.1</a>) yang tidak dibahas pada tulisan tersebut. Diatesis bahasa Indonesia juga telah diulas dari sudut pandang teoretis <span class="citation" data-cites="arka2008 cole2008"><a href="#ref-arka2008" role="doc-biblioref">[5]</a>, <a href="#ref-cole2008" role="doc-biblioref">[17]</a></span> dan tipologis <span class="citation" data-cites="artawa_pemarkahan_2020"><a href="#ref-artawa_pemarkahan_2020" role="doc-biblioref">[8]</a></span> yang kali ini akan dilanjutkan dengan nuansa kuantitatif.</p>
-<p>Selanjutnya, beberapa kajian teoretis terkait diatesis medial (<a href="#sec-medial">§&nbsp;4.2</a>) dalam BI dan bahasa terkait (mis. bahasa Bali) telah dilakukan dalam kurun waktu sepuluh tahun terakhir <span class="citation" data-cites="udayana2013 udayana2021 beavers2022"><a href="#ref-udayana2013" role="doc-biblioref">[18]</a>–<a href="#ref-beavers2022" role="doc-biblioref">[20]</a></span>. Secara umum, ketiga kajian terdahulu tersebut membahas aspek sintaksis dan semantis dari diatesis medial BI. Salah satu analisis yang diajukan oleh Udayana <span class="citation" data-cites="udayana2021"><a href="#ref-udayana2021" role="doc-biblioref">[19]</a></span>, juga Beaver dan Udayana <span class="citation" data-cites="beavers2022"><a href="#ref-beavers2022" role="doc-biblioref">[20]</a></span>, adalah bahwa <em>ber-</em> berfungsi untuk meniadakan salah satu argumen dari verba transitif dasar yang melekat pada <em>ber-</em>. Tulisan terkait lainnya <span class="citation" data-cites="rajeg2023"><a href="#ref-rajeg2023" role="doc-biblioref">[16]</a></span> juga telah mengulas secara kualitatif beragam arti <em>ber</em>-, beserta produktivitas morfologisnya namun bukan produktivitas semantisnya. Makalah kami memusatkan analisis produktivitas semantis bentukan verba dalam diatesis medial (<a href="#sec-medial">§&nbsp;4.2</a>). Kami akan menunjukkan bahwa produktivitas suatu diatesis berdasarkan satu afiks dapat berbeda pada tataran semantis.</p>
+<p>Buku-buku tata bahasa BI <span class="citation" data-cites="alwi2000 sneddon2010 moeliono2017"><a href="#ref-moeliono2017" role="doc-biblioref">[9]</a>, <a href="#ref-sneddon2010" role="doc-biblioref">[10]</a>, <a href="#ref-alwi2000" role="doc-biblioref">[12]</a></span> telah mengulas bentuk kata kerja penanda kalimat aktif dan “kaidah umum untuk pembentukan kalimat pasif dari kalimat aktif” <span class="citation" data-cites="alwi2000"><a href="#ref-alwi2000" role="doc-biblioref">[12, p. 345]</a></span>. Akan tetapi, kajian kuantitatif terhadap data korpus dalam makalah ini (<a href="#sec-dca" class="quarto-xref">§&nbsp;4.3</a>), dan yang telah dilakukan sebelumnya <span class="citation" data-cites="rra:2020 rajeg2022"><a href="#ref-rra:2020" role="doc-biblioref">[13]</a>, <a href="#ref-rajeg2022" role="doc-biblioref">[14]</a></span>, akan menunjukkan bahwa bentuk pasif tidak harus memiliki bentuk aktif, dan oleh karena itu, bentuk pasif mesti dipandang sebagai suatu unit konstruksi tersendiri yang bukan dan tidak selalu merupakan transformasi dari bentuk aktif.</p>
+<p>Sebelum penulisan makalah ini, kajian korpus kuantitatif dan eksperimental termutakhir atas diatesis BI <span class="citation" data-cites="rra:2020 rajeg2022"><a href="#ref-rra:2020" role="doc-biblioref">[13]</a>, <a href="#ref-rajeg2022" role="doc-biblioref">[14]</a></span> juga telah menunjukkan bahwa bentuk pasif berbeda dengan bentuk aktif dari segi preferensi semantisnya (yaitu kecenderungan mengungkapkan makna tertentu dalam bentuk tertentu) dan mesti dipandang sebagai unit konstruksi mandiri. Misalnya, makna ‘mewajibkan’ dari verba <em>kenai</em> lebih signifikan diasosiasikan dengan bentuk pasif <em>dikenai</em> dan tidak pernah diungkapkan dalam bentuk aktif <em>mengenai</em>, yang mengungkapkan arti fisik <span class="citation" data-cites="rra:2020"><a href="#ref-rra:2020" role="doc-biblioref">[13]</a></span>. Perbedaan makna ini juga menunjukkan bahwa makna tertentu dapat langsung diungkapkan dalam bentuk pasif tanpa perlu memiliki bentuk aktifnya. Kajian eksperimental <span class="citation" data-cites="rajeg2022"><a href="#ref-rajeg2022" role="doc-biblioref">[14]</a></span> juga menunjukkan bahwa penutur merekam, dalam khasanah kebahasaan mereka, bentuk diatesis yang dominan digunakan untuk mengungkapkan makna tertentu dari suatu verba. Preferensi semantis ini juga mengindikasikan bahwa komponen yang dipandang secara tradisional sebagai suatu kaidah tata bahasa (misalnya alternasi aktif-pasif) memiliki kekhasan dan batasan leksikal <span class="citation" data-cites="lier2022"><a href="#ref-lier2022" role="doc-biblioref">[15]</a></span> (lihat <a href="#sec-dca" class="quarto-xref">§&nbsp;4.3</a>). Kemudian, ulasan fungsi, makna dan produktivitas pemarkah diatesis aktif <em>meN</em>- beserta kaitannya dengan transitivitas telah dibahas pada tulisan lain terkait proyek ini oleh Rajeg dan Denistia <span class="citation" data-cites="rajeg2023"><a href="#ref-rajeg2023" role="doc-biblioref">[16]</a></span>; makalah kali ini menitikberatkan pada fitur diatesis pasif dan non-aktor (OV/UV) (<a href="#sec-passive-objective" class="quarto-xref">§&nbsp;4.1</a>) yang tidak dibahas pada tulisan tersebut. Diatesis bahasa Indonesia juga telah diulas dari sudut pandang teoretis <span class="citation" data-cites="arka2008 cole2008"><a href="#ref-arka2008" role="doc-biblioref">[5]</a>, <a href="#ref-cole2008" role="doc-biblioref">[17]</a></span> dan tipologis <span class="citation" data-cites="artawa_pemarkahan_2020"><a href="#ref-artawa_pemarkahan_2020" role="doc-biblioref">[8]</a></span> yang kali ini akan dilanjutkan dengan nuansa kuantitatif.</p>
+<p>Selanjutnya, beberapa kajian teoretis terkait diatesis medial (<a href="#sec-medial" class="quarto-xref">§&nbsp;4.2</a>) dalam BI dan bahasa terkait (mis. bahasa Bali) telah dilakukan dalam kurun waktu sepuluh tahun terakhir <span class="citation" data-cites="udayana2013 udayana2021 beavers2022"><a href="#ref-udayana2013" role="doc-biblioref">[18]</a>–<a href="#ref-beavers2022" role="doc-biblioref">[20]</a></span>. Secara umum, ketiga kajian terdahulu tersebut membahas aspek sintaksis dan semantis dari diatesis medial BI. Salah satu analisis yang diajukan oleh Udayana <span class="citation" data-cites="udayana2021"><a href="#ref-udayana2021" role="doc-biblioref">[19]</a></span>, juga Beaver dan Udayana <span class="citation" data-cites="beavers2022"><a href="#ref-beavers2022" role="doc-biblioref">[20]</a></span>, adalah bahwa <em>ber-</em> berfungsi untuk meniadakan salah satu argumen dari verba transitif dasar yang melekat pada <em>ber-</em>. Tulisan terkait lainnya <span class="citation" data-cites="rajeg2023"><a href="#ref-rajeg2023" role="doc-biblioref">[16]</a></span> juga telah mengulas secara kualitatif beragam arti <em>ber</em>-, beserta produktivitas morfologisnya namun bukan produktivitas semantisnya. Makalah kami memusatkan analisis produktivitas semantis bentukan verba dalam diatesis medial (<a href="#sec-medial" class="quarto-xref">§&nbsp;4.2</a>). Kami akan menunjukkan bahwa produktivitas suatu diatesis berdasarkan satu afiks dapat berbeda pada tataran semantis.</p>
 </section>
 <section id="sec-metodologi" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Metodologi</h1>
 <p>Sumber data makalah ini adalah Korpus Referensi Tata Bahasa Indonesia Kontemporer (TBIK) yang dibangun oleh <em>Pusat Pengembangan dan Pelindungan Bahasa dan Sastra, Badan Pengembangan dan Pembinaan Bahasa, Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi</em>. Korpus ini berukuran sekitar 18 juta kemunculan kata dan terdiri atas dua belas ragam teks tulis BI dari tahun 2011-2020. Kedua belas ragam tersebut adalah Biografi, Buku Teks, Cerpen, Disertasi/Tesis/Skripsi, Jurnal, Koran, Laman Resmi, Majalah, Novel, Perundang-undangan, Populer, dan Surat Resmi.</p>
-<p>Selain digunakan sebagai sumber contoh dan juga dianalisis secara manual terkait sejumlah fitur diatesis yang diteliti, korpus tersebut juga kami olah secara komputasional dalam hal analisis pemecahan komponen morfologis, menggunakan peranti lunak <em>MorphInd</em> <span class="citation" data-cites="larasati2011"><a href="#ref-larasati2011" role="doc-biblioref">[21]</a></span> dan dibantu dengan <em>MALINDO Morph</em> <span class="citation" data-cites="nomoto2018"><a href="#ref-nomoto2018" role="doc-biblioref">[22]</a></span>. Luaran analisis komputasional tersebut kemudian diperiksa kembali secara manual. Selanjutnya, data morfologis tersebut digunakan untuk kajian produktivitas morfologis verba untuk topik bab buku lain dalam seri ini <span class="citation" data-cites="rajeg2023"><a href="#ref-rajeg2023" role="doc-biblioref">[16]</a></span>. Pada makalah ini, bank data verba tersebut, yaitu <em>VerbInd</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <span class="citation" data-cites="rajeg"><a href="#ref-rajeg" role="doc-biblioref">[23]</a></span>, akan digunakan sebagai data kuantitatif distribusi diatesis berkaitan dengan bentuk morfologi dan maknanya (mis. pada <a href="#sec-medial">§&nbsp;4.2</a>).</p>
-<p>Makalah ini juga akan menampilkan satu model analisis kuantitatif yang dapat dilakukan dengan data kuantitatif dari korpus dalam konteks kajian alternasi (morfo)sintaksis, dan juga interaksi antara unsur leksikal dan konstruksi gramatikal <span class="citation" data-cites="stefanowitsch2003 lier2022"><a href="#ref-lier2022" role="doc-biblioref">[15]</a>, <a href="#ref-stefanowitsch2003" role="doc-biblioref">[24]</a></span>. Gries dan Stefanowitsch <span class="citation" data-cites="gries2004"><a href="#ref-gries2004" role="doc-biblioref">[25]</a></span> mengajukan metode yang dalam BI kami sebut “Analisis Koleksem Khas” (terjemahan dari label aslinya, yaitu <em>Distinctive Collexeme Analysis</em> dan yang seterusnya akan disebut dengan [DCA]). DCA berfungsi untuk menelusuri preferensi leksikal verba terhadap sepasang konstruksi yang (i) mirip secara semantis (mis. konstruksi <em>BE GOING TO</em>+<em>Infinitive</em> vs.&nbsp;<em>WILL</em>+<em>Infinitive</em> dalam bahasa Inggris), dan/atau (ii) yang menunjukkan alternasi (seperti konstruksi objek ganda vs.&nbsp;konstruksi datif). Salah satu pasangan konstruksi yang dikaji oleh Gries dan Stefanowitsch <span class="citation" data-cites="gries2004"><a href="#ref-gries2004" role="doc-biblioref">[25]</a></span> adalah konstruksi aktif dan pasif bahasa Inggris, dengan fokus preferensi verba yang cenderung muncul pada salah satu dari kedua konstruksi tersebut. DCA juga telah diterapkan pada data bahasa Indonesia untuk kajian (i) preferensi verba terhadap negasi <em>tak</em> vs.&nbsp;<em>tidak</em> <span class="citation" data-cites="rajeg2018"><a href="#ref-rajeg2018" role="doc-biblioref">[26]</a></span>, (ii) preferensi akar kata ajektiva terhadap afiks kausatif PER- dan -KAN <span class="citation" data-cites="rajeg2021"><a href="#ref-rajeg2021" role="doc-biblioref">[27]</a></span>, dan (iii) perbedaan semantis verba sinonim <em>perbesar</em> vs.&nbsp;<em>besarkan</em> dengan afiks kausatif PER- dan -KAN <span class="citation" data-cites="rajeg2019"><a href="#ref-rajeg2019" role="doc-biblioref">[28]</a></span>. Penerapan DCA untuk kajian alternasi diatesis telah diterapkan dalam bahasa Besemah (Melayu Polinesia Barat, di Sumatra) <span class="citation" data-cites="mcdonnell2016"><a href="#ref-mcdonnell2016" role="doc-biblioref">[29]</a></span>. McDonnell <span class="citation" data-cites="mcdonnell2016"><a href="#ref-mcdonnell2016" role="doc-biblioref">[29]</a></span> menemukan adanya preferensi leksikal antara verba tertentu yang lebih sering muncul dalam diatesis aktif dibandingkan diatesis non-aktor (OV/UV) dalam bahasa Besemah. Ulasan lebih lanjut terkait mekanisme dalam DCA akan dijelaskan di awal <a href="#sec-dca-how">§&nbsp;4.3.1</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Selain digunakan sebagai sumber contoh dan juga dianalisis secara manual terkait sejumlah fitur diatesis yang diteliti, korpus tersebut juga kami olah secara komputasional dalam hal analisis pemecahan komponen morfologis, menggunakan peranti lunak <em>MorphInd</em> <span class="citation" data-cites="larasati2011"><a href="#ref-larasati2011" role="doc-biblioref">[21]</a></span> dan dibantu dengan <em>MALINDO Morph</em> <span class="citation" data-cites="nomoto2018"><a href="#ref-nomoto2018" role="doc-biblioref">[22]</a></span>. Luaran analisis komputasional tersebut kemudian diperiksa kembali secara manual. Selanjutnya, data morfologis tersebut digunakan untuk kajian produktivitas morfologis verba untuk topik bab buku lain dalam seri ini <span class="citation" data-cites="rajeg2023"><a href="#ref-rajeg2023" role="doc-biblioref">[16]</a></span>. Pada makalah ini, bank data verba tersebut, yaitu <em>VerbInd</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <span class="citation" data-cites="rajeg"><a href="#ref-rajeg" role="doc-biblioref">[23]</a></span>, akan digunakan sebagai data kuantitatif distribusi diatesis berkaitan dengan bentuk morfologi dan maknanya (mis. pada <a href="#sec-medial" class="quarto-xref">§&nbsp;4.2</a>).</p>
+<p>Makalah ini juga akan menampilkan satu model analisis kuantitatif yang dapat dilakukan dengan data kuantitatif dari korpus dalam konteks kajian alternasi (morfo)sintaksis, dan juga interaksi antara unsur leksikal dan konstruksi gramatikal <span class="citation" data-cites="stefanowitsch2003 lier2022"><a href="#ref-lier2022" role="doc-biblioref">[15]</a>, <a href="#ref-stefanowitsch2003" role="doc-biblioref">[24]</a></span>. Gries dan Stefanowitsch <span class="citation" data-cites="gries2004"><a href="#ref-gries2004" role="doc-biblioref">[25]</a></span> mengajukan metode yang dalam BI kami sebut “Analisis Koleksem Khas” (terjemahan dari label aslinya, yaitu <em>Distinctive Collexeme Analysis</em> dan yang seterusnya akan disebut dengan [DCA]). DCA berfungsi untuk menelusuri preferensi leksikal verba terhadap sepasang konstruksi yang (i) mirip secara semantis (mis. konstruksi <em>BE GOING TO</em>+<em>Infinitive</em> vs.&nbsp;<em>WILL</em>+<em>Infinitive</em> dalam bahasa Inggris), dan/atau (ii) yang menunjukkan alternasi (seperti konstruksi objek ganda vs.&nbsp;konstruksi datif). Salah satu pasangan konstruksi yang dikaji oleh Gries dan Stefanowitsch <span class="citation" data-cites="gries2004"><a href="#ref-gries2004" role="doc-biblioref">[25]</a></span> adalah konstruksi aktif dan pasif bahasa Inggris, dengan fokus preferensi verba yang cenderung muncul pada salah satu dari kedua konstruksi tersebut. DCA juga telah diterapkan pada data bahasa Indonesia untuk kajian (i) preferensi verba terhadap negasi <em>tak</em> vs.&nbsp;<em>tidak</em> <span class="citation" data-cites="rajeg2018"><a href="#ref-rajeg2018" role="doc-biblioref">[26]</a></span>, (ii) preferensi akar kata ajektiva terhadap afiks kausatif PER- dan -KAN <span class="citation" data-cites="rajeg2021"><a href="#ref-rajeg2021" role="doc-biblioref">[27]</a></span>, dan (iii) perbedaan semantis verba sinonim <em>perbesar</em> vs.&nbsp;<em>besarkan</em> dengan afiks kausatif PER- dan -KAN <span class="citation" data-cites="rajeg2019"><a href="#ref-rajeg2019" role="doc-biblioref">[28]</a></span>. Penerapan DCA untuk kajian alternasi diatesis telah diterapkan dalam bahasa Besemah (Melayu Polinesia Barat, di Sumatra) <span class="citation" data-cites="mcdonnell2016"><a href="#ref-mcdonnell2016" role="doc-biblioref">[29]</a></span>. McDonnell <span class="citation" data-cites="mcdonnell2016"><a href="#ref-mcdonnell2016" role="doc-biblioref">[29]</a></span> menemukan adanya preferensi leksikal antara verba tertentu yang lebih sering muncul dalam diatesis aktif dibandingkan diatesis non-aktor (OV/UV) dalam bahasa Besemah. Ulasan lebih lanjut terkait mekanisme dalam DCA akan dijelaskan di awal <a href="#sec-dca-how" class="quarto-xref">§&nbsp;4.3.1</a>.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 </section>
 <section id="hasil-dan-pembahasan" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Hasil dan pembahasan</h1>
@@ -312,11 +368,11 @@ div.csl-indent {
 <li><p>(…) seorang yang <em>dikenal</em> <strong>baik</strong> Presiden Soekarno. (H1A17003)</p></li>
 </ol>
 <p>Penelitian lebih lanjut dapat mengamati seberapa sering <em>oleh</em> tidak muncul dalam konteks seperti pada contoh (5) di atas.</p>
-<p>Pada bagian ini kami ingin membahas distribusi/tingkat ke(tidak)munculan AGEN dalam frase dengan <em>oleh</em> pada ke-12 ragam teks korpusnya. Kami mengamati 50 sampel kalimat acak dengan pasif <em>di</em>- untuk tiap-tiap ragam teks, dengan total 600 butir data (50 kalimat * 12 ragam teks). Pola pencarian kompleks (<em>regular expression</em>) yang kami gunakan untuk menjaring bentuk pasif potensial adalah <code>di[a-z]{5,}</code>. Selanjutnya, secara manual kami menandai apakah sampel kalimat pasif tersebut menyebutkan secara eksplisit (atau tidak) peran AGEN. <a href="#fig-long-short-passive">Gambar&nbsp;1</a> menyarikan distribusi dari hasil analisis tersebut.</p>
-<div class="cell" data-fig-cap-location="bottom">
-<details>
+<p>Pada bagian ini kami ingin membahas distribusi/tingkat ke(tidak)munculan AGEN dalam frase dengan <em>oleh</em> pada ke-12 ragam teks korpusnya. Kami mengamati 50 sampel kalimat acak dengan pasif <em>di</em>- untuk tiap-tiap ragam teks, dengan total 600 butir data (50 kalimat * 12 ragam teks). Pola pencarian kompleks (<em>regular expression</em>) yang kami gunakan untuk menjaring bentuk pasif potensial adalah <code>di[a-z]{5,}</code>. Selanjutnya, secara manual kami menandai apakah sampel kalimat pasif tersebut menyebutkan secara eksplisit (atau tidak) peran AGEN. <a href="#fig-long-short-passive" class="quarto-xref">Gambar&nbsp;1</a> menyarikan distribusi dari hasil analisis tersebut.</p>
+<div class="cell fig-cap-location-bottom">
+<details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>agent_encoding_by_genre <span class="sc">|&gt;</span> </span>
+<div class="sourceCode cell-code" id="cb1" data-cap-location="bottom"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>agent_encoding_by_genre <span class="sc">|&gt;</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">AGENT_ENCODED =</span> <span class="fu">if_else</span>(AGENT_ENCODED <span class="sc">==</span> <span class="cn">TRUE</span>, <span class="st">"ya"</span>, <span class="st">"tidak"</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> GENRE, </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">y =</span> perc_by_genre, </span>
@@ -335,10 +391,14 @@ div.csl-indent {
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-long-short-passive" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-long-short-passive-1.png" class="img-fluid figure-img" style="width:75.0%"></p>
-<figcaption class="figure-caption">Gambar&nbsp;1: Distribusi (tidak) diungkapkannya AGEN pada 50 sampel kalimat pasif <em>di</em>- untuk masing-masing ragam teks.</figcaption>
+<div id="fig-long-short-passive" class="quarto-figure quarto-figure-center quarto-float anchored" data-cap-location="bottom">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-long-short-passive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-long-short-passive-1.png" class="img-fluid figure-img" style="width:75.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-long-short-passive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;1: Distribusi (tidak) diungkapkannya AGEN pada 50 sampel kalimat pasif <em>di</em>- untuk masing-masing ragam teks.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -354,12 +414,12 @@ div.csl-indent {
 <ol start="8" class="example" type="1">
 <li>Seseorang mendapatkan haknya dikarenakan <em>dipenuhi<strong>nya</strong></em> kewajiban yang dimiliki. (E1C17001)</li>
 </ol>
-<p>Setelah mengamati tendensi pengungkapan AGEN pada sampel 600 butir kalimat, <a href="#sec-agent-pronoun-di-passive">§&nbsp;4.1.2</a> membahas tipe AGEN pada diatesis pasif <em>di</em>-.</p>
+<p>Setelah mengamati tendensi pengungkapan AGEN pada sampel 600 butir kalimat, <a href="#sec-agent-pronoun-di-passive" class="quarto-xref">§&nbsp;4.1.2</a> membahas tipe AGEN pada diatesis pasif <em>di</em>-.</p>
 </section>
 <section id="sec-agent-pronoun-di-passive" class="level3" data-number="4.1.2">
 <h3 data-number="4.1.2" class="anchored" data-anchor-id="sec-agent-pronoun-di-passive"><span class="header-section-number">4.1.2</span> Tipe AGEN pada diatesis pasif <em>di</em>-</h3>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>di_first_person <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"data/di_oleh_1st-person.txt"</span>, <span class="at">quote =</span> <span class="st">""</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pronomina =</span> <span class="st">"orang pertama (1)"</span>)</span>
@@ -382,10 +442,10 @@ div.csl-indent {
 <li><p><code>("di[a-z]+" "oleh" "diri kamu|kamu|diri engkau|engkau|dikau|dirimu|anda|Anda|diri kau|diri anda|diri Anda|kau"|"di[a-z]+" "olehmu|olehkau")</code> (Pola pencarian untuk pronomina kedua)</p></li>
 <li><p><code>("di[a-z]+" "oleh" "dia|diri dia|mereka|diri beliau|beliau|ia|dirinya|diri mereka"|"di[a-z]+" "olehnya")</code> (Pola pencarian untuk pronomina ketiga)</p></li>
 </ul>
-<p>Luaran tiap-tiap pencarian tersebut kami sarikan melalui <a href="#fig-agent-pronoun-for-di-passive-VISUALISATION">Gambar&nbsp;2</a>.</p>
+<p>Luaran tiap-tiap pencarian tersebut kami sarikan melalui <a href="#fig-agent-pronoun-for-di-passive-VISUALISATION" class="quarto-xref">Gambar&nbsp;2</a>.</p>
 <p>&nbsp;</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>di_agent_pronoun_count <span class="ot">&lt;-</span> di_agent_pronoun <span class="sc">|&gt;</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pronomina_lex =</span> <span class="fu">str_replace</span>(pronomina_lex, <span class="st">"^(ku|mu|nya)$"</span>, <span class="st">"-</span><span class="sc">\\</span><span class="st">1"</span>)) <span class="sc">|&gt;</span> </span>
@@ -397,8 +457,8 @@ div.csl-indent {
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(pronomina, <span class="fu">desc</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div>
-<details>
+<div class="cell" data-layout="[[80, -20, 80],]" data-fig-cap-location="bottom">
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>di_agent_pron_1 <span class="ot">&lt;-</span> di_agent_pronoun_count <span class="sc">|&gt;</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pronomina) <span class="sc">|&gt;</span> </span>
@@ -434,45 +494,57 @@ div.csl-indent {
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-agent-pronoun-for-di-passive-VISUALISATION" class="cell quarto-layout-panel" data-fig-cap-location="bottom">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 44.4%;justify-content: center;">
-<div id="fig-agent-pronoun-for-di-passive-VISUALISATION-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-agent-pronoun-for-di-passive-VISUALISATION-1.png" class="img-fluid figure-img" data-ref-parent="fig-agent-pronoun-for-di-passive-VISUALISATION" width="1800"></p>
-<figcaption class="figure-caption">(a) Tipe AGEN pronomina</figcaption>
+<div id="fig-agent-pronoun-for-di-passive-VISUALISATION" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-agent-pronoun-for-di-passive-VISUALISATION-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-agent-pronoun-for-di-passive-VISUALISATION" style="flex-basis: 44.4%;justify-content: flex-start;">
+<div id="fig-agent-pronoun-for-di-passive-VISUALISATION-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-agent-pronoun-for-di-passive-VISUALISATION-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-agent-pronoun-for-di-passive-VISUALISATION-1.png" class="img-fluid figure-img" data-ref-parent="fig-agent-pronoun-for-di-passive-VISUALISATION" width="1800">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-agent-pronoun-for-di-passive-VISUALISATION-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Tipe AGEN pronomina
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 11.1%;justify-content: center;">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 11.1%;justify-content: flex-start;">
 <p>&nbsp;</p>
 </div>
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 44.4%;justify-content: center;">
-<div id="fig-agent-pronoun-for-di-passive-VISUALISATION-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-agent-pronoun-for-di-passive-VISUALISATION-2.png" class="img-fluid figure-img" data-ref-parent="fig-agent-pronoun-for-di-passive-VISUALISATION" width="1800"></p>
-<figcaption class="figure-caption">(b) Bentuk leksikal AGEN pronomina</figcaption>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-agent-pronoun-for-di-passive-VISUALISATION" style="flex-basis: 44.4%;justify-content: flex-start;">
+<div id="fig-agent-pronoun-for-di-passive-VISUALISATION-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-agent-pronoun-for-di-passive-VISUALISATION-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-agent-pronoun-for-di-passive-VISUALISATION-2.png" class="img-fluid figure-img" data-ref-parent="fig-agent-pronoun-for-di-passive-VISUALISATION" width="1800">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-agent-pronoun-for-di-passive-VISUALISATION-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Bentuk leksikal AGEN pronomina
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Gambar&nbsp;2: Frekuensi tipe AGEN pronomina dalam diatesis pasif <em>di</em>- dalam konstruksi [<em>di</em>- <em>oleh</em> AGEN]</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-agent-pronoun-for-di-passive-VISUALISATION-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;2: Frekuensi tipe AGEN pronomina dalam diatesis pasif <em>di</em>- dalam konstruksi [<em>di</em>- <em>oleh</em> AGEN]
+</figcaption>
 </figure>
 </div>
 </div>
-<p>Data pada <a href="#fig-agent-pronoun-for-di-passive-VISUALISATION-1">Gambar&nbsp;2 (a)</a> menunjukkan bahwa AGEN pronomina pertama (contoh (9) berikut) dan kedua (10) juga dapat digunakan, meskipun secara signifikan tidak sedominan AGEN pronomina bentuk ketiga (<span class="math inline">\(\chi^{2}\)</span> = 454.14, <em>df</em> = 2, <em>p</em><sub>goodness-of-fit</sub> &lt; 0.001). Temuan ini sejalan dengan temuan kuantitatif atas pasif <em>di</em>- pada bahasa Melayu Malaysia <span class="citation" data-cites="nomoto_person_2014"><a href="#ref-nomoto_person_2014" role="doc-biblioref">[32]</a></span>.</p>
+<p>Data pada <a href="#fig-agent-pronoun-for-di-passive-VISUALISATION-1" class="quarto-xref">Gambar&nbsp;2 (a)</a> menunjukkan bahwa AGEN pronomina pertama (contoh (9) berikut) dan kedua (10) juga dapat digunakan, meskipun secara signifikan tidak sedominan AGEN pronomina bentuk ketiga (<span class="math inline">\(\chi^{2}\)</span> = 454.14, <em>df</em> = 2, <em>p</em><sub>goodness-of-fit</sub> &lt; 0.001). Temuan ini sejalan dengan temuan kuantitatif atas pasif <em>di</em>- pada bahasa Melayu Malaysia <span class="citation" data-cites="nomoto_person_2014"><a href="#ref-nomoto_person_2014" role="doc-biblioref">[32]</a></span>.</p>
 <ol start="9" class="example" type="1">
 <li><p>…keahlian yang sejak dulu dikembangkan Pak AB dan <em>diteruskan oleh</em> <strong><em>saya</em></strong> (H1A20004)</p></li>
 <li><p>“Kalung itu hanya bisa <em>dibuka oleh</em> <strong><em>kamu</em></strong>” (C1A15015)</p></li>
 </ol>
-<p>Selanjutnya, tidak semua bentuk untuk tiap-tiap tipe pronomina memiliki frekuensi yang sama (perhatikan <a href="#fig-agent-pronoun-for-di-passive-VISUALISATION-2">Gambar&nbsp;2 (b)</a>). Misalnya, untuk AGEN pronomina pertama, <em>kita</em> (pronomina pertama jamak) yang paling tinggi frekuensinya dibandingkan <em>saya</em> ataupun <em>aku</em>. Begitupun dengan AGEN pronomina ketiga, yang didominasi oleh pronomina jamak <em>mereka</em>. Kemudian, pengungkapan AGEN menggunakan klitik pronomina <em>-nya</em> (ketiga; <em>oleh<strong>nya</strong></em>), <em>-ku</em> (pertama; <em>oleh<strong>ku</strong></em>), dan <em>-mu</em> (kedua; <em>oleh<strong>mu</strong></em>) adalah yang paling sering kedua di tiap-tiap tipe pronomina.</p>
-<p>Nomoto dan Wahab <span class="citation" data-cites="nomoto_person_2014"><a href="#ref-nomoto_person_2014" role="doc-biblioref">[32, pp. 40–41]</a></span> mengajukan analisis atas adanya tren batasan tipe pronomina untuk pasif <em>di</em>-. Analisis ini mencakup struktur informasi terkait partisipan mana yang lebih menonjol dalam kejadian tutur; dalam hal ini, pronomina pertama dan kedua dikatakan lebih menonjol dalam suatu kejadian tutur atas dasar kedua pronomina tersebut saling berbagi pengetahuan/informasi (yaitu memiliki “<em>common ground</em>” <span class="citation" data-cites="nomoto_person_2014"><a href="#ref-nomoto_person_2014" role="doc-biblioref">[32, p. 40]</a></span>), namun tidak untuk pronomina ketiga. Karenanya, Nomoto dan Wahab <span class="citation" data-cites="nomoto_person_2014"><a href="#ref-nomoto_person_2014" role="doc-biblioref">[32, p. 40]</a></span> berpendapat bahwa dominasi pronomina ketiga (seperti ditunjukkan pada <a href="#fig-agent-pronoun-for-di-passive-VISUALISATION-1">Gambar&nbsp;2 (a)</a>) mengindikasikan bahwa AGEN dari pasif <em>di</em>- bukanlah suatu acuan/entitas yang menonjol (“<em>non-salient</em>” <span class="citation" data-cites="nomoto_person_2014"><a href="#ref-nomoto_person_2014" role="doc-biblioref">[32, p. 41]</a></span>).</p>
+<p>Selanjutnya, tidak semua bentuk untuk tiap-tiap tipe pronomina memiliki frekuensi yang sama (perhatikan <a href="#fig-agent-pronoun-for-di-passive-VISUALISATION-2" class="quarto-xref">Gambar&nbsp;2 (b)</a>). Misalnya, untuk AGEN pronomina pertama, <em>kita</em> (pronomina pertama jamak) yang paling tinggi frekuensinya dibandingkan <em>saya</em> ataupun <em>aku</em>. Begitupun dengan AGEN pronomina ketiga, yang didominasi oleh pronomina jamak <em>mereka</em>. Kemudian, pengungkapan AGEN menggunakan klitik pronomina <em>-nya</em> (ketiga; <em>oleh<strong>nya</strong></em>), <em>-ku</em> (pertama; <em>oleh<strong>ku</strong></em>), dan <em>-mu</em> (kedua; <em>oleh<strong>mu</strong></em>) adalah yang paling sering kedua di tiap-tiap tipe pronomina.</p>
+<p>Nomoto dan Wahab <span class="citation" data-cites="nomoto_person_2014"><a href="#ref-nomoto_person_2014" role="doc-biblioref">[32, pp. 40–41]</a></span> mengajukan analisis atas adanya tren batasan tipe pronomina untuk pasif <em>di</em>-. Analisis ini mencakup struktur informasi terkait partisipan mana yang lebih menonjol dalam kejadian tutur; dalam hal ini, pronomina pertama dan kedua dikatakan lebih menonjol dalam suatu kejadian tutur atas dasar kedua pronomina tersebut saling berbagi pengetahuan/informasi (yaitu memiliki “<em>common ground</em>” <span class="citation" data-cites="nomoto_person_2014"><a href="#ref-nomoto_person_2014" role="doc-biblioref">[32, p. 40]</a></span>), namun tidak untuk pronomina ketiga. Karenanya, Nomoto dan Wahab <span class="citation" data-cites="nomoto_person_2014"><a href="#ref-nomoto_person_2014" role="doc-biblioref">[32, p. 40]</a></span> berpendapat bahwa dominasi pronomina ketiga (seperti ditunjukkan pada <a href="#fig-agent-pronoun-for-di-passive-VISUALISATION-1" class="quarto-xref">Gambar&nbsp;2 (a)</a>) mengindikasikan bahwa AGEN dari pasif <em>di</em>- bukanlah suatu acuan/entitas yang menonjol (“<em>non-salient</em>” <span class="citation" data-cites="nomoto_person_2014"><a href="#ref-nomoto_person_2014" role="doc-biblioref">[32, p. 41]</a></span>).</p>
 </section>
 <section id="sec-agent-OV" class="level3" data-number="4.1.3">
 <h3 data-number="4.1.3" class="anchored" data-anchor-id="sec-agent-OV"><span class="header-section-number">4.1.3</span> Tipe AGEN pada diatesis non-aktor (OV/UV)</h3>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>berikan <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"data/berikan.tsv"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ov_agent_berikan <span class="ot">&lt;-</span> berikan <span class="sc">|&gt;</span> </span>
@@ -508,15 +580,15 @@ div.csl-indent {
 <span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">AGENT_LEX =</span> <span class="fu">fct_relevel</span>(AGENT_LEX, ov_agent_pronomina<span class="sc">$</span>AGENT_LEX))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Selain pasif <em>di</em>-, buku TBBBI mengajukan tipe pasif kedua, yang disebut dengan pasif pronomina seperti pada contoh (11) berikut (dan contoh (3) pada <a href="#sec-pengantar">§&nbsp;1</a>). Seperti disebutkan pada <a href="#sec-pengantar">§&nbsp;1</a>, kalimat pada (11) bukanlah kalimat pasif namun merupakan diatesis non-aktor (OV/UV) berdasarkan bukti-bukti pada kajian sebelumnya <span class="citation" data-cites="arka_voice_2003 arka2008"><a href="#ref-arka2008" role="doc-biblioref">[5]</a>, <a href="#ref-arka_voice_2003" role="doc-biblioref">[6]</a></span>; sehingga label “pasif” tidak lagi digunakan dalam makalah ini untuk konstruksi seperti pada (11). Bentuk diatesis pasif <em>di</em>- ditampilkan pada (12).</p>
+<p>Selain pasif <em>di</em>-, buku TBBBI mengajukan tipe pasif kedua seperti pada contoh (11) berikut (dan contoh (3) pada <a href="#sec-pengantar" class="quarto-xref">§&nbsp;1</a>). Seperti disebutkan pada <a href="#sec-pengantar" class="quarto-xref">§&nbsp;1</a>, kalimat pada (11) bukanlah kalimat pasif namun merupakan diatesis non-aktor (OV/UV) berdasarkan bukti-bukti pada kajian sebelumnya <span class="citation" data-cites="arka_voice_2003 arka2008"><a href="#ref-arka2008" role="doc-biblioref">[5]</a>, <a href="#ref-arka_voice_2003" role="doc-biblioref">[6]</a></span>; sehingga label “pasif” tidak lagi digunakan dalam makalah ini untuk konstruksi seperti pada (11). Bentuk diatesis pasif <em>di</em>- ditampilkan pada (12).</p>
 <ol start="11" class="example" type="1">
 <li><p>[Panas terik matahari]<sub>TEMA</sub> tak [ia]<sub>AGEN</sub> <em><strong>hiraukan</strong></em> demi mendapatkan penghasilan (B1Z19008)</p></li>
 <li><p>[Rasa sakit itu]<sub>TEMA</sub> tak lagi <em><strong>di</strong>hiraukan</em> [Komar]<sub>AGEN</sub> (D1A14002)</p></li>
 </ol>
-<p>Perbedaan OV/UV dengan pasif <em>di</em>- (12) adalah (i) verba yang tidak dimarkahi <em>di</em>- dan (ii) posisi AGEN (yaitu <em>ia</em> pada contoh (11)) yang mendahului verbanya. Selain itu pasif <em>di</em>- secara sintaksis bersifat intransitif (karena AGEN-nya dapat dihilangkan dan/atau mengisi posisi argumen non-inti <span class="citation" data-cites="arka_voice_2003"><a href="#ref-arka_voice_2003" role="doc-biblioref">[6]</a></span>) sedangkan OV/UV adalah transitif. Bentuk seperti (11) disebut pasif pronomina dalam TBBBI karena diasumsikan hanya digunakan jika AGEN-nya adalah pronomina persona (bukan nomina biasa) <span class="citation" data-cites="moeliono2017"><a href="#ref-moeliono2017" role="doc-biblioref">[9, pp. 470–471]</a></span>. Berdasarkan data korpus, kami meninjau apakah OV/UV hanya digunakan dengan AGEN pronomina persona saja dan seberapa tinggi frekuensinya.</p>
-<p>Sebagai ilustrasi, <a href="#fig-OV-agent-berikan">Gambar&nbsp;3</a> menampilkan tipe AGEN pada OV/UV untuk verba <em>berikan</em>.</p>
-<div>
-<details>
+<p>Perbedaan OV/UV dengan pasif <em>di</em>- (12) adalah (i) verba yang tidak dimarkahi <em>di</em>- dan (ii) posisi AGEN (yaitu <em>ia</em> pada contoh (11)) yang mendahului verbanya. Selain itu pasif <em>di</em>- secara sintaksis bersifat intransitif (karena AGEN-nya dapat dihilangkan dan/atau mengisi posisi argumen non-inti <span class="citation" data-cites="arka_voice_2003"><a href="#ref-arka_voice_2003" role="doc-biblioref">[6]</a></span>) sedangkan OV/UV adalah transitif. Bentuk seperti (11) dalam TBBBI diasumsikan hanya digunakan jika AGEN-nya adalah pronomina persona (bukan nomina biasa) <span class="citation" data-cites="moeliono2017"><a href="#ref-moeliono2017" role="doc-biblioref">[9, pp. 470–471]</a></span>. Berdasarkan data korpus, kami meninjau apakah OV/UV hanya digunakan dengan AGEN pronomina persona saja dan seberapa tinggi frekuensinya.</p>
+<p>Sebagai ilustrasi, <a href="#fig-OV-agent-berikan" class="quarto-xref">Gambar&nbsp;3</a> menampilkan tipe AGEN pada OV/UV untuk verba <em>berikan</em>.</p>
+<div class="cell" data-layout="[[80, -20, 80],]" data-fig-cap-location="bottom">
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ov_agent_berikan,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> AGENT_TYPE,</span>
@@ -557,48 +629,60 @@ div.csl-indent {
 <span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
 <span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="fig-OV-agent-berikan" class="cell quarto-layout-panel" data-fig-cap-location="bottom">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 44.4%;justify-content: center;">
-<div id="fig-OV-agent-berikan-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-OV-agent-berikan-1.png" class="img-fluid figure-img" data-ref-parent="fig-OV-agent-berikan" width="1800"></p>
-<figcaption class="figure-caption">(a) Tipe AGEN</figcaption>
+<div id="fig-OV-agent-berikan" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-OV-agent-berikan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-OV-agent-berikan" style="flex-basis: 44.4%;justify-content: flex-start;">
+<div id="fig-OV-agent-berikan-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-OV-agent-berikan-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-OV-agent-berikan-1.png" class="img-fluid figure-img" data-ref-parent="fig-OV-agent-berikan" width="1800">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-OV-agent-berikan-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Tipe AGEN
+</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 11.1%;justify-content: center;">
+<div class="quarto-figure-spacer quarto-layout-cell" style="flex-basis: 11.1%;justify-content: flex-start;">
 <p>&nbsp;</p>
 </div>
-<div class="cell-output-display quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 44.4%;justify-content: center;">
-<div id="fig-OV-agent-berikan-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-OV-agent-berikan-2.png" class="img-fluid figure-img" data-ref-parent="fig-OV-agent-berikan" width="1800"></p>
-<figcaption class="figure-caption">(b) Tipe AGEN Pronomina</figcaption>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-OV-agent-berikan" style="flex-basis: 44.4%;justify-content: flex-start;">
+<div id="fig-OV-agent-berikan-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-OV-agent-berikan-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-OV-agent-berikan-2.png" class="img-fluid figure-img" data-ref-parent="fig-OV-agent-berikan" width="1800">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-OV-agent-berikan-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Tipe AGEN Pronomina
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Gambar&nbsp;3: Frekuensi tipe AGEN dalam diatesis non-aktor (OV/UV) dengan verba <strong>berikan</strong></figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-OV-agent-berikan-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;3: Frekuensi tipe AGEN dalam diatesis non-aktor (OV/UV) dengan verba <strong>berikan</strong>
+</figcaption>
 </figure>
 </div>
 </div>
-<p>Data korpus pada <a href="#fig-OV-agent-berikan-1">Gambar&nbsp;3 (a)</a> menunjukkan bahwa pronomina adalah tipe AGEN dominan dalam konstruksi OV/UV untuk <em>berikan</em>. Hal ini sejalan dengan deskripsi pada TBBBI terkait pencirian OV/UV dan jenis AGEN-nya, serta berlaku khusus untuk verba <em>berikan</em>. Pembaca dapat melakukan penelitian lanjutan untuk verba lainnya. Namun, dominasi AGEN pronomina tersebut tidak bersifat absolut, karena tipe AGEN lain terbukti muncul digunakan meskipun proporsinya secara signifikan sangat minor (<span class="math inline">\(\chi^{2}\)</span> = 695.34, <em>df</em> = 4, <em>p</em><sub>goodness-of-fit</sub> &lt; 0.001). Tipe AGEN lain tersebut ialah nomina (mis. <em>guru</em> pada contoh (13)), nomina diri (<em>Shopee</em> pada contoh (14)), dan nomina kekerabatan (15) yang dapat diinterpretasikan dalam fungsinya sebagai kata ganti orang kedua.</p>
+<p>Data korpus pada <a href="#fig-OV-agent-berikan-1" class="quarto-xref">Gambar&nbsp;3 (a)</a> menunjukkan bahwa pronomina adalah tipe AGEN dominan dalam konstruksi OV/UV untuk <em>berikan</em>. Hal ini sejalan dengan deskripsi pada TBBBI terkait pencirian OV/UV dan jenis AGEN-nya, serta berlaku khusus untuk verba <em>berikan</em>. Pembaca dapat melakukan penelitian lanjutan untuk verba lainnya. Namun, dominasi AGEN pronomina tersebut tidak bersifat absolut, karena tipe AGEN lain terbukti muncul digunakan meskipun proporsinya secara signifikan sangat minor (<span class="math inline">\(\chi^{2}\)</span> = 695.34, <em>df</em> = 4, <em>p</em><sub>goodness-of-fit</sub> &lt; 0.001). Tipe AGEN lain tersebut ialah nomina (mis. <em>guru</em> pada contoh (13)), nomina diri (<em>Shopee</em> pada contoh (14)), dan nomina kekerabatan (15) yang dapat diinterpretasikan dalam fungsinya sebagai kata ganti orang kedua.</p>
 <ol start="13" class="example" type="1">
 <li><p>… mereka hanya mampu meniru cara yang <em><strong>guru</strong></em> <em>berikan</em> (F1B11008)</p></li>
 <li><p>… pagelaran program edukasi yang <em><strong>Shopee</strong></em> <em>berikan</em> (K1N120003)</p></li>
 <li><p>Atas perhatian dan izin yang <em><strong>Bapak</strong></em> <em>berikan</em>, saya ucapkan banyak terima kasih (E1B17001)</p></li>
 </ol>
-<p>Berikutnya, <a href="#fig-OV-agent-berikan-2">Gambar&nbsp;3 (b)</a> juga menunjukkan bahwa untuk <em>berikan</em>, tidak semua bentuk pronomina memiliki distribusi seimbang sebagai AGEN.</p>
+<p>Berikutnya, <a href="#fig-OV-agent-berikan-2" class="quarto-xref">Gambar&nbsp;3 (b)</a> juga menunjukkan bahwa untuk <em>berikan</em>, tidak semua bentuk pronomina memiliki distribusi seimbang sebagai AGEN.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>anugerahkan <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"data/anugerahkan.tsv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ceritakan <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"data/ceritakan.tsv"</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>ov_agent_ceritakan_pronomina <span class="ot">&lt;-</span> ceritakan <span class="sc">|&gt;</span> </span>
@@ -611,7 +695,7 @@ div.csl-indent {
 </details>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ajukan <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">"data/ajukan.tsv"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ov_agent_ajukan_pronomina <span class="ot">&lt;-</span> ajukan <span class="sc">|&gt;</span> </span>
@@ -623,9 +707,9 @@ div.csl-indent {
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">AGENT_LEX =</span> <span class="fu">fct_relevel</span>(AGENT_LEX, ov_agent_ajukan_pronomina<span class="sc">$</span>AGENT_LEX))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Terdapat juga kemungkinan bahwa tipe AGEN ditentukan oleh kespesifikan makna verbanya. Sebagai contoh, dari total 5 kemunculan <em>anugerahkan</em> dalam konstruksi OV/UV, 4 diisi oleh nomina, yaitu <em>Allah (SWT)</em> dan <em>Tuhan</em>. Dari sudut pandang semantik, kemunculan <em>Allah (SWT)</em> dan <em>Tuhan</em> dimotivasi dari makna akar kata <em>anugerahkan</em>, yaitu <em>anugerah</em> yang juga bermakna ‘kurnia (dari Tuhan)’ pada KBBI Daring<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Yang lebih menarik adalah terdapat pula tendensi perbedaan pronomina terkait verba tertentu dalam OV/UV. Sebagai contoh, kami tampilkan persentase AGEN pronomina untuk <em>ajukan</em>, <em>berikan</em>, dan <em>ceritakan</em> pada <a href="#fig-pronoun-agent-comparison">Gambar&nbsp;4</a>.</p>
+<p>Terdapat juga kemungkinan bahwa tipe AGEN ditentukan oleh kespesifikan makna verbanya. Sebagai contoh, dari total 5 kemunculan <em>anugerahkan</em> dalam konstruksi OV/UV, 4 diisi oleh nomina, yaitu <em>Allah (SWT)</em> dan <em>Tuhan</em>. Dari sudut pandang semantik, kemunculan <em>Allah (SWT)</em> dan <em>Tuhan</em> dimotivasi dari makna akar kata <em>anugerahkan</em>, yaitu <em>anugerah</em> yang juga bermakna ‘kurnia (dari Tuhan)’ pada KBBI Daring<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. Yang lebih menarik adalah terdapat pula tendensi perbedaan pronomina terkait verba tertentu dalam OV/UV. Sebagai contoh, kami tampilkan persentase AGEN pronomina untuk <em>ajukan</em>, <em>berikan</em>, dan <em>ceritakan</em> pada <a href="#fig-pronoun-agent-comparison" class="quarto-xref">Gambar&nbsp;4</a>.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ov_agent_pronomina_all <span class="ot">&lt;-</span> ov_agent_pronomina <span class="sc">|&gt;</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">verba =</span> <span class="st">"berikan"</span>) <span class="sc">|&gt;</span> </span>
@@ -655,24 +739,28 @@ div.csl-indent {
 <span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                    breaks = c("ceritakan", "berikan", "ajukan"))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-pronoun-agent-comparison" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-pronoun-agent-comparison-1.png" class="img-fluid figure-img" style="width:85.0%"></p>
-<figcaption class="figure-caption">Gambar&nbsp;4: Distribusi tipe AGEN pronomina dalam OV/UV untuk <strong>ajukan</strong>, <strong>berikan</strong>, dan <strong>ceritakan</strong></figcaption>
+<div id="fig-pronoun-agent-comparison" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pronoun-agent-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-pronoun-agent-comparison-1.png" class="img-fluid figure-img" style="width:85.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pronoun-agent-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;4: Distribusi tipe AGEN pronomina dalam OV/UV untuk <strong>ajukan</strong>, <strong>berikan</strong>, dan <strong>ceritakan</strong>
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Jika kita melihat <a href="#fig-pronoun-agent-comparison">Gambar&nbsp;4</a>, terdapat ketimpangan frekuensi penggunaan bentuk pronomina sebagai AGEN pada OV/UV untuk ketiga verba, yang dapat mencerminkan pemahaman berbeda terhadap ketiga verba tersebut. Misalnya, kejadian <em>(men)ceritakan</em> sesuatu tampaknya lebih bersifat personal jika melihat paling tingginya pronomina pertama tunggal <em>aku</em> dan <em>saya</em>, sebaliknya <em>berikan</em> dan <em>ajukan</em> lebih bersifat kolektif berdasarkan paling tingginya bentuk pronomina pertama jamak <em>kami</em> dan <em>kita</em> untuk kedua verba tersebut. Kemudian, <em>berikan</em> dan <em>ajukan</em> tampak membawa nuansa formal mengingat, untuk pronomina kedua, AGEN kedua verba ini didominasi oleh bentuk formal <em>Anda</em>; sebaliknya untuk <em>ceritakan</em>, AGEN pronomina kedua yang paling sering bersifat kurang formal dan menunjukkan kedekatan pembicaranya, yaitu <em>kau</em>.</p>
+<p>Jika kita melihat <a href="#fig-pronoun-agent-comparison" class="quarto-xref">Gambar&nbsp;4</a>, terdapat ketimpangan frekuensi penggunaan bentuk pronomina sebagai AGEN pada OV/UV untuk ketiga verba, yang dapat mencerminkan pemahaman berbeda terhadap ketiga verba tersebut. Misalnya, kejadian <em>(men)ceritakan</em> sesuatu tampaknya lebih bersifat personal jika melihat paling tingginya pronomina pertama tunggal <em>aku</em> dan <em>saya</em>, sebaliknya <em>berikan</em> dan <em>ajukan</em> lebih bersifat kolektif berdasarkan paling tingginya bentuk pronomina pertama jamak <em>kami</em> dan <em>kita</em> untuk kedua verba tersebut. Kemudian, <em>berikan</em> dan <em>ajukan</em> tampak membawa nuansa formal mengingat, untuk pronomina kedua, AGEN kedua verba ini didominasi oleh bentuk formal <em>Anda</em>; sebaliknya untuk <em>ceritakan</em>, AGEN pronomina kedua yang paling sering bersifat kurang formal dan menunjukkan kedekatan pembicaranya, yaitu <em>kau</em>.</p>
 </section>
 <section id="sec-ov-in-clause" class="level3" data-number="4.1.4">
 <h3 data-number="4.1.4" class="anchored" data-anchor-id="sec-ov-in-clause"><span class="header-section-number">4.1.4</span> Kemunculan diatesis non-aktor (OV/UV) dalam klausa relatif</h3>
-<p>Fitur yang belum dibahas pada TBBBI edisi terdahulu adalah tendensi dominan (lihat <a href="#fig-OV-in-rel-clause">Gambar&nbsp;5</a>) kemunculan OV/UV dalam klausa relatif (contoh (17)-(19) berikut, dan (13)-(15) pada <a href="#sec-agent-OV">§&nbsp;4.1.3</a>), dibandingkan dalam klausa utama (contoh (16)) seperti yang lumrah dicontohkan dalam literatur terdahulu.</p>
+<p>Fitur yang belum dibahas pada TBBBI edisi terdahulu adalah tendensi dominan (lihat <a href="#fig-OV-in-rel-clause" class="quarto-xref">Gambar&nbsp;5</a>) kemunculan OV/UV dalam klausa relatif (contoh (17)-(19) berikut, dan (13)-(15) pada <a href="#sec-agent-OV" class="quarto-xref">§&nbsp;4.1.3</a>), dibandingkan dalam klausa utama (contoh (16)) seperti yang lumrah dicontohkan dalam literatur terdahulu.</p>
 <ol start="16" class="example" type="1">
 <li>Buku itu saya baca <span class="citation" data-cites="arka2008"><a href="#ref-arka2008" role="doc-biblioref">[5, p. 49]</a></span></li>
 </ol>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ov_in_relcl <span class="ot">&lt;-</span> <span class="fu">read_tsv</span>(<span class="st">'data/ajukan.tsv'</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(OV_IN_RELCL) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">verba =</span> <span class="st">"ajukan"</span>) <span class="sc">|&gt;</span> <span class="fu">bind_rows</span>(<span class="fu">read_tsv</span>(<span class="st">'data/ceritakan.tsv'</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(OV_IN_RELCL) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">verba =</span> <span class="st">"ceritakan"</span>)) <span class="sc">|&gt;</span> <span class="fu">bind_rows</span>(<span class="fu">read_tsv</span>(<span class="st">'data/berikan.tsv'</span>) <span class="sc">|&gt;</span> <span class="fu">select</span>(OV_IN_RELCL) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">verba =</span> <span class="st">"berikan"</span>)) <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(OV_IN_RELCL))</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -685,7 +773,7 @@ div.csl-indent {
 </details>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ov_in_relcl_n <span class="sc">|&gt;</span> </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> verba, <span class="at">y =</span> perc, <span class="at">fill =</span> tipe_klausa_ov)) <span class="sc">+</span> </span>
@@ -700,21 +788,25 @@ div.csl-indent {
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-OV-in-rel-clause" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-OV-in-rel-clause-1.png" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption class="figure-caption">Gambar&nbsp;5: Distribusi OV/UV untuk tiga verba dalam klausa relatif dan klausa utama</figcaption>
+<div id="fig-OV-in-rel-clause" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-OV-in-rel-clause-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-OV-in-rel-clause-1.png" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-OV-in-rel-clause-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;5: Distribusi OV/UV untuk tiga verba dalam klausa relatif dan klausa utama
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="#fig-OV-in-rel-clause">Gambar&nbsp;5</a> menampilkan distribusi OV/UV pada klausa utama dan klausa relatif untuk tiga verba yang juga dijadikan contoh pada <a href="#fig-pronoun-agent-comparison">Gambar&nbsp;4</a>. Contoh kalimat ketiga verba ini ditampilkan berikut ini.</p>
+<p><a href="#fig-OV-in-rel-clause" class="quarto-xref">Gambar&nbsp;5</a> menampilkan distribusi OV/UV pada klausa utama dan klausa relatif untuk tiga verba yang juga dijadikan contoh pada <a href="#fig-pronoun-agent-comparison" class="quarto-xref">Gambar&nbsp;4</a>. Contoh kalimat ketiga verba ini ditampilkan berikut ini.</p>
 <ol start="17" class="example" type="1">
 <li><p>… sesuai dengan kandidat <strong>yang</strong> hendak mereka <em><strong>ajukan</strong></em> (B2C13040)</p></li>
 <li><p>Bantuan <strong>yang</strong> telah Henny dan YTP <em><strong>berikan</strong></em> berupa ujian paket A , B , dan C (B3B17002)</p></li>
 <li><p>Kisah-kisah <strong>yang</strong> Gio <em><strong>ceritakan</strong></em> setiap mampir pulang … (D1A16002)</p></li>
 </ol>
-<p>Tendensi seperti pada <a href="#fig-OV-in-rel-clause">Gambar&nbsp;5</a> mengindikasikan bahwa OV/UV lebih lumrah difungsikan sebagai penjelas nomina dibandingkan sebagai suatu proposisi pada klausa utama (paling tidak berdasarkan data tiga verba tersebut). Selain itu, tendensi fungsi penjelas nomina untuk OV/UV juga dapat dipandang mempertegas fungsi OV/UV yang menonjolkan peran bukan-AGEN (<em>Non-Agentive</em>) sebagai fokus utama (yaitu subjek gramatikal klausa), namun dengan tetap mempertahankan peran AGEN secara eksplisit (sehingga AGEN juga masih menonjol). Peran bukan-AGEN diisi oleh inti nomina dalam frase nomina yang dijelaskan oleh klausa relatif OV/UV seperti pada contoh (17) sampai (18).</p>
+<p>Tendensi seperti pada <a href="#fig-OV-in-rel-clause" class="quarto-xref">Gambar&nbsp;5</a> mengindikasikan bahwa OV/UV lebih lumrah difungsikan sebagai penjelas nomina dibandingkan sebagai suatu proposisi pada klausa utama (paling tidak berdasarkan data tiga verba tersebut). Selain itu, tendensi fungsi penjelas nomina untuk OV/UV juga dapat dipandang mempertegas fungsi OV/UV yang menonjolkan peran bukan-AGEN (<em>Non-Agentive</em>) sebagai fokus utama (yaitu subjek gramatikal klausa), namun dengan tetap mempertahankan peran AGEN secara eksplisit (sehingga AGEN juga masih menonjol). Peran bukan-AGEN diisi oleh inti nomina dalam frase nomina yang dijelaskan oleh klausa relatif OV/UV seperti pada contoh (17) sampai (18).</p>
 <p>Penelitian lebih lanjut dapat melihat distribusi klausa verba yang lain ketika digunakan dalam OV/UV. Kajian terkait lainnya yang dapat dilakukan adalah perbandingan diatesis pasif <em>di</em>- dan OV/UV untuk suatu verba terkait distribusi kedua diatesis ini pada klausa utama dan klausa relatif.</p>
 </section>
 </section>
@@ -728,13 +820,13 @@ div.csl-indent {
 <li>Mereka tampak berebut untuk bersalaman dan <em><strong>ber</strong>swafoto</em> dengan Presiden Jokowi (ekotmm02002020043).</li>
 </ol>
 <p>Dalam literatur diatesis medial, makna/interpretasi yang dinyatakan oleh <strong>berswafoto</strong> disebut makna ‘refleksif’, khususnya ‘refleksif medial tak langsung’ (“<em>indirect middle</em>”) <span class="citation" data-cites="kemmer1993"><a href="#ref-kemmer1993" role="doc-biblioref">[34, p. 78]</a></span>. Makna ini dicirikan sebagai aksi yang secara normatif dan sewajarnya dilakukan untuk keuntungan seseorang (“<em>actions that one <strong>normally</strong> or <strong>necessarily</strong> performs for one own’s benefit</em>”) <span class="citation" data-cites="kemmer1993"><a href="#ref-kemmer1993" role="doc-biblioref">[34, p. 78]</a>, penekanan sesuai kutipan aslinya</span> (bandingkan juga dengan pencirian refleksif pada Zúñiga dan Kittilä <span class="citation" data-cites="zúñiga2019"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 153]</a></span>).</p>
-<p>Bentuk dengan awalan <em>ber-</em> sebagai pemarkah diatesis dapat mengungkapkan sejumlah makna <span class="citation" data-cites="zúñiga2019"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 151]</a></span>. Selain makna dalam ranah refleksif seperti pada contoh (20), makna lain yang juga banyak dibahas adalah makna ‘resiprokal’ atau ‘timbal-balik’. Keberagaman makna yang diungkapkan oleh bentuk verba <em>ber-</em> mendukung pernyataan Zúñiga dan Kittilä <span class="citation" data-cites="zúñiga2019"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 169]</a></span> bahwa verba bermarkah morfologis penanda diatesis medial bisa merujuk pada kejadian refleksif dan resiprokal. Dalam situasi resiprokal, subjek verba <em>ber-</em> secara alamiah dipandang terdiri atas dua atau lebih partisipan, dan sejumlah partisipan ini secara bersamaan merupakan AGEN dan juga bukan-AGEN <span class="citation" data-cites="zúñiga2019 kemmer1993"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 153]</a>, <a href="#ref-kemmer1993" role="doc-biblioref">[34, p. 96]</a></span>. Salah satu contoh prototipikal kejadian yang secara alamiah menyatakan arti resiprokal dalam konstruksi verba <em>ber-</em> adalah <em>bertarung</em> (contoh (21)) (dan juga <em>bersisian</em> yang merupakan gabungan afiks <em>ber-</em>/<em>-an</em>, yang diulas pada <a href="#sec-ber-an">§&nbsp;4.2.2</a>).</p>
+<p>Bentuk dengan awalan <em>ber-</em> sebagai pemarkah diatesis dapat mengungkapkan sejumlah makna <span class="citation" data-cites="zúñiga2019"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 151]</a></span>. Selain makna dalam ranah refleksif seperti pada contoh (20), makna lain yang juga banyak dibahas adalah makna ‘resiprokal’ atau ‘timbal-balik’. Keberagaman makna yang diungkapkan oleh bentuk verba <em>ber-</em> mendukung pernyataan Zúñiga dan Kittilä <span class="citation" data-cites="zúñiga2019"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 169]</a></span> bahwa verba bermarkah morfologis penanda diatesis medial bisa merujuk pada kejadian refleksif dan resiprokal. Dalam situasi resiprokal, subjek verba <em>ber-</em> secara alamiah dipandang terdiri atas dua atau lebih partisipan, dan sejumlah partisipan ini secara bersamaan merupakan AGEN dan juga bukan-AGEN <span class="citation" data-cites="zúñiga2019 kemmer1993"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 153]</a>, <a href="#ref-kemmer1993" role="doc-biblioref">[34, p. 96]</a></span>. Salah satu contoh prototipikal kejadian yang secara alamiah menyatakan arti resiprokal dalam konstruksi verba <em>ber-</em> adalah <em>bertarung</em> (contoh (21)) (dan juga <em>bersisian</em> yang merupakan gabungan afiks <em>ber-</em>/<em>-an</em>, yang diulas pada <a href="#sec-ber-an" class="quarto-xref">§&nbsp;4.2.2</a>).</p>
 <ol start="21" class="example" type="1">
 <li>banyak pembaca yang ingin melihat kita <em><strong>ber</strong>tarung</em> <em><strong>ber</strong>sisi<strong>an</strong></em> … (D1A18004)</li>
 </ol>
-<p>Makalah ini menampilkan bagaimana data kuantitatif (yang telah dianalisis secara kualitatif-semantis) diolah untuk mengamati variasi produktivitas semantik diatesis medial yang dimarkahi dengan bentuk yang sama, yaitu <em>ber-</em>. Analisis dilandasi atas sampel acak 1000 bentukan verba <em>ber-</em> dan mengelompokkannya secara semantis-kualitatif berdasarkan kategori semantis yang diajukan oleh Kemmer <span class="citation" data-cites="kemmer1993"><a href="#ref-kemmer1993" role="doc-biblioref">[34]</a></span>. Analisis kuantitatif akan menampilkan 10 kategori semantis yang paling produktif (lihat <a href="#fig-ber-semantics">Gambar&nbsp;6</a>). Produktivitas ini diukur berdasarkan (persentase) jumlah bentuk verba <em>ber-</em> yang masuk dalam kategori semantis tersebut (yaitu persentase frekuensi tipe dari masing-masing kategori semantis; lihat <code>% tipe</code> pada <a href="#fig-ber-semantics">Gambar&nbsp;6</a>). Analisis produktivitas tipe semantis suatu bentuk morfologis ini diadaptasi dari kajian sebelumnya terhadap awalan kausatif <em>per-</em> BI <span class="citation" data-cites="rajeg2017"><a href="#ref-rajeg2017" role="doc-biblioref">[36]</a></span>.</p>
+<p>Makalah ini menampilkan bagaimana data kuantitatif (yang telah dianalisis secara kualitatif-semantis) diolah untuk mengamati variasi produktivitas semantik diatesis medial yang dimarkahi dengan bentuk yang sama, yaitu <em>ber-</em>. Analisis dilandasi atas sampel acak 1000 bentukan verba <em>ber-</em> dan mengelompokkannya secara semantis-kualitatif berdasarkan kategori semantis yang diajukan oleh Kemmer <span class="citation" data-cites="kemmer1993"><a href="#ref-kemmer1993" role="doc-biblioref">[34]</a></span>. Analisis kuantitatif akan menampilkan 10 kategori semantis yang paling produktif (lihat <a href="#fig-ber-semantics" class="quarto-xref">Gambar&nbsp;6</a>). Produktivitas ini diukur berdasarkan (persentase) jumlah bentuk verba <em>ber-</em> yang masuk dalam kategori semantis tersebut (yaitu persentase frekuensi tipe dari masing-masing kategori semantis; lihat <code>% tipe</code> pada <a href="#fig-ber-semantics" class="quarto-xref">Gambar&nbsp;6</a>). Analisis produktivitas tipe semantis suatu bentuk morfologis ini diadaptasi dari kajian sebelumnya terhadap awalan kausatif <em>per-</em> BI <span class="citation" data-cites="rajeg2017"><a href="#ref-rajeg2017" role="doc-biblioref">[36]</a></span>.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ber_stats_top10_fig <span class="ot">&lt;-</span> ber_stats_top10 <span class="sc">|&gt;</span> </span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sem_idn, <span class="fu">matches</span>(<span class="st">"^perc_"</span>)) <span class="sc">|&gt;</span> </span>
@@ -762,21 +854,25 @@ div.csl-indent {
 <span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>, <span class="at">x =</span> <span class="cn">NULL</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-ber-semantics" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-ber-semantics-1.png" class="img-fluid figure-img" style="width:95.0%"></p>
-<figcaption class="figure-caption">Gambar&nbsp;6: Distribusi token, tipe, dan hapax untuk tipe semantis dari <em>ber-</em></figcaption>
+<div id="fig-ber-semantics" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ber-semantics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-ber-semantics-1.png" class="img-fluid figure-img" style="width:95.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ber-semantics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;6: Distribusi token, tipe, dan hapax untuk tipe semantis dari <em>ber-</em>
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="#fig-ber-semantics">Gambar&nbsp;6</a> menampilkan tiga pengukuran produktivitas medan semantik diatesis medial dengan <em>ber-</em>. Pengurutan didasarkan atas persentase frekuensi tipe (<code>% tipe</code>). Pengukuran lain adalah (persentase) frekuensi token (<code>% token</code>, yaitu total kemunculan bentukan kata untuk tiap-tiap kategori/medan semantik dalam korpus) dan (persentase) frekuensi hapax (<code>% hapax</code>, yaitu bentukan <em>ber-</em> untuk tiap-tiap kategori semantik yang hanya ditemukan satu kali dalam korpus). Keberagaman tipe kategori semantis diatesis medial <em>ber-</em> mendukung gagasan dari Zúñiga dan Kittilä <span class="citation" data-cites="zúñiga2019"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 174]</a></span> yang menyatakan bahwa diatesis medial sebaiknya dipandang sebagai konstruksi dengan jejaring makna berbeda, dibandingkan hanya sebagai suatu bentuk verba.</p>
-<p>Dapat diperhatikan pada <a href="#fig-ber-semantics">Gambar&nbsp;6</a> bahwa diatesis medial <em>ber-</em> paling produktif digunakan dalam ranah semantis ‘resiprokal’/‘timbal-balik’, baik dari segi proporsi jumlah bentukan kata (<code>% tipe</code>), kekerapan penggunaan kata-kata tersebut dalam korpus (<code>% token</code>), maupun jumlah bentukan kata yang berupa hapax (yang dapat mengindikasikan tingkat produktivitas potensial dari suatu bentukan kata/tipe semantis). Perhatikan contoh (23) yang menampilkan 10 bentukan hapax acak untuk kategori ‘timbal-balik’, dan (22) yang menampilkan sepuluh bentukan teratas kategori ‘timbal-balik’ (nilai di dalam kurung menunjukkan frekuensi token/kekerapan).</p>
+<p><a href="#fig-ber-semantics" class="quarto-xref">Gambar&nbsp;6</a> menampilkan tiga pengukuran produktivitas medan semantik diatesis medial dengan <em>ber-</em>. Pengurutan didasarkan atas persentase frekuensi tipe (<code>% tipe</code>). Pengukuran lain adalah (persentase) frekuensi token (<code>% token</code>, yaitu total kemunculan bentukan kata untuk tiap-tiap kategori/medan semantik dalam korpus) dan (persentase) frekuensi hapax (<code>% hapax</code>, yaitu bentukan <em>ber-</em> untuk tiap-tiap kategori semantik yang hanya ditemukan satu kali dalam korpus). Keberagaman tipe kategori semantis diatesis medial <em>ber-</em> mendukung gagasan dari Zúñiga dan Kittilä <span class="citation" data-cites="zúñiga2019"><a href="#ref-zúñiga2019" role="doc-biblioref">[1, p. 174]</a></span> yang menyatakan bahwa diatesis medial sebaiknya dipandang sebagai konstruksi dengan jejaring makna berbeda, dibandingkan hanya sebagai suatu bentuk verba.</p>
+<p>Dapat diperhatikan pada <a href="#fig-ber-semantics" class="quarto-xref">Gambar&nbsp;6</a> bahwa diatesis medial <em>ber-</em> paling produktif digunakan dalam ranah semantis ‘resiprokal’/‘timbal-balik’, baik dari segi proporsi jumlah bentukan kata (<code>% tipe</code>), kekerapan penggunaan kata-kata tersebut dalam korpus (<code>% token</code>), maupun jumlah bentukan kata yang berupa hapax (yang dapat mengindikasikan tingkat produktivitas potensial dari suatu bentukan kata/tipe semantis). Perhatikan contoh (23) yang menampilkan 10 bentukan hapax acak untuk kategori ‘timbal-balik’, dan (22) yang menampilkan sepuluh bentukan teratas kategori ‘timbal-balik’ (nilai di dalam kurung menunjukkan frekuensi token/kekerapan).</p>
 <ol start="22" class="example" type="1">
 <li><p><em>ber<strong>sama</strong></em> (10.916); <em>ber<strong>beda</strong></em> (8.076); <em>ber<strong>temu</strong></em> (2.848); <em>ber<strong>gabung</strong></em> (1.385); <em>ber<strong>bagi</strong></em> (985); <em>ber<strong>interaksi</strong></em> (865); <em>ber<strong>partisipasi</strong></em> (706); <em>ber<strong>kontribusi</strong></em> (664); <em>ber<strong>negara</strong></em> (491); <em>ber<strong>diskusi</strong></em> (463)</p></li>
-<li><p><em>ber<strong>tolakbelakang</strong></em> (1); <em>ber<strong>serpihan</strong></em> (1); <em>ber<strong>tatap muka</strong></em> (1); <em>ber<strong>banyak</strong></em> (1); <em>ber<strong>formasi</strong></em> (1); <em>ber<strong>dekat</strong></em> (1); <em>ber<strong>kolaborator</strong></em> (1); <em>ber<strong>kompetitif</strong></em> (1); <em>ber<strong>telpon</strong></em> (1); <em>ber<strong>koresponden</strong></em> (1)</p></li>
+<li><p><em>ber<strong>hantam</strong></em> (1); <em>ber<strong>pandang</strong></em> (1); <em>ber<strong>telpon</strong></em> (1); <em>ber<strong>sinambung</strong></em> (1); <em>ber<strong>kolaborator</strong></em> (1); <em>ber<strong>pintal</strong></em> (1); <em>ber<strong>tikam</strong></em> (1); <em>ber<strong>singgung</strong></em> (1); <em>ber<strong>serpihan</strong></em> (1); <em>ber<strong>seiring</strong></em> (1)</p></li>
 </ol>
-<p>Pola yang menarik pada <a href="#fig-ber-semantics">Gambar&nbsp;6</a> ditunjukkan oleh kategori semantik ‘pendandanan diri’ (<em>grooming</em>). Meskipun kategori ‘<em>grooming</em>’ tidak kerap digunakan (frekuensi tokennya minim), namun kategori ini salah satu yang paling produktif dihasilkan mengingat lebih tingginya jumlah bentukan kata (<code>% tipe</code>) dan juga bentukan hapax (<code>% hapax</code>) dibandingkan penggunaannya dalam teks. Sepuluh bentuk kata teratas kategori ini ditampilkan pada (24) sedangkan contoh hapaxnya ditunjukkan pada (25).</p>
+<p>Pola yang menarik pada <a href="#fig-ber-semantics" class="quarto-xref">Gambar&nbsp;6</a> ditunjukkan oleh kategori semantik ‘pendandanan diri’ (<em>grooming</em>). Meskipun kategori ‘<em>grooming</em>’ tidak kerap digunakan (frekuensi tokennya minim), namun kategori ini salah satu yang paling produktif dihasilkan mengingat lebih tingginya jumlah bentukan kata (<code>% tipe</code>) dan juga bentukan hapax (<code>% hapax</code>) dibandingkan penggunaannya dalam teks. Sepuluh bentuk kata teratas kategori ini ditampilkan pada (24) sedangkan contoh hapaxnya ditunjukkan pada (25).</p>
 <ol start="24" class="example" type="1">
 <li><p><em>ber<strong>senjata</strong></em> (501); <em>ber<strong>seragam</strong></em> (173); <em>ber<strong>salin</strong></em> (136); <em>ber<strong>baju</strong></em> (112); <em>ber<strong>benah</strong></em> (90); <em>ber<strong>kaca</strong></em> (88); <em>ber<strong>lumpur</strong></em> (72); <em>ber<strong>topeng</strong></em> (66); <em>ber<strong>kacamata</strong></em> (53); <em>ber<strong>cermin</strong></em> (42); <em>ber<strong>jubah</strong></em> (42)</p></li>
 <li><p><em>ber<strong>alih wujud</strong></em> (1); <em>ber<strong>bandana</strong></em> (1); <em>ber<strong>basah</strong></em> (1); <em>ber<strong>batik</strong></em> (1); <em>ber<strong>belangkon</strong></em> (1); <em>ber<strong>beres</strong></em> (1); <em>ber<strong>capil</strong></em> (1); <em>ber<strong>cebur</strong></em> (1); <em>ber<strong>cincin</strong></em> (1); <em>ber<strong>crosslining</strong></em> (1); <em>ber<strong>gadget</strong></em> (1); <em>ber<strong>golok</strong></em> (1); <em>ber<strong>hazmat</strong></em> (1); <em>ber<strong>jins</strong></em> (1); <em>ber<strong>kubur</strong></em> (1); <em>ber<strong>lulur</strong></em> (1); <em>ber<strong>panas</strong></em> (1); <em>ber<strong>pedang</strong></em> (1); <em>ber<strong>sajadah</strong></em> (1); <em>ber<strong>saku</strong></em> (1); <em>ber<strong>salin rupa</strong></em> (1); <em>ber<strong>sampo</strong></em> (1); <em>ber<strong>saput</strong></em> (1); <em>ber<strong>selop</strong></em> (1)</p></li>
@@ -802,7 +898,7 @@ div.csl-indent {
 <li><p><em>ber<strong>semangat</strong></em> (447); <em>ber<strong>hatihati</strong></em> (331); <em>ber<strong>sabar</strong></em> (161); <em>ber<strong>sedih</strong></em> (152); <em>ber<strong>bahagia</strong></em> (128); <em>ber<strong>duka</strong></em> (117); <em>ber<strong>hati</strong></em> (86); <em>ber<strong>sungguhsungguh</strong></em> (86); <em>ber<strong>keras</strong></em> (70); <em>ber<strong>simpati</strong></em> (59)</p></li>
 <li><p><em>ber<strong>asyik</strong></em> (1); <em>ber<strong>baik hati</strong></em> (1); <em>ber<strong>belas kasih</strong></em> (1); <em>ber<strong>dendam</strong></em> (1); <em>ber<strong>duka kecewa</strong></em> (1); <em>ber<strong>galau</strong></em> (1); <em>ber<strong>gelisah</strong></em> (1); <em>ber<strong>lega</strong></em> (1); <em>ber<strong>sukaria</strong></em> (1); <em>ber<strong>teguh</strong></em> (1); <em>ber<strong>tenang</strong></em> (1)</p></li>
 </ol>
-<p>Tiga kategori terakhir pada <a href="#fig-ber-semantics">Gambar&nbsp;6</a> merupakan bagian dari ranah <span class="smallcaps">aksi tubuh</span> (“<em>body action domain</em>”) <span class="citation" data-cites="kemmer1993"><a href="#ref-kemmer1993" role="doc-biblioref">[34, pp. 67–71]</a></span>. Yang pertama yaitu ‘posisional’. Pencirian yang diberikan oleh Kemmer <span class="citation" data-cites="kemmer1993"><a href="#ref-kemmer1993" role="doc-biblioref">[34, p. 269]</a></span> untuk kategori ini adalah adanya acuan terhadap konfigurasi/bentuk/postur tubuh atau objek yang dikaitkan dengan adanya objek penopang (“<em>supporting object</em>”). Sepuluh verba teratas dalam korpus yang masuk kategori semantik ini ditampilkan pada (34) (bentuk hapaxnya pada (35)).</p>
+<p>Tiga kategori terakhir pada <a href="#fig-ber-semantics" class="quarto-xref">Gambar&nbsp;6</a> merupakan bagian dari ranah <span class="smallcaps">aksi tubuh</span> (“<em>body action domain</em>”) <span class="citation" data-cites="kemmer1993"><a href="#ref-kemmer1993" role="doc-biblioref">[34, pp. 67–71]</a></span>. Yang pertama yaitu ‘posisional’. Pencirian yang diberikan oleh Kemmer <span class="citation" data-cites="kemmer1993"><a href="#ref-kemmer1993" role="doc-biblioref">[34, p. 269]</a></span> untuk kategori ini adalah adanya acuan terhadap konfigurasi/bentuk/postur tubuh atau objek yang dikaitkan dengan adanya objek penopang (“<em>supporting object</em>”). Sepuluh verba teratas dalam korpus yang masuk kategori semantik ini ditampilkan pada (34) (bentuk hapaxnya pada (35)).</p>
 <ol start="34" class="example" type="1">
 <li><p><em>ber<strong>gantung</strong></em> (937); <em>ber<strong>ujung</strong></em> (373); <em>ber<strong>kantor</strong></em> (284); <em>ber<strong>pusat</strong></em> (278); <em>ber<strong>sandar</strong></em> (256); <em>ber<strong>diam</strong></em> (216); <em>ber<strong>jenjang</strong></em> (197); <em>ber<strong>mukim</strong></em> (153); <em>ber<strong>geming</strong></em> (150); <em>ber<strong>muara</strong></em> (146)</p></li>
 <li><p><em>ber<strong>asalusul</strong></em> (1); <em>ber<strong>gelantung</strong></em> (1); <em>ber<strong>lokus</strong></em> (1); <em>ber<strong>muasal</strong></em> (1); <em>ber<strong>posko</strong></em> (1); <em>be<strong>rehat</strong></em> (1); <em>be<strong>relaksasi</strong></em> (1)</p></li>
@@ -821,7 +917,7 @@ div.csl-indent {
 <section id="sec-ber-an" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="sec-ber-an"><span class="header-section-number">4.2.2</span> Konfiks <em>ber-</em>/<em>-an</em></h3>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>ber_an0 <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_tsv</span>(<span class="st">"data/ber_an.tsv"</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">semantics =</span> <span class="fu">if_else</span>(root_morphind <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"jual"</span>), </span>
@@ -876,10 +972,10 @@ div.csl-indent {
 <span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>         <span class="at">perc_hapax =</span> <span class="fu">round</span>(hapax<span class="sc">/</span><span class="fu">sum</span>(hapax) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Sneddon dkk. <span class="citation" data-cites="sneddon2010"><a href="#ref-sneddon2010" role="doc-biblioref">[10, pp. 111–114]</a></span> mengajukan dua kategori semantis utama untuk verba dengan konfiks <em>ber-</em>/<em>-an</em>, yang berkaitan dengan diatesis medial pada <a href="#sec-ber-middle">§&nbsp;4.2.1</a> sebelumnya: ‘resiprokal/timbal-balik’ (mis. <em>ber<strong>salam</strong>an</em>, <em>ber<strong>dekat</strong>an</em> <span class="citation" data-cites="sneddon2010"><a href="#ref-sneddon2010" role="doc-biblioref">[10, p. 111]</a></span>) dan ‘kejadian tak beraturan’ (“<em>random action</em> <em><strong>ber</strong></em>-…-<em><strong>an</strong></em> <em>verbs</em>”) (mis. <em>ber<strong>desing</strong>an</em>, <em>ber<strong>gugur</strong>an</em>, <em>ber<strong>lari</strong>an</em> <span class="citation" data-cites="sneddon2010"><a href="#ref-sneddon2010" role="doc-biblioref">[10, p. 113]</a></span>). Kedua kategori semantis ini sekilas telah disebutkan pada naskah terkait lain oleh Rajeg dan Denistia <span class="citation" data-cites="rajeg2023"><a href="#ref-rajeg2023" role="doc-biblioref">[16]</a></span> yang mengkaji afiksasi verba dalam konteks produktivitas morfologis, bukan semantis yang akan dilakukan pada makalah kali ini.</p>
+<p>Sneddon dkk. <span class="citation" data-cites="sneddon2010"><a href="#ref-sneddon2010" role="doc-biblioref">[10, pp. 111–114]</a></span> mengajukan dua kategori semantis utama untuk verba dengan konfiks <em>ber-</em>/<em>-an</em>, yang berkaitan dengan diatesis medial pada <a href="#sec-ber-middle" class="quarto-xref">§&nbsp;4.2.1</a> sebelumnya: ‘resiprokal/timbal-balik’ (mis. <em>ber<strong>salam</strong>an</em>, <em>ber<strong>dekat</strong>an</em> <span class="citation" data-cites="sneddon2010"><a href="#ref-sneddon2010" role="doc-biblioref">[10, p. 111]</a></span>) dan ‘kejadian tak beraturan’ (“<em>random action</em> <em><strong>ber</strong></em>-…-<em><strong>an</strong></em> <em>verbs</em>”) (mis. <em>ber<strong>desing</strong>an</em>, <em>ber<strong>gugur</strong>an</em>, <em>ber<strong>lari</strong>an</em> <span class="citation" data-cites="sneddon2010"><a href="#ref-sneddon2010" role="doc-biblioref">[10, p. 113]</a></span>). Kedua kategori semantis ini sekilas telah disebutkan pada naskah terkait lain oleh Rajeg dan Denistia <span class="citation" data-cites="rajeg2023"><a href="#ref-rajeg2023" role="doc-biblioref">[16]</a></span> yang mengkaji afiksasi verba dalam konteks produktivitas morfologis, bukan semantis yang akan dilakukan pada makalah kali ini.</p>
 <p>Dalam basis data <em>VerbInd</em> <span class="citation" data-cites="rajeg"><a href="#ref-rajeg" role="doc-biblioref">[23]</a></span> yang kami gunakan, terdapat 300 bentukan kata yang diawali dengan rangkaian karakter <em>ber-</em> dan diakhiri dengan -<em>an</em>, namun hanya 232 yang relevan mencerminkan konstruksi medial <em>ber</em>-/-<em>an</em> (setelah dianalisis lebih lanjut secara manual satu-per-satu). Analisis kualitatif yang kami lakukan terhadap basis data <em>ber</em>-/-<em>an</em> ini adalah pengelompokan tiap-tiap bentuk ke dalam kedua kategori semantis utama di atas. Terdapat 10 butir data (hanya 4.3% dari total 232 data) yang tidak dapat kami kelompokkan dengan pasti dan tidak diikutkan dalam analisis yang ditampilkan selanjutnya.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ber_sem_prod_plot <span class="ot">&lt;-</span> ber_sem_prod <span class="sc">|&gt;</span> </span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>sem_gen, <span class="at">names_to =</span> <span class="st">"dist"</span>, <span class="at">values_to =</span> <span class="st">"vals"</span>) <span class="sc">|&gt;</span> </span>
@@ -910,15 +1006,19 @@ div.csl-indent {
 <span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>, <span class="at">fill =</span> <span class="cn">NULL</span>, <span class="at">x =</span> <span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="fig-ber-an-semantics" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-ber-an-semantics-1.png" class="img-fluid figure-img" style="width:55.0%"></p>
-<figcaption class="figure-caption">Gambar&nbsp;7: Distribusi token, tipe, dan hapax untuk tipe semantis dari <em>ber-</em>/<em>-an</em></figcaption>
+<div id="fig-ber-an-semantics" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ber-an-semantics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="rajeg_artawa_2023-02-06-voice-cxn-for-tbik_files/figure-html/fig-ber-an-semantics-1.png" class="img-fluid figure-img" style="width:55.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ber-an-semantics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Gambar&nbsp;7: Distribusi token, tipe, dan hapax untuk tipe semantis dari <em>ber-</em>/<em>-an</em>
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Dari segi frekuensi token, makna ‘resiprokal’ (n=18.366; contoh (40) dan (41)) jauh lebih produktif digunakan dibandingkan dengan ‘kejadian tak beraturan’ (3.343) (ketimpangan proporsi ini juga ditampilkan pada <a href="#fig-ber-an-semantics">Gambar&nbsp;7</a>). Sedangkan dari segi jumlah bentukan kata (frekuensi tipe), keduanya berimbang (sama-sama memiliki 111 bentuk). Yang menarik dari tren pada <a href="#fig-ber-an-semantics">Gambar&nbsp;7</a> adalah, kategori semantis ‘kejadian tak beraturan’ memiliki potensi lebih produktif mengingat kategori ini memiliki jumlah hapax yang lebih tinggi (yaitu dapat melekat pada akar kata yang lebih beragam) dibandingkan ‘resiprokal’ (perhatikan panel <code>% hapax</code>). Berikut ini ((40) dan (41)) ditampilkan contoh-contoh bentuk verba diatesis medial dengan <em>ber</em>-/<em>-an</em> bermakna ‘resiprokal’.</p>
+<p>Dari segi frekuensi token, makna ‘resiprokal’ (n=18.366; contoh (40) dan (41)) jauh lebih produktif digunakan dibandingkan dengan ‘kejadian tak beraturan’ (3.343) (ketimpangan proporsi ini juga ditampilkan pada <a href="#fig-ber-an-semantics" class="quarto-xref">Gambar&nbsp;7</a>). Sedangkan dari segi jumlah bentukan kata (frekuensi tipe), keduanya berimbang (sama-sama memiliki 111 bentuk). Yang menarik dari tren pada <a href="#fig-ber-an-semantics" class="quarto-xref">Gambar&nbsp;7</a> adalah, kategori semantis ‘kejadian tak beraturan’ memiliki potensi lebih produktif mengingat kategori ini memiliki jumlah hapax yang lebih tinggi (yaitu dapat melekat pada akar kata yang lebih beragam) dibandingkan ‘resiprokal’ (perhatikan panel <code>% hapax</code>). Berikut ini ((40) dan (41)) ditampilkan contoh-contoh bentuk verba diatesis medial dengan <em>ber</em>-/<em>-an</em> bermakna ‘resiprokal’.</p>
 <ol start="40" class="example" type="1">
 <li><p><em>ber<strong>kait</strong>an</em> (3.985); <em>ber<strong>sangkut</strong>an</em> (2.801); <em>ber<strong>hubung</strong>an</em> (2.505); <em>ber<strong>sama</strong>an</em> (1.224); <em>ber<strong>tentang</strong>an</em> (975); <em>ber<strong>hadap</strong>an</em> (666); <em>ber<strong>kena</strong>an</em> (531); <em>ber<strong>jual</strong>an</em> (476); <em>ber<strong>ganti</strong>an</em> (390); <em>ber<strong>dekat</strong>an</em> (282)</p></li>
 <li><p><em>ber<strong>akrab</strong>an</em> (1); <em>ber<strong>ampun</strong>an</em> (1); <em>ber<strong>banding</strong>an</em> (1); <em>ber<strong>bantah</strong>an</em> (1); <em>ber<strong>cengkram</strong>an</em> (1); <em>ber<strong>cumbu</strong>an</em> (1); <em>ber<strong>deret</strong>an</em> (1); <em>ber<strong>jalin</strong>an</em> (1); <em>ber<strong>kakak</strong>an</em> (1); <em>ber<strong>kangen</strong>an</em> (1); <em>ber<strong>kawan</strong>an</em> (1); <em>ber<strong>punggung</strong>an</em> (1); <em>be<strong>rangkai</strong>an</em> (1); <em>ber<strong>salin</strong>an</em> (1); <em>ber<strong>sanding</strong>an</em> (1); <em>ber<strong>seling</strong>an</em> (1); <em>ber<strong>sikut</strong>an</em> (1); <em>ber<strong>surat</strong>an</em> (1); <em>ber<strong>susul</strong>an</em> (1); <em>ber<strong>tingkah</strong>an</em> (1); <em>ber<strong>tolak</strong>an</em> (1); <em>ber<strong>tukar</strong>an</em> (1)</p></li>
@@ -926,28 +1026,32 @@ div.csl-indent {
 <p>Selanjutnya, contoh-contoh verba diatesis medial <em>ber</em>-/-<em>an</em> dengan makna ‘kejadian tak beraturan’ ditampilkan pada (42) dan (43) (untuk bentuk hapax, diambil sepuluh contoh acak).</p>
 <ol start="42" class="example" type="1">
 <li><p><em>ber<strong>lebih</strong>an</em> (1.223); <em>ber<strong>datang</strong>an</em> (238); <em>ber<strong>lari</strong>an</em> (221); <em>ber<strong>muncul</strong>an</em> (219); <em>ber<strong>serak</strong>an</em> (172); <em>ber<strong>hambur</strong>an</em> (139); <em>ber<strong>jatuh</strong>an</em> (123); <em>ber<strong>tebar</strong>an</em> (119); <em>ber<strong>gugur</strong>an</em> (89); <em>ber<strong>gelantung</strong>an</em> (60); <em>ber<strong>lumur</strong>an</em> (60)</p></li>
-<li><p><em>ber<strong>pental</strong>an</em> (1); <em>ber<strong>simbah</strong>an</em> (1); <em>ber<strong>desah</strong>an</em> (1); <em>ber<strong>kerumun</strong>an</em> (1); <em>ber<strong>gemeretup</strong>an</em> (1); <em>ber<strong>aneka ragam</strong>an</em> (1); <em>ber<strong>pantul</strong>an</em> (1); <em>be<strong>rebah</strong>an</em> (1); <em>ber<strong>sembur</strong>an</em> (1); <em>ber<strong>semilir</strong>an</em> (1)</p></li>
+<li><p><em>ber<strong>goncang</strong>an</em> (1); <em>ber<strong>gayut</strong>an</em> (1); <em>ber<strong>gumul</strong>an</em> (1); <em>ber<strong>serabut</strong>an</em> (1); <em>ber<strong>kerumun</strong>an</em> (1); <em>ber<strong>sandal</strong>an</em> (1); <em>ber<strong>aneka ragam</strong>an</em> (1); <em>ber<strong>kolong</strong>an</em> (1); <em>ber<strong>pijar</strong>an</em> (1); <em>ber<strong>gelandang</strong>an</em> (1)</p></li>
 </ol>
 <p>Salah satu isu dominan dalam analisis terhadap bentuk <em>ber</em>-/-<em>an</em> adalah adanya bentuk yang pangkal katanya adalah bentukan dengan -<em>an</em>, seperti <em>anggap<strong>an</strong></em> (terdapat 48 kasus seperti ini dalam basis data). Bentuk -<em>an</em> nomina ini kemudian digunakan dalam konstruksi <em>ber</em>- dan mengungkapkan arti ‘memiliki’ dari <em>ber</em>-, dibandingkan arti ‘kejadian tak beraturan’ atau ‘resiprokal’. Bentuk yang seperti ini tidak diikutkan dalam analisis <em>ber</em>-/-<em>an</em> dan dipisahkan melalui pengecekan manual.</p>
 </section>
 </section>
 <section id="sec-dca" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="sec-dca"><span class="header-section-number">4.3</span> Kajian kuantitatif atas preferensi leksikal dalam diatesis: Analisis Koleksem Khas (<em>Distinctive Collexeme Analysis</em>)</h2>
-<p>Analisis Koleksem Khas (<em>Distinctive Collexeme Analysis</em> [DCA]) adalah salah satu dari gugusan metodologi kuantitatif di bawah payung Analisis Kolostruksional (<em>Collostructional Analysis</em> [CollAna]) <span class="citation" data-cites="stefanowitsch2003 stefanowitsch2013"><a href="#ref-stefanowitsch2003" role="doc-biblioref">[24]</a>, <a href="#ref-stefanowitsch2013" role="doc-biblioref">[37]</a></span>. CollAna memfasilitasi kajian kuantitatif atas keterkaitan antara leksikon/unsur leksikal dan konstruksi gramatikal. Kajian tersebut bertujuan untuk mengungkap batasan distribusi dan juga ciri semantis konstruksi gramatikal dalam suatu bahasa. Beberapa contohnya telah diberikan pada <a href="#sec-metodologi">§&nbsp;3</a>, misalnya melihat verba mana yang memiliki asosiasi statistik kuat terhadap konstruksi dwitransitif dan konstruksi datif, serta kontribusi semantis verba khas tersebut (yaitu <em>koleksem khas</em>) terhadap pencirian semantis yang membedakan konstruksi dwitransitif dan konstruksi datif <span class="citation" data-cites="gries2004"><a href="#ref-gries2004" role="doc-biblioref">[25]</a></span>. Kajian batasan semantis dan lingkup distribusi verba untuk suatu konstruksi gramatikal (misalnya diatesis) merupakan salah satu aspek teoretis kunci dari teori Gramatika Konstruksional (<em>Construction Grammar</em> [CxG]) <span class="citation" data-cites="goldberg2013 hilpert2020 fried2015"><a href="#ref-goldberg2013" role="doc-biblioref">[38]</a>, <a href="#ref-hilpert2020" role="doc-biblioref">[39]</a>, <a href="#ref-fried2015" role="doc-biblioref">[40]</a></span> . Salah satu asumsi mendasar dari CxG adalah bahwa bahasa terdiri atas konstruksi, yaitu keberpasangan antara bentuk dan makna pada tingkatan yang berbeda, mulai dari konstruksi yang spesifik (seperti kata) hingga yang abstrak (seperti konstruksi sintaksis) <span class="citation" data-cites="goldberg2013"><a href="#ref-goldberg2013" role="doc-biblioref">[38, p. 17]</a></span>.</p>
+<p>Analisis Koleksem Khas (<em>Distinctive Collexeme Analysis</em> [DCA]) adalah salah satu dari gugusan metodologi kuantitatif di bawah payung Analisis Kolostruksional (<em>Collostructional Analysis</em> [CollAna]) <span class="citation" data-cites="stefanowitsch2003 stefanowitsch2013"><a href="#ref-stefanowitsch2003" role="doc-biblioref">[24]</a>, <a href="#ref-stefanowitsch2013" role="doc-biblioref">[37]</a></span>. CollAna memfasilitasi kajian kuantitatif atas keterkaitan antara leksikon/unsur leksikal dan konstruksi gramatikal. Kajian tersebut bertujuan untuk mengungkap batasan distribusi dan juga ciri semantis konstruksi gramatikal dalam suatu bahasa. Beberapa contohnya telah diberikan pada <a href="#sec-metodologi" class="quarto-xref">§&nbsp;3</a>, misalnya melihat verba mana yang memiliki asosiasi statistik kuat terhadap konstruksi dwitransitif dan konstruksi datif, serta kontribusi semantis verba khas tersebut (yaitu <em>koleksem khas</em>) terhadap pencirian semantis yang membedakan konstruksi dwitransitif dan konstruksi datif <span class="citation" data-cites="gries2004"><a href="#ref-gries2004" role="doc-biblioref">[25]</a></span>. Kajian batasan semantis dan lingkup distribusi verba untuk suatu konstruksi gramatikal (misalnya diatesis) merupakan salah satu aspek teoretis kunci dari teori Gramatika Konstruksional (<em>Construction Grammar</em> [CxG]) <span class="citation" data-cites="goldberg2013 hilpert2020 fried2015"><a href="#ref-goldberg2013" role="doc-biblioref">[38]</a>, <a href="#ref-hilpert2020" role="doc-biblioref">[39]</a>, <a href="#ref-fried2015" role="doc-biblioref">[40]</a></span> . Salah satu asumsi mendasar dari CxG adalah bahwa bahasa terdiri atas konstruksi, yaitu keberpasangan antara bentuk dan makna pada tingkatan yang berbeda, mulai dari konstruksi yang spesifik (seperti kata) hingga yang abstrak (seperti konstruksi sintaksis) <span class="citation" data-cites="goldberg2013"><a href="#ref-goldberg2013" role="doc-biblioref">[38, p. 17]</a></span>.</p>
 <p>Berdasarkan konteks teoretis dalam CxG yang dijelaskan pada paragraf sebelumnya, yaitu interaksi antara leksikon dan konstruksi gramatikal, dan batasan distribusi konstruksi gramatikal, DCA digunakan untuk mengungkap perbedaan di antara dua konstruksi gramatikal yang mirip secara semantis/secara fungsional. Perbedaan tersebut dapat berkaitan dengan batasan distribusi dan parameter yang digunakan untuk melihat perbedaan tersebut adalah asosiasi statistik unsur leksikal yang dapat muncul dengan konstruksi tersebut melalui DCA.</p>
 <p>Data korpus melimpah TBIK dapat diolah secara kuantitatif untuk mengukur preferensi leksikal di antara afiksasi penanda diatesis BI. Sebagai contoh penerapan DCA, diatesis yang dibandingkan adalah antara <em>meN</em>- aktif dan <em>di</em>- pasif. Makalah ini akan (i) menampilkan akar kata mana yang lebih sering digunakan dalam diatesis aktif <em>meN</em>- dibandingkan dengan <em>di</em>- dan (ii) mengulas apakah preferensi leksikal tersebut mencerminkan perbedaan semantis antara <em>meN</em>- dan <em>di</em>-.</p>
 <section id="sec-dca-how" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="sec-dca-how"><span class="header-section-number">4.3.1</span> Landasan kuantitatif dari DCA</h3>
-<p>DCA bekerja dengan memanfaatkan data frekuensi (token) yang diperoleh dari korpus. Rancangan dasar dari analisis kuantitatif dalam DCA adalah tabulasi silang frekuensi dalam tabel dua dimensi seperti pada <a href="#tbl-dca-schema">Table&nbsp;1</a>.</p>
+<p>DCA bekerja dengan memanfaatkan data frekuensi (token) yang diperoleh dari korpus. Rancangan dasar dari analisis kuantitatif dalam DCA adalah tabulasi silang frekuensi dalam tabel dua dimensi seperti pada <a href="#tbl-dca-schema" class="quarto-xref">Table&nbsp;1</a>.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="st">"A [*Frek. V dengan Cxn 1*]"</span>, <span class="st">"B [*Frek. Vlainnya dengan Cxn 1*]"</span>, <span class="st">"C [*Frek. V dengan Cxn 2*]"</span>, <span class="st">"D [*Frek. Vlainnya dengan Cxn 2*]"</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>, <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="at">Konstruksi =</span> <span class="fu">c</span>(<span class="st">"Konstruksi (Cxn) 1 "</span>, <span class="st">"Konstruksi (Cxn) 2"</span>), <span class="at">Verba =</span> <span class="fu">c</span>(<span class="st">"Akar verba V"</span>, <span class="st">"Akar verba Lainnya"</span>))) <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div id="tbl-dca-schema" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dca-schema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Skema tabulasi silang yang melandasi Analisis Koleksem Khas
+</figcaption>
+<div aria-describedby="tbl-dca-schema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-dca-schema" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;1: Skema tabulasi silang yang melandasi Analisis Koleksem Khas</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 23%">
 <col style="width: 33%">
@@ -975,11 +1079,13 @@ div.csl-indent {
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 <p>&nbsp;</p>
-<p><a href="#tbl-dca-schema">Table&nbsp;1</a> menunjukkan bahwa, untuk suatu akar verba V, kita memerlukan frekuensi token akar tersebut ketika muncul dalam konstruksi 1 (sel A) dan konstruksi 2 (sel C) yang dibandingkan. Frekuensi token akar verba lainnya dengan kedua konstruksi (sel B dan D) juga diperlukan. Realisasi konkret dari <a href="#tbl-dca-schema">Table&nbsp;1</a> ditunjukkan pada <a href="#tbl-dca-riil">Table&nbsp;2</a> dengan data frekuensi untuk verba <em>bilang</em> pada diatesis aktif <em>meN</em>- dan <em>di</em>-.</p>
+<p><a href="#tbl-dca-schema" class="quarto-xref">Table&nbsp;1</a> menunjukkan bahwa, untuk suatu akar verba V, kita memerlukan frekuensi token akar tersebut ketika muncul dalam konstruksi 1 (sel A) dan konstruksi 2 (sel C) yang dibandingkan. Frekuensi token akar verba lainnya dengan kedua konstruksi (sel B dan D) juga diperlukan. Realisasi konkret dari <a href="#tbl-dca-schema" class="quarto-xref">Table&nbsp;1</a> ditunjukkan pada <a href="#tbl-dca-riil" class="quarto-xref">Table&nbsp;2</a> dengan data frekuensi untuk verba <em>bilang</em> pada diatesis aktif <em>meN</em>- dan <em>di</em>-.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>bilang_dca_raw <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">347902</span>, <span class="dv">341</span>, <span class="dv">138276</span>), <span class="at">byrow =</span> <span class="cn">TRUE</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="at">Diatesis =</span> <span class="fu">c</span>(<span class="st">"*meN*-"</span>, <span class="st">"*di*-"</span>), <span class="at">Verba =</span> <span class="fu">c</span>(<span class="st">"*bilang*"</span>, <span class="st">"verba lainnya"</span>)))</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -997,10 +1103,14 @@ div.csl-indent {
 <span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(bilang_dca)[[<span class="dv">2</span>]][<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"Total baris"</span></span>
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>bilang_dca <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div id="tbl-dca-riil" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-dca-riil-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Tabulasi silang frekuensi kemunculan <em>bilang</em> dalam konstruksi Aktif <em>meN</em>- (<em>membilang</em>) dan Pasif <em>di</em>- (<em>dibilang</em>); nilai dalam kurung adalah frekuensi harapan (<em>expected frequency</em>)
+</figcaption>
+<div aria-describedby="tbl-dca-riil-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-dca-riil" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;2: Tabulasi silang frekuensi kemunculan <em>bilang</em> dalam konstruksi Aktif <em>meN</em>- (<em>membilang</em>) dan Pasif <em>di</em>- (<em>dibilang</em>); nilai dalam kurung adalah frekuensi harapan (<em>expected frequency</em>)</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -1032,16 +1142,18 @@ div.csl-indent {
 </table>
 </div>
 </div>
+</figure>
+</div>
 </div>
 <p>&nbsp;</p>
-<p>Nilai di dalam kurung pada <a href="#tbl-dca-riil">Table&nbsp;2</a> adalah “frekuensi harapan” <span class="citation" data-cites="rajeg2019 rajeg2019a"><a href="#ref-rajeg2019" role="doc-biblioref">[28, p. 71]</a>, <a href="#ref-rajeg2019a" role="doc-biblioref">[41]</a></span>, yaitu frekuensi yang diharapkan muncul dalam korpus jika kita berasumsi bahwa proporsi diatesis aktif dan pasif seharusnya (secara teoretis) berimbang untuk <em>bilang</em> (dengan kata lain, seharusnya <em>bilang</em> dapat secara silih berganti muncul di kedua diatesis dan, secara statistik, distribusi <em>bilang</em> pada kedua diatesis tidak berbeda signifikan). Akan tetapi, <a href="#tbl-dca-riil">Table&nbsp;2</a> menunjukkan bahwa terdapat ketimpangan antara frekuensi (token) pengamatan (yang riil diperoleh dari korpus) dan frekuensi harapan untuk <em>bilang</em> terhadap kemunculannya pada diatesis aktif <em>meN</em>- dan pasif <em>di</em>-. Pembaca dapat melihat kajian oleh Rajeg dan Rajeg <span class="citation" data-cites="rajeg2019 rajeg2019a"><a href="#ref-rajeg2019" role="doc-biblioref">[28, p. 71]</a>, <a href="#ref-rajeg2019a" role="doc-biblioref">[41]</a></span> terkait cara menghitung frekuensi harapan.</p>
-<p>Selanjutnya, frekuensi riil dalam keempat sel (A, B, C, D) pada <a href="#tbl-dca-riil">Table&nbsp;2</a> menjadi masukan data untuk uji signifikansi statistik, seperti uji Fisher-Yates Exact, Chi-Square, atau Log-likelihood (yang akan digunakan pada makalah ini). Dalam konteks DCA, uji signifikansi digunakan untuk menentukan apakah ketimpangan/perbedaan antara (i) frekuensi kemunculan/pengamatan suatu koleksem (seperti <em>bilang</em>) dalam korpus dan (ii) frekuensi harapannya terhadap konstruksi aktif <em>meN</em>- dan <em>di</em>- merupakah ketimpangan yang signifikan secara statistik.</p>
-<p>Untuk contoh dengan verba <em>bilang</em>, uji statistik menunjukkan bahwa terdapat ketimpangan yang signifikan (tidak merupakan suatu kebetulan) antara frekuensi pengamatan dan harapan untuk <em>bilang</em> terhadap kedua diatesis tersebut. Secara khusus, ditemukan bahwa <em>bilang</em> secara signifikan lebih sering digunakan dalam diatesis pasif <em>di</em>- dari apa yang diharapkan, dan lebih jarang digunakan dari yang diharapkan pada diatesis aktif <em>meN</em>-. Dengan kata lain, bentuk <em>dibilang</em> lebih lazim dibandingkan <em>membilang</em>. Untuk analisis DCA yang tuntas, kalkulasi seperti pada <a href="#tbl-dca-riil">Table&nbsp;2</a> diulang untuk tiap-tiap akar verba yang paling sedikit muncul satu kali dalam korpus dengan satu dari kedua konstruksi yang dibandingkan. Kemudian, tiap-tiap verba diurutkan berdasarkan derajat kekhasan (<em>Distinctiveness</em>) terhadap salah satu dari kedua konstruksi tersebut. Komputasi DCA dilakukan dengan modul <code>collostructions</code> <span class="citation" data-cites="flach2021"><a href="#ref-flach2021" role="doc-biblioref">[42]</a></span> untuk bahasa pemrograman R <span class="citation" data-cites="rcore2022"><a href="#ref-rcore2022" role="doc-biblioref">[43]</a></span>.</p>
+<p>Nilai di dalam kurung pada <a href="#tbl-dca-riil" class="quarto-xref">Table&nbsp;2</a> adalah “frekuensi harapan” <span class="citation" data-cites="rajeg2019 rajeg2019a"><a href="#ref-rajeg2019" role="doc-biblioref">[28, p. 71]</a>, <a href="#ref-rajeg2019a" role="doc-biblioref">[41]</a></span>, yaitu frekuensi yang diharapkan muncul dalam korpus jika kita berasumsi bahwa proporsi diatesis aktif dan pasif seharusnya (secara teoretis) berimbang untuk <em>bilang</em> (dengan kata lain, seharusnya <em>bilang</em> dapat secara silih berganti muncul di kedua diatesis dan, secara statistik, distribusi <em>bilang</em> pada kedua diatesis tidak berbeda signifikan). Akan tetapi, <a href="#tbl-dca-riil" class="quarto-xref">Table&nbsp;2</a> menunjukkan bahwa terdapat ketimpangan antara frekuensi (token) pengamatan (yang riil diperoleh dari korpus) dan frekuensi harapan untuk <em>bilang</em> terhadap kemunculannya pada diatesis aktif <em>meN</em>- dan pasif <em>di</em>-. Pembaca dapat melihat kajian oleh Rajeg dan Rajeg <span class="citation" data-cites="rajeg2019 rajeg2019a"><a href="#ref-rajeg2019" role="doc-biblioref">[28, p. 71]</a>, <a href="#ref-rajeg2019a" role="doc-biblioref">[41]</a></span> terkait cara menghitung frekuensi harapan.</p>
+<p>Selanjutnya, frekuensi riil dalam keempat sel (A, B, C, D) pada <a href="#tbl-dca-riil" class="quarto-xref">Table&nbsp;2</a> menjadi masukan data untuk uji signifikansi statistik, seperti uji Fisher-Yates Exact, Chi-Square, atau Log-likelihood (yang akan digunakan pada makalah ini). Dalam konteks DCA, uji signifikansi digunakan untuk menentukan apakah ketimpangan/perbedaan antara (i) frekuensi kemunculan/pengamatan suatu koleksem (seperti <em>bilang</em>) dalam korpus dan (ii) frekuensi harapannya terhadap konstruksi aktif <em>meN</em>- dan <em>di</em>- merupakah ketimpangan yang signifikan secara statistik.</p>
+<p>Untuk contoh dengan verba <em>bilang</em>, uji statistik menunjukkan bahwa terdapat ketimpangan yang signifikan (tidak merupakan suatu kebetulan) antara frekuensi pengamatan dan harapan untuk <em>bilang</em> terhadap kedua diatesis tersebut. Secara khusus, ditemukan bahwa <em>bilang</em> secara signifikan lebih sering digunakan dalam diatesis pasif <em>di</em>- dari apa yang diharapkan, dan lebih jarang digunakan dari yang diharapkan pada diatesis aktif <em>meN</em>-. Dengan kata lain, bentuk <em>dibilang</em> lebih lazim dibandingkan <em>membilang</em>. Untuk analisis DCA yang tuntas, kalkulasi seperti pada <a href="#tbl-dca-riil" class="quarto-xref">Table&nbsp;2</a> diulang untuk tiap-tiap akar verba yang paling sedikit muncul satu kali dalam korpus dengan satu dari kedua konstruksi yang dibandingkan. Kemudian, tiap-tiap verba diurutkan berdasarkan derajat kekhasan (<em>Distinctiveness</em>) terhadap salah satu dari kedua konstruksi tersebut. Komputasi DCA dilakukan dengan modul <code>collostructions</code> <span class="citation" data-cites="flach2021"><a href="#ref-flach2021" role="doc-biblioref">[42]</a></span> untuk bahasa pemrograman R <span class="citation" data-cites="rcore2022"><a href="#ref-rcore2022" role="doc-biblioref">[43]</a></span>.</p>
 </section>
 <section id="sec-dca-av-pass" class="level3" data-number="4.3.2">
 <h3 data-number="4.3.2" class="anchored" data-anchor-id="sec-dca-av-pass"><span class="header-section-number">4.3.2</span> Analisis Koleksem Khas untuk <em>meN</em>- vs.&nbsp;<em>di</em>-</h3>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>tb2 <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_tsv</span>(<span class="st">"data/DCA-input-me-vs-di.tsv"</span>) <span class="sc">|&gt;</span> <span class="fu">as.data.frame</span>()</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>dca_logll <span class="ot">&lt;-</span> collostructions<span class="sc">::</span><span class="fu">collex.dist</span>(tb2)</span>
@@ -1090,20 +1202,29 @@ div.csl-indent {
 <span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Kekhasan (*meN*-)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">format</span>(<span class="fu">round</span>(COLL.STR.LOGL, <span class="dv">2</span>), <span class="at">big.mark =</span> <span class="st">"."</span>, <span class="at">decimal.mark =</span> <span class="st">","</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p><a href="#tbl-av-vs-di">Table&nbsp;3</a> menampilkan luaran standar DCA <span class="citation" data-cites="gries2004"><a href="#ref-gries2004" role="doc-biblioref">[25]</a></span>, dengan fokus pada dua puluh koleksem dengan derajat kekhasan (kolom <code>Kekhasan (...)</code>) tertinggi dan signifikan untuk untuk [<em>di</em>-+v] (bagian kiri) dan [<em>meN</em>-+v] (kanan). Semakin tinggi kekhasannya, semakin kuat koleksem tersebut berasosiasi khas dengan diatesis yang dimaksud. Nilai dalam kurung setelah bentuk koleksem menunjukkan frekuensi koleksem tersebut untuk masing-masing diatesis. Misalnya, <em>tuju</em> muncul 5.268 kali dengan <em>meN</em>- (<em>menuju</em>) dan hanya 171 kali dengan <em>di</em>- (<em>dituju</em>). Data pada <a href="#tbl-av-vs-di">Table&nbsp;3</a> kemudian dapat diulas secara kualitatif guna melihat perbedaan fungsional atau semantis di antara kedua konstruksi tersebut.</p>
-<div class="cell tbl-cap-location-top">
-<details>
+<p><a href="#tbl-av-vs-di" class="quarto-xref">Table&nbsp;3</a> menampilkan luaran standar DCA <span class="citation" data-cites="gries2004"><a href="#ref-gries2004" role="doc-biblioref">[25]</a></span>, dengan fokus pada dua puluh koleksem dengan derajat kekhasan (kolom <code>Kekhasan (...)</code>) tertinggi dan signifikan untuk untuk [<em>di</em>-+v] (bagian kiri) dan [<em>meN</em>-+v] (kanan). Semakin tinggi kekhasannya, semakin kuat koleksem tersebut berasosiasi khas dengan diatesis yang dimaksud. Nilai dalam kurung setelah bentuk koleksem menunjukkan frekuensi koleksem tersebut untuk masing-masing diatesis. Misalnya, <em>tuju</em> muncul 5.268 kali dengan <em>meN</em>- (<em>menuju</em>) dan hanya 171 kali dengan <em>di</em>- (<em>dituju</em>). Data pada <a href="#tbl-av-vs-di" class="quarto-xref">Table&nbsp;3</a> kemudian dapat diulas secara kualitatif guna melihat perbedaan fungsional atau semantis di antara kedua konstruksi tersebut.</p>
+<div class="cell" data-tbl-cap-location="top">
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tb_print <span class="ot">&lt;-</span> dist_for_di <span class="sc">|&gt;</span> </span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">8</span><span class="sc">:</span><span class="dv">9</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_cols</span>(dist_for_me <span class="sc">|&gt;</span> </span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>              <span class="fu">select</span>(<span class="dv">8</span><span class="sc">:</span><span class="dv">9</span>))</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>tb_print <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>tb_print <span class="sc">|&gt;</span> knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># tb_print |&gt;   flextable() |&gt; </span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="co">#   add_header_row(colwidths = c(2, 2),</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co">#                  values = c("Koleksem khas untuk [*di*-+v]", </span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co">#                             "Koleksem khas untuk [*meN*-+v]")) |&gt; </span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="co">#   autofit()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div id="tbl-av-vs-di" class="cell quarto-float anchored" data-tbl-cap-location="top">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-av-vs-di-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Dua puluh (20) koleksem khas teratas untuk [<em>di</em>-+v] (panel kiri) dan [<em>meN</em>-+v] (panel kanan)
+</figcaption>
+<div aria-describedby="tbl-av-vs-di-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tbl-av-vs-di" class="anchored">
-<table class="table table-sm table-striped small">
-<caption>Table&nbsp;3: Dua puluh (20) koleksem khas teratas untuk [<em>di</em>-+v] (panel kiri) dan [<em>meN</em>-+v] (panel kanan)</caption>
+<table class="do-not-create-environment cell table table-sm table-striped small">
 <colgroup>
 <col style="width: 31%">
 <col style="width: 17%">
@@ -1243,14 +1364,8 @@ div.csl-indent {
 </table>
 </div>
 </div>
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tb_print |&gt;   flextable() |&gt; </span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#   add_header_row(colwidths = c(2, 2),</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                  values = c("Koleksem khas untuk [*di*-+v]", </span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#                             "Koleksem khas untuk [*meN*-+v]")) |&gt; </span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   autofit()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+</figure>
+</div>
 </div>
 <p>&nbsp;</p>
 <p>Setelah mengamati tipe verba yang khas untuk <em>meN</em>- dan <em>di</em>-, terlihat adanya preferensi semantis yang dapat mencirikan fungsi kedua diatesis tersebut. Untuk <em>meN</em>- sebagian besar koleksem verbal khas merujuk pada kejadian yang bersifat dinamis dan agentif (aksional), yaitu <em>tuju</em>, <em>cari</em>, <em>buat</em>, <em>bantu</em>, <em>coba</em>, <em>dorong</em>, <em>capai</em>, <em>lawan</em>, <em>ganggu</em>, <em>tarik</em>, <em>jaga</em>, <em>cakup</em><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>, <em>jawab</em>, dan <em>toleh</em>. Hal ini dapat mengindikasikan kesesuaian antara makna aksional/dinamis verba tersebut dan makna prototipikal konstruksi aktif <em>meN</em>- yang memusatkan perhatiannya pada aliran energi dari AGEN/Subjek ke peran bukan AGEN (mis. PENDERITA).</p>
@@ -1262,7 +1377,7 @@ div.csl-indent {
 </section>
 <section id="simpulan" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Simpulan</h1>
-<p>Makalah ini mengulas sejumlah fitur sintaksis, semantis, dan leksikal untuk diatesis dalam bahasa Indonesia, utamanya diatesis pasif, diatesis non-aktor (OV/UV), diatesis medial, dan preferensi leksikal diatesis aktif <em>meN</em>- vs.&nbsp;pasif <em>di</em>-. <a href="#sec-agent-encoding-di">§&nbsp;4.1.1</a> menunjukkan bahwa pasif <em>di</em>- di semua ragam teks lebih sering meninggalkan peran AGEN implisit. Kami juga memberikan bukti kuantitatif terkait gagasan terdahulu <span class="citation" data-cites="sneddon2010 moeliono2017"><a href="#ref-moeliono2017" role="doc-biblioref">[9]</a>, <a href="#ref-sneddon2010" role="doc-biblioref">[10]</a></span> bahwa (i) pronomina ketiga adalah tipe yang dominan sebagai AGEN pasif <em>di</em>- (<a href="#fig-agent-pronoun-for-di-passive-VISUALISATION">Gambar&nbsp;2</a>) dan (ii) pronomina secara umum (dibandingkan kategori lainnya) adalah tipe AGEN dominan untuk (sejumlah sampel verba dengan) OV/UV (<a href="#fig-OV-agent-berikan">Gambar&nbsp;3</a> dan <a href="#fig-pronoun-agent-comparison">Gambar&nbsp;4</a>). Akan tetapi, dengan data korpus melimpah, kami juga menunjukkan adanya preferensi leksikal untuk suatu verba dalam konstruksi OV/UV terkait bentuk pronomina mana yang lebih sering muncul sebagai AGEN dan bagaimana preferensi tersebut mencerminkan konseptualisasi berbeda terhadap kejadian yang dirujuk verba tersebut (<a href="#fig-pronoun-agent-comparison">Gambar&nbsp;4</a>). Selanjutnya, <a href="#sec-medial">§&nbsp;4.2</a> menunjukkan bahwa makna ‘resiprokal/timbal-balik’ adalah yang paling produktif untuk pemarkah medial <em>ber</em>- di ketiga pengukuran produktivitas (lihat <a href="#fig-ber-semantics">Gambar&nbsp;6</a> pada <a href="#sec-ber-middle">§&nbsp;4.2.1</a>) dan makna yang sama lebih kerap digunakan dalam korpus untuk <em>ber</em>-/-<em>an</em> namun memiliki produktivitas potensial yang lebih rendah dibandingkan makna ‘kejadian tak beraturan’ (lihat <a href="#fig-ber-an-semantics">Gambar&nbsp;7</a> pada <a href="#sec-ber-an">§&nbsp;4.2.2</a>). Terakhir, kami mencontohkan penerapan analisis kuantitatif mutakhir, “Analisis Koleksem Khas” (DCA) (<a href="#sec-dca">§&nbsp;4.3</a>). DCA digunakan dalam menjelajahi sekaligus menguji temuan terdahulu terkait adanya kespesifikan/preferensi leksikal dalam suatu konstruksi gramatikal <span class="citation" data-cites="gries2004 rajeg2021 lier2022"><a href="#ref-lier2022" role="doc-biblioref">[15]</a>, <a href="#ref-gries2004" role="doc-biblioref">[25]</a>, <a href="#ref-rajeg2021" role="doc-biblioref">[27]</a></span>, seperti halnya konstruksi diatesis. Luaran DCA kemudian diulas secara kualitatif untuk menunjukkan bahwa preferensi leksikal tersebut mengungkap kandungan semantis dan fungsional dari konstruksi gramatikal (khususnya untuk studi kasus [<em>meN</em>-+v] vs.&nbsp;[<em>di</em>-+v]; <a href="#sec-dca-av-pass">§&nbsp;4.3.2</a>).</p>
+<p>Makalah ini mengulas sejumlah fitur sintaksis, semantis, dan leksikal untuk diatesis dalam bahasa Indonesia, utamanya diatesis pasif, diatesis non-aktor (OV/UV), diatesis medial, dan preferensi leksikal diatesis aktif <em>meN</em>- vs.&nbsp;pasif <em>di</em>-. <a href="#sec-agent-encoding-di" class="quarto-xref">§&nbsp;4.1.1</a> menunjukkan bahwa pasif <em>di</em>- di semua ragam teks lebih sering meninggalkan peran AGEN implisit. Kami juga memberikan bukti kuantitatif terkait gagasan terdahulu <span class="citation" data-cites="sneddon2010 moeliono2017"><a href="#ref-moeliono2017" role="doc-biblioref">[9]</a>, <a href="#ref-sneddon2010" role="doc-biblioref">[10]</a></span> bahwa (i) pronomina ketiga adalah tipe yang dominan sebagai AGEN pasif <em>di</em>- (<a href="#fig-agent-pronoun-for-di-passive-VISUALISATION" class="quarto-xref">Gambar&nbsp;2</a>) dan (ii) pronomina secara umum (dibandingkan kategori lainnya) adalah tipe AGEN dominan untuk (sejumlah sampel verba dengan) OV/UV (<a href="#fig-OV-agent-berikan" class="quarto-xref">Gambar&nbsp;3</a> dan <a href="#fig-pronoun-agent-comparison" class="quarto-xref">Gambar&nbsp;4</a>). Akan tetapi, dengan data korpus melimpah, kami juga menunjukkan adanya preferensi leksikal untuk suatu verba dalam konstruksi OV/UV terkait bentuk pronomina mana yang lebih sering muncul sebagai AGEN dan bagaimana preferensi tersebut mencerminkan konseptualisasi berbeda terhadap kejadian yang dirujuk verba tersebut (<a href="#fig-pronoun-agent-comparison" class="quarto-xref">Gambar&nbsp;4</a>). Selanjutnya, <a href="#sec-medial" class="quarto-xref">§&nbsp;4.2</a> menunjukkan bahwa makna ‘resiprokal/timbal-balik’ adalah yang paling produktif untuk pemarkah medial <em>ber</em>- di ketiga pengukuran produktivitas (lihat <a href="#fig-ber-semantics" class="quarto-xref">Gambar&nbsp;6</a> pada <a href="#sec-ber-middle" class="quarto-xref">§&nbsp;4.2.1</a>) dan makna yang sama lebih kerap digunakan dalam korpus untuk <em>ber</em>-/-<em>an</em> namun memiliki produktivitas potensial yang lebih rendah dibandingkan makna ‘kejadian tak beraturan’ (lihat <a href="#fig-ber-an-semantics" class="quarto-xref">Gambar&nbsp;7</a> pada <a href="#sec-ber-an" class="quarto-xref">§&nbsp;4.2.2</a>). Terakhir, kami mencontohkan penerapan analisis kuantitatif mutakhir, “Analisis Koleksem Khas” (DCA) (<a href="#sec-dca" class="quarto-xref">§&nbsp;4.3</a>). DCA digunakan dalam menjelajahi sekaligus menguji temuan terdahulu terkait adanya kespesifikan/preferensi leksikal dalam suatu konstruksi gramatikal <span class="citation" data-cites="gries2004 rajeg2021 lier2022"><a href="#ref-lier2022" role="doc-biblioref">[15]</a>, <a href="#ref-gries2004" role="doc-biblioref">[25]</a>, <a href="#ref-rajeg2021" role="doc-biblioref">[27]</a></span>, seperti halnya konstruksi diatesis. Luaran DCA kemudian diulas secara kualitatif untuk menunjukkan bahwa preferensi leksikal tersebut mengungkap kandungan semantis dan fungsional dari konstruksi gramatikal (khususnya untuk studi kasus [<em>meN</em>-+v] vs.&nbsp;[<em>di</em>-+v]; <a href="#sec-dca-av-pass" class="quarto-xref">§&nbsp;4.3.2</a>).</p>
 </section>
 <section id="daftar-pustaka" class="level1 unnumbered">
 
@@ -1270,7 +1385,7 @@ div.csl-indent {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Daftar pustaka</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Daftar pustaka</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
 <div id="ref-zúñiga2019" class="csl-entry" role="listitem">
 <div class="csl-left-margin">[1] </div><div class="csl-right-inline">F. Zúñiga and S. Kittilä, <em>Grammatical voice</em>. Cambridge ; New York: Cambridge University Press, 2019. doi: <a href="https://doi.org/10.1017/9781316671399">10.1017/9781316671399</a>.</div>
 </div>
@@ -1406,14 +1521,14 @@ div.csl-indent {
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Penulis berterima kasih kepada I Wayan Arka dan tim peninjau atas komentar dan saran yang diberikan pada versi awal makalah ini. Segala kekurangan yang masih ditemukan merupakan tanggung jawab penulis.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Penulis berterima kasih kepada I Wayan Arka dan tim peninjau, M. Umar Muslim, atas komentar dan saran yang diberikan pada versi awal makalah ini. Segala kekurangan yang masih ditemukan merupakan tanggung jawab penulis.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p><a href="https://gederajeg.github.io/database-verba-bahasa-indonesia/" class="uri">https://gederajeg.github.io/database-verba-bahasa-indonesia/</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Penulisan dan analisis kuantitatif dalam makalah ini dilakukan secara komputasional menggunakan <a href="https://quarto.org">Quarto</a> melalui peranti pemrograman <a href="https://posit.co/products/open-source/rstudio/">RStudio</a>. Berkas Quarto dan data akan tersedia terbuka pada <a href="https://github.com/gederajeg/diatesis-bahasa-indonesia">https://github.com/gederajeg/diatesis-bahasa-indonesia</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>https://kbbi.kemdikbud.go.id/entri/anugerah<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>Penting untuk diperhatikan bahwa diatesis medial juga dapat dimarkahi dengan awalan <em>meN</em>- <span class="citation" data-cites="mayani_diatesis_2004"><a href="#ref-mayani_diatesis_2004" role="doc-biblioref">[33, p. 62]</a></span> dan <em>ter</em>- <span class="citation" data-cites="mayani_diatesis_2004"><a href="#ref-mayani_diatesis_2004" role="doc-biblioref">[33, p. 68]</a></span>. Karena keterbatasan ruang, makalah ini belum mengkaji diatesis medial <em>meN</em>- dan <em>ter</em>-.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>Arti <em>mencakup</em> adalah menangkap dengan mulut atau juga mencedok (dengan tangan) (https://kbbi.kemdikbud.go.id/entri/mencakup).<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div>CC BY-NC-SA</div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-rajeg2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+</section><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-rajeg2024" class="csl-entry quarto-appendix-citeas" role="listitem">
 <div class="">G.
 P. W. Rajeg and K. Artawa, <span>“Kajian korpus kuantitatif terhadap
 aspek-aspek diatesis dalam bahasa Indonesia,”</span> 2024. doi: <a href="https://doi.org/10.5281/zenodo.10615406">10.5281/zenodo.10615406</a>.</div>
@@ -1498,10 +1613,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1511,8 +1625,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1525,6 +1648,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1568,6 +1810,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1593,6 +1836,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1653,6 +1922,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
